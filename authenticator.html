@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freddie’s Website</title>
+  <style>
 
+  </style>
+</head>
+
+  <body>
+  <!-- …your existing UI… -->
+
+  <!-- placeholder for our new textbox -->
+  <div id="textbox-container"></div>
+
+  <!-- your existing scripts… -->
+  <script src="addTextbox.js"></script>
+</body>
+
+  <script>
+  // 1. Find (or create) a container
+const container = document.getElementById('textbox-container');
+
+// 2. Create the input element
+const input = document.createElement('input');
+input.type        = 'text';
+input.placeholder = 'Type something here…';
+input.id          = 'myTextbox';
+
+// 3. (Optional) add some basic styling
+input.style.padding     = '8px';
+input.style.fontSize    = '16px';
+input.style.border      = '1px solid #ccc';
+input.style.borderRadius= '4px';
+input.style.width       = '250px';
+
+// 4. Append it into the page
+container.appendChild(input);
+
+// 5. Hook up an event listener
+input.addEventListener('input', (e) => {
+  console.log('Current text:', e.target.value);
+});
+
+</script>
