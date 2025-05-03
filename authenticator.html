@@ -73,8 +73,12 @@
     // on click: append "\n{value}" to the 4th text
     validateBtn.addEventListener('click', () => {
       const text4 = document.getElementById('text-4');
-      text4.textContent += `\n${input.value}`;
-    });
+      const currentText = input.value;
+      const length     = currentText.length;
+      if (length>15) {
+        text4.textContent += `\n$User "Guest"'s Private API Key: ${input.value}`;
+      }
+      });
   </script>
 </body>
 </html>
