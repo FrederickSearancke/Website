@@ -6,21 +6,22 @@
   <title>Freddie’s Website</title>
   <style>
     /* Reset default margins */
-    body { margin: 0; padding: 0; }
+    body { margin: 0; padding: 0; height: 100%;}
 
     /* ← NEW: four thin strips behind everything */
     .bg-strips {
       position: fixed;      /* stick to viewport */
       top: 0; left: 0;
       width: 100%; 
-      height: 150px;        /* adjust to the “thin” height you want */
+      height: 100vh;        /* adjust to the “thin” height you want */
       z-index: -1;          /* behind all other content */
       display: flex;
     }
     .bg-strips img {
-      flex: 1;              /* each image takes 25% width */
-      height: 100%;
-      object-fit: cover;    /* crops/zooms to fill the strip */
+      flex: 1;             /* each image takes 25% of the width */
+      width: 25%;          /* fallback if flex is not supported */
+      height: 100%;        /* fill the parent’s height */
+      object-fit: cover;   /* crop/zoom to fill */
     }
 
     /* Banner box */
