@@ -72,6 +72,7 @@
   margin: 240px 15px 0;
   display: flex;
   justify-content: space-around;
+  z-index: 5;
 
   /* make the container transparent: */
   background-color: transparent;  
@@ -84,7 +85,6 @@
     /* 3) buttons at layer 2 */
     .btn {
       position: relative;   /* so z-index takes effect */
-      z-index: 2;
       padding: 10px 20px;
       font-size: 16px;
       font-family: Arial, sans-serif;
