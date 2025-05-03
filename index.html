@@ -25,6 +25,12 @@
       font-weight: 700;                      /* ensure bold */
       color: #ffffff;        /* Google Blue */
       padding: 15px 0;       /* space above and below text */
+      transition: opacity 0.5s ease-in-out;  /* animate opacity */
+      opacity: 1;
+    }
+
+    .bannerText.scrolled {
+      opacity: 0;                             /* target state */
     }
 
     .boarderLeft {
@@ -55,6 +61,32 @@
     <div class="boarderLeft"></div>
     <div class="boarderRight"></div>
     <div class="bannerText">Frederick's Website</div>
+
+
+  <body>
+  …  
+  <!-- JavaScript to detect scroll -->
+  <script>
+    // ① Grab the element you’ll animate
+    const banner = document.querySelector('.bannerText');
+
+    // ② Listen for any scroll event on the window
+    window.addEventListener('scroll', function() {
+      // ③ Measure how far the page is scrolled
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+      // ④ Conditional: if we’ve passed 200px
+      if (scrollY > 200) {
+        // ⑤ “True” branch: add the class to trigger CSS
+        banner.classList.add('scrolled');
+      } else {
+        // ⑥ “False” branch: remove it when we scroll back up
+        banner.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+
   
 </body>
 </html>
