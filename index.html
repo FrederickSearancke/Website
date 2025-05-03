@@ -102,12 +102,13 @@
     </div>
 
 
-  <body>
-  …  
+
   <!-- JavaScript to detect scroll -->
   <script>
     // ① Grab the element you’ll animate
     const banner = document.querySelector('.bannerText');
+    const btnContainer = document.querySelector('.btn-container');
+
 
     // ② Listen for any scroll event on the window
     window.addEventListener('scroll', function() {
@@ -126,7 +127,8 @@
         btn-container.classList.add('newscrolled');
       } else {
         btn-container.classList.remove('newscrolled');
-    });
+      }
+    }
   </script>
 </body>
 
