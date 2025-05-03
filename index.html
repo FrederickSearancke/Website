@@ -60,6 +60,9 @@
     display: flex;
     justify-content: space-around;  /* equal space around items */
   }
+    .btn-container.newscrolled {
+      top: 0%;
+    }
 
     /* Generic button styling */
     .btn {
@@ -119,6 +122,10 @@
         // ⑥ “False” branch: remove it when we scroll back up
         banner.classList.remove('scrolled');
       }
+      if (scrollY > 250) {
+        btn-container.classList.add('newscrolled');
+      } else {
+        btn-container.classList.remove('newscrolled');
     });
   </script>
 </body>
