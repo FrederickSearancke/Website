@@ -8,68 +8,61 @@
     /* Center the textbox + button */
     #textbox-container {
       position: fixed;
-      top: 50%;
-      left: 50%;
+      top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      display: flex;
-      gap: 10px;
-      align-items: center;
+      display: flex; gap: 10px; align-items: center;
     }
 
     /* Vertical stack of your four text lines */
     #text-list {
       position: fixed;
-      top: 20px;
-      left: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+      top: 20px; left: 20px;
+      display: flex; flex-direction: column; gap: 8px;
       font-family: 'Oswald', sans-serif;
-      font-size: 18px;
-      font-weight: 500;
-      color: #000;
+      font-size: 18px; font-weight: 500; color: #000;
+    }
+
+    /* preserve line-breaks in the fourth div */
+    #text-4 {
+      white-space: pre-wrap;
     }
 
     /* Button style */
     .btn {
       position: relative;
       padding: 10px 20px;
-      font-size: 16px;
-      font-family: Arial, sans-serif;
-      background-color: #4285F4;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s;
+      font-size: 16px; font-family: Arial, sans-serif;
+      background-color: #4285F4; color: #fff;
+      border: none; border-radius: 4px;
+      cursor: pointer; transition: background-color 0.3s;
     }
     .btn:hover { background-color: #3367D6; }
   </style>
 </head>
 <body>
-  <!-- Text lines in a vertical list -->
   <div id="text-list">
     <div>User “Freya Sinome”’s Private API Key: 3f1d5a2b4c7e8f9a0b1c2d3e4f5a6b7c</div>
     <div>User “test”’s Private API Key: d4E6f7A8b9C0d1E2f3G4h5I6j7K8l9M0n1O2p3Q</div>
     <div>User “Slim tim”’s Private API Key: A1B2-C3D4-E5F6-G7H8-I9J0-K1L2-M3N4-O5P6-Q7R8</div>
-    <div id="text-4"></div>  <!-- will be filled on Validate -->
+    <div id="text-4"></div>
   </div>
 
-  <!-- Centered textbox + validate button -->
   <div id="textbox-container"></div>
 
   <script>
-    // create textbox + button
+    // build textbox + button
     const container = document.getElementById('textbox-container');
 
     const input = document.createElement('input');
     input.type        = 'text';
     input.placeholder = 'Type something here…';
-    input.style.padding      = '8px';
-    input.style.fontSize     = '16px';
-    input.style.border       = '1px solid #ccc';
-    input.style.borderRadius = '4px';
-    input.style.width        = '250px';
+    Object.assign(input.style, {
+      padding: '8px',
+      fontSize: '16px',
+      border: '1px solid #ccc',
+      borderRadius: '4px',
+      width: '250px'
+    });
 
     const validateBtn = document.createElement('button');
     validateBtn.textContent = 'Validate';
@@ -77,10 +70,10 @@
 
     container.append(input, validateBtn);
 
-    // on click: populate the 4th text line
+    // on click: append "\n{value}" to the 4th text
     validateBtn.addEventListener('click', () => {
       const text4 = document.getElementById('text-4');
-      text4.textContent = input.value;
+      text4.textContent += `\n${input.value}`;
     });
   </script>
 </body>
