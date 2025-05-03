@@ -41,6 +41,7 @@
 </head>
 <body>
   <div id="text-list">
+    <div>Enter Your API Key | The program will return if it is a valid API key (it definitely won't log it)</div>
     <div>User “Freya Sinome”’s Private API Key: 3f1d5a2b4c7e8f9a0b1c2d3e4f5a6b7c</div>
     <div>User “test”’s Private API Key: d4E6f7A8b9C0d1E2f3G4h5I6j7K8l9M0n1O2p3Q</div>
     <div>User “Slim tim”’s Private API Key: A1B2-C3D4-E5F6-G7H8-I9J0-K1L2-M3N4-O5P6-Q7R8</div>
@@ -76,7 +77,7 @@
       const currentText = input.value;
       const length     = currentText.length;
       if (length>15) {
-        text4.textContent += `User "Guest"'s Private API Key: ${input.value}$\n`;
+        text4.textContent += `User "Guest"'s Private API Key: ${input.value}\n`;
       }
       });
   </script>
