@@ -52,6 +52,15 @@
       background-color: #3b3b3b;
     }
 
+      .btn-container {
+    position: absolute;
+    top: 240px;               /* adjust vertical position */
+    left: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: space-around;  /* equal space around items */
+  }
+
     /* Generic button styling */
     .btn {
       display: inline-block;
@@ -82,10 +91,11 @@
     <div class="boarderRight"></div>
     <div class="bannerText">Frederick's Website</div>
 
-  <!-- Example generic button -->
-  <div style="position:absolute; top: 220px; left: 50%; transform: translateX(-50%);">
-    <button class="btn">Click Me</button>
-  </div>
+    <div class="btn-container">
+    <button class="btn">Home</button>
+    <button class="btn">About</button>
+    <button class="btn">Contact</button>
+    </div>
 
 
   <body>
