@@ -67,15 +67,19 @@
     .boarderRight { right: 0; }
 
     .btn-container {
-      position: sticky;
-      top: 0;
-      margin: 240px 15px 0;
-      display: flex;
-      justify-content: space-around;
-      background: white;
-      padding: 10px 0;
-      /* remove any z-index here so it stays at 0 */
-    }
+  position: sticky;
+  top: 0;
+  margin: 240px 15px 0;
+  display: flex;
+  justify-content: space-around;
+
+  /* make the container transparent: */
+  background-color: transparent;  
+  /* or simply remove any background declaration */
+
+  padding: 10px 0;
+  /* no z-index needed here if you want it “under” the strips */
+}
     
     /* 3) buttons at layer 2 */
     .btn {
