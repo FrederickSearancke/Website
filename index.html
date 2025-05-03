@@ -14,7 +14,7 @@
       top: 0; left: 0;
       width: 100%; 
       height: 100vh;        /* adjust to the “thin” height you want */
-      z-index: 0;          /* behind all other content */
+      z-index: 1;          /* behind all other content */
       display: flex;
     }
     .bg-strips img {
@@ -32,7 +32,7 @@
       right: 15px;
       height: 150px;
       background-color: #4285F4;
-      z-index: 1;
+      z-index: 2;
     }
 
     /* Banner text */
@@ -50,7 +50,7 @@
       padding: 15px 0;
       transition: opacity 0.5s ease-in-out;
       opacity: 1;
-      z-index: 2;
+      z-index: 3;
     }
     .bannerText.scrolled { opacity: 0; }
 
@@ -90,7 +90,7 @@
       border-radius: 4px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      z-index: 1;
+      z-index: 2;
     }
     .btn:hover { background-color: #3367D6; }
   </style>
