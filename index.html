@@ -61,8 +61,13 @@
     justify-content: space-around;  /* equal space around items */
   }
     .btn-container.newscrolled {
-      top: 0%;
-    }
+  position: fixed;
+  top: 0;
+  left: 15px;
+  right: 15px;
+  background: white; /* optional for legibility */
+  z-index: 1000;     /* stay above other content */
+}
 
     /* Generic button styling */
     .btn {
