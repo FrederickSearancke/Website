@@ -3,75 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Freddie's Website</title>
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet"> -->
+  <title>Freddie’s Website</title>
   <style>
-  .box {
-  position: absolute;
-  top: 50px;
-  left: 15px;
-  right: 15px;
-  height: 150px;
-  background-color: #4285F4;}
+    /* Reset default margins */
+    body { margin: 0; padding: 0; }
 
-  .bannerText {
+    /* Banner box */
+    .box {
+      position: absolute;
+      top: 50px;
+      left: 15px;
+      right: 15px;
+      height: 150px;
+      background-color: #4285F4;
+    }
+
+    /* Banner text */
+    .bannerText {
       position: absolute;
       top: 60px;
       left: 50%;
       transform: translateX(-50%);
-      width: 100%;           /* full width for text-align */
+      width: 100%;
       text-align: center;
-      font-size: 100px;                       /* larger for banners */
-      font-family: 'Oswald', sans-serif;     /* bold, condensed style */
-      font-weight: 700;                      /* ensure bold */
-      color: #ffffff;        /* Google Blue */
-      padding: 15px 0;       /* space above and below text */
-      transition: opacity 0.5s ease-in-out;  /* animate opacity */
+      font-size: 100px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      color: #ffffff;
+      padding: 15px 0;
+      transition: opacity 0.5s ease-in-out;
       opacity: 1;
     }
+    .bannerText.scrolled { opacity: 0; }
 
-    .bannerText.scrolled {
-      opacity: 0;                             /* target state */
+    /* Side borders */
+    .boarderLeft, .boarderRight {
+      position: absolute; top: 0; bottom: 0; width: 15px; background-color: #3b3b3b;
     }
+    .boarderLeft { left: 0; }
+    .boarderRight { right: 0; }
 
-    .boarderLeft {
+    /* Button container under banner */
+    .btn-container {
       position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 15px;
-      bottom:-300px;
-      background-color: #3b3b3b;
+      top: 240px;
+      left: 15px;
+      right: 15px;
+      display: flex;
+      justify-content: space-around;
+      transition: top 0.3s ease;
     }
 
-    .boarderRight {
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      width: 15px;
-      bottom:-300px;
-      background-color: #3b3b3b;
-    }
-
-      .btn-container {
-    position: absolute;
-    top: 240px;               /* adjust vertical position */
-    left: 300px;
-    right: 300px;
-    display: flex;
-    justify-content: space-around;  /* equal space around items */
-  }
+    /* When scrolled past threshold, fix to top */
     .btn-container.newscrolled {
-  position: fixed;
-  top: 0;
-  left: 15px;
-  right: 15px;
-  background: white; /* optional for legibility */
-  z-index: 1000;     /* stay above other content */
-}
+      position: fixed;
+      top: 0;
+      left: 15px;
+      right: 15px;
+      background: white;      /* optional: add background so buttons are legible */
+      z-index: 1000;
+    }
 
     /* Generic button styling */
     .btn {
-      display: inline-block;
       padding: 10px 20px;
       font-size: 16px;
       font-family: Arial, sans-serif;
@@ -81,53 +75,37 @@
       border-radius: 4px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      text-align: center;
-      text-decoration: none;
     }
-    .btn:hover {
-      background-color: #3367D6;
-    }
-    
+    .btn:hover { background-color: #3367D6; }
   </style>
 </head>
 <body>
-  
-  <!-- getting the front page working! -->
-  
-    <div class="box"></div>
-    <div class="boarderLeft"></div>
-    <div class="boarderRight"></div>
-    <div class="bannerText">Frederick's Website</div>
+  <div class="box"></div>
+  <div class="boarderLeft"></div>
+  <div class="boarderRight"></div>
+  <div class="bannerText">Frederick's Website</div>
 
-    <div class="btnContainer">
+  <!-- Use consistent class naming: btn-container -->
+  <div class="btn-container">
     <button class="btn">Who Am I</button>
     <button class="btn">Hire Me</button>
     <button class="btn">Projects</button>
     <button class="btn">Private API key authenticator</button>
-    </div>
+  </div>
 
-
-
-  <!-- JavaScript to detect scroll -->
   <script>
-    // ① Grab the element you’ll animate
     const banner = document.querySelector('.bannerText');
     const btnContainer = document.querySelector('.btn-container');
 
-
-    // ② Listen for any scroll event on the window
     window.addEventListener('scroll', function() {
-      // ③ Measure how far the page is scrolled
       const scrollY = window.scrollY || document.documentElement.scrollTop;
-
-      // ④ Conditional: if we’ve passed 200px
+      // Fade banner at 200px
       if (scrollY > 200) {
-        // ⑤ “True” branch: add the class to trigger CSS
         banner.classList.add('scrolled');
       } else {
-        // ⑥ “False” branch: remove it when we scroll back up
         banner.classList.remove('scrolled');
       }
+      // Fix buttons at top after 250px
       if (scrollY > 250) {
         btnContainer.classList.add('newscrolled');
       } else {
@@ -136,6 +114,4 @@
     });
   </script>
 </body>
-
-  
 </html>
