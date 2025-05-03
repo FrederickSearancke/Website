@@ -8,6 +8,21 @@
     /* Reset default margins */
     body { margin: 0; padding: 0; }
 
+    /* ← NEW: four thin strips behind everything */
+    .bg-strips {
+      position: fixed;      /* stick to viewport */
+      top: 0; left: 0;
+      width: 100%; 
+      height: 150px;        /* adjust to the “thin” height you want */
+      z-index: -1;          /* behind all other content */
+      display: flex;
+    }
+    .bg-strips img {
+      flex: 1;              /* each image takes 25% width */
+      height: 100%;
+      object-fit: cover;    /* crops/zooms to fill the strip */
+    }
+
     /* Banner box */
     .box {
       position: absolute;
@@ -75,6 +90,14 @@
   </style>
 </head>
 <body>
+
+  <div class="bg-strips">
+    <img src="images/strip1.jpg" alt="Strip 1">
+    <img src="images/strip2.jpg" alt="Strip 2">
+    <img src="images/strip3.jpg" alt="Strip 3">
+    <img src="images/strip4.jpg" alt="Strip 4">
+  </div>
+  
   <div class="box"></div>
   <div class="boarderLeft"></div>
   <div class="boarderRight"></div>
