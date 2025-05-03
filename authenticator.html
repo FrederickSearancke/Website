@@ -1,44 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Freddie’s Website</title>
   <style>
-    /* any CSS you want */
+    /* center #textbox-container in the viewport, and lay out its children in a row */
+    #textbox-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      gap: 10px;            /* space between input & button */
+      align-items: center;  /* vertical‐align them */
+    }
+
+    /* your existing .btn style can apply to our new button too */
+    .btn {
+      position: relative;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      background-color: #4285F4;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn:hover { background-color: #3367D6; }
   </style>
 </head>
 <body>
   <!-- …your existing UI… -->
 
-  <!-- placeholder for our new textbox -->
+  <!-- centered flex‐container for our textbox + validate button -->
   <div id="textbox-container"></div>
 
-  <!-- INLINE SCRIPT: put it *before* the closing </body> tag -->
   <script>
-    // 1. Find (or create) a container
     const container = document.getElementById('textbox-container');
 
-    // 2. Create the input element
+    // create the text‐input
     const input = document.createElement('input');
     input.type        = 'text';
     input.placeholder = 'Type something here…';
     input.id          = 'myTextbox';
-
-    // 3. (Optional) add some basic styling
     input.style.padding      = '8px';
     input.style.fontSize     = '16px';
     input.style.border       = '1px solid #ccc';
     input.style.borderRadius = '4px';
     input.style.width        = '250px';
 
-    // 4. Append it into the page
-    container.appendChild(input);
-
-    // 5. Hook up an event listener
-    input.addEventListener('input', e => {
-      console.log('Current text:', e.target.value);
+    // create the validate button
+    const validateBtn = document.createElement('button');
+    validateBtn.textContent = 'Validate';
+    validateBtn.className   = 'btn';
+    validateBtn.addEventListener('click', () => {
+      // whatever “validate” should do; for now:
+      console.log('Validating:', input.value);
+      alert(`You entered: ${input.value}`);
     });
+
+    // stick them both into the centered container
+    container.append(input, validateBtn);
   </script>
 </body>
 </html>
