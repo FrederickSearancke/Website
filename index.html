@@ -38,30 +38,25 @@
 
     /* Side borders */
     .boarderLeft, .boarderRight {
-      position: absolute; top: 0px; bottom: -500px; width: 15px; background-color: #3b3b3b;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 15px;
+      background-color: #3b3b3b;
     }
     .boarderLeft { left: 0; }
     .boarderRight { right: 0; }
 
-    /* Button container under banner */
+    /* Button container under banner using sticky positioning */
     .btn-container {
-      position: absolute;
-      top: 240px;
-      left: 15px;
-      right: 15px;
+      position: sticky;
+      top: 0;
+      margin: 240px 15px 0;
       display: flex;
       justify-content: space-around;
-      transition: none;
-    }
-
-    /* When scrolled past threshold, fix to top */
-    .btn-container.newscrolled {
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      right: 15px;
-      background: white;      /* optional: add background so buttons are legible */
+      background: white;
       z-index: 1000;
+      padding: 10px 0;
     }
 
     /* Generic button styling */
@@ -74,7 +69,7 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      transition: none;
+      transition: background-color 0.3s ease;
     }
     .btn:hover { background-color: #3367D6; }
   </style>
@@ -85,7 +80,6 @@
   <div class="boarderRight"></div>
   <div class="bannerText">Frederick's Website</div>
 
-  <!-- Use consistent class naming: btn-container -->
   <div class="btn-container">
     <button class="btn">Who Am I</button>
     <button class="btn">Hire Me</button>
@@ -95,22 +89,10 @@
 
   <script>
     const banner = document.querySelector('.bannerText');
-    const btnContainer = document.querySelector('.btn-container');
-
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
-      // Fade banner at 200px
-      if (scrollY > 200) {
-        banner.classList.add('scrolled');
-      } else {
-        banner.classList.remove('scrolled');
-      }
-      // Fix buttons at top after 250px
-      if (scrollY > 233) {
-        btnContainer.classList.add('newscrolled');
-      } else {
-        btnContainer.classList.remove('newscrolled');
-      }
+      if (scrollY > 200) banner.classList.add('scrolled');
+      else banner.classList.remove('scrolled');
     });
   </script>
 </body>
