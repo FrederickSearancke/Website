@@ -6,24 +6,33 @@
   <title>Freddie’s Website</title>
   <style>
 
-    /* 1) For Chrome, Safari & Opera */
+    /* ─── RESET & BASE ─── */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      /* (You can leave overflow:auto here; we’ll hide scrollbars below) */
+    }
+
+    /* 1) Chrome, Safari & Opera */
+    html::-webkit-scrollbar,
     body::-webkit-scrollbar {
       display: none; 
     }
-    
-    /* 2) For Firefox */
+
+    /* 2) Firefox */
+    html,
     body {
-      scrollbar-width: none;  /* Firefox: “none” hides the bar */
-    }
-    
-    /* 3) For old IE/Edge (legacy) */
-    body {
-      -ms-overflow-style: none;  /* IE and Edge: hides scrollbar */
+      scrollbar-width: none; /* “none” hides the bar in Firefox */
     }
 
-    
-    /* Reset default margins */
-    body { margin: 0; padding: 0; height: 100%; }
+    /* 3) IE/Edge (legacy) */
+    html,
+    body {
+      -ms-overflow-style: none; /* hides scrollbar in old IE/Edge */
+    }
+
 
     /* ← NEW: single backdrop image behind everything */
     .bg-backdrop {
