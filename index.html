@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Freddie’s Website</title>
   <style>
+
+    /* 1) For Chrome, Safari & Opera */
+    body::-webkit-scrollbar {
+      display: none; 
+    }
+    
+    /* 2) For Firefox */
+    body {
+      scrollbar-width: none;  /* Firefox: “none” hides the bar */
+    }
+    
+    /* 3) For old IE/Edge (legacy) */
+    body {
+      -ms-overflow-style: none;  /* IE and Edge: hides scrollbar */
+    }
+
+    
     /* Reset default margins */
     body { margin: 0; padding: 0; height: 100%; }
 
