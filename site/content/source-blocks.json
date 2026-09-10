@@ -1,0 +1,2668 @@
+{
+  "schema_version": 1,
+  "purpose": "Source-preserving article copy from six user-supplied PDFs. Block text contains author words, not summaries.",
+  "normalisation": "Only PDF line breaks and repeated spacing were normalised. Printed spelling, capitalisation, punctuation, claims and paragraph order remain unchanged. Visible Markdown caption/heading labels were removed as formatting; one maze image-placement instruction was separated from meaningful caption text.",
+  "raster_content_boundary": "This extraction includes all native substantive headings, paragraphs, list items, examples and captions across all 30 pages. Text inside raster screenshots/figures is kept in the original assets, not silently transcribed or rewritten. Native captions/alt descriptions are available in caption blocks; alt_text should not be displayed as article body.",
+  "documents": [
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "source_sha256": "5a638dca1b38b9f90f3d38b4799e101c1146e2d421054ba32e654bfcd9a72259",
+      "page_count": 5,
+      "native_text_block_count": 19,
+      "pages": [
+        {
+          "page_number": 1,
+          "native_text_line_count": 32,
+          "image_count": 0,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 2,
+          "native_text_line_count": 35,
+          "image_count": 0,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 3,
+          "native_text_line_count": 0,
+          "image_count": 1,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 4,
+          "native_text_line_count": 0,
+          "image_count": 1,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 5,
+          "native_text_line_count": 0,
+          "image_count": 1,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        }
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "source_sha256": "c645386676360db6212f6231895841c6333453b70571b489bc24efcae0ab81ec",
+      "page_count": 4,
+      "native_text_block_count": 50,
+      "pages": [
+        {
+          "page_number": 1,
+          "native_text_line_count": 30,
+          "image_count": 0,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 2,
+          "native_text_line_count": 36,
+          "image_count": 0,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 3,
+          "native_text_line_count": 29,
+          "image_count": 0,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 4,
+          "native_text_line_count": 20,
+          "image_count": 0,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        }
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "source_sha256": "57c2f7cca981301ca87e1ccac0e2a0071bba2f9a44d6349152f7c1e8699cd239",
+      "page_count": 7,
+      "native_text_block_count": 29,
+      "pages": [
+        {
+          "page_number": 1,
+          "native_text_line_count": 31,
+          "image_count": 0,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 2,
+          "native_text_line_count": 6,
+          "image_count": 1,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 3,
+          "native_text_line_count": 40,
+          "image_count": 0,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 4,
+          "native_text_line_count": 7,
+          "image_count": 1,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 5,
+          "native_text_line_count": 6,
+          "image_count": 2,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 6,
+          "native_text_line_count": 7,
+          "image_count": 2,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 7,
+          "native_text_line_count": 0,
+          "image_count": 1,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        }
+      ]
+    },
+    {
+      "document_key": "gpt-integration",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ training the model (2).pdf",
+      "source_sha256": "53ecbfae030f950684efcb16169696996cffd2189e97daac82ac723e996a67a7",
+      "page_count": 5,
+      "native_text_block_count": 13,
+      "pages": [
+        {
+          "page_number": 1,
+          "native_text_line_count": 19,
+          "image_count": 0,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 2,
+          "native_text_line_count": 0,
+          "image_count": 1,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 3,
+          "native_text_line_count": 0,
+          "image_count": 1,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 4,
+          "native_text_line_count": 1,
+          "image_count": 2,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 5,
+          "native_text_line_count": 9,
+          "image_count": 0,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        }
+      ]
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "source_sha256": "15d3ce228bbe1b502018210b744936f1dfde9ce5fa334afcdf6e4450480a8e68",
+      "page_count": 4,
+      "native_text_block_count": 22,
+      "pages": [
+        {
+          "page_number": 1,
+          "native_text_line_count": 28,
+          "image_count": 0,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 2,
+          "native_text_line_count": 15,
+          "image_count": 1,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 3,
+          "native_text_line_count": 7,
+          "image_count": 2,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 4,
+          "native_text_line_count": 5,
+          "image_count": 0,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        }
+      ]
+    },
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "source_sha256": "7bf0b78e4699b317cb1c6297302c071eccb26578647ade6f8ba2d5f1cef3d4cf",
+      "page_count": 5,
+      "native_text_block_count": 13,
+      "pages": [
+        {
+          "page_number": 1,
+          "native_text_line_count": 35,
+          "image_count": 0,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 2,
+          "native_text_line_count": 9,
+          "image_count": 1,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 3,
+          "native_text_line_count": 0,
+          "image_count": 1,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 4,
+          "native_text_line_count": 3,
+          "image_count": 1,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        },
+        {
+          "page_number": 5,
+          "native_text_line_count": 0,
+          "image_count": 1,
+          "image_text_policy": "Raster figures and screenshots remain original image content; not OCR-rewritten as author prose."
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-formatting-p01-b01",
+      "text": "GPT-4o Machine Learning Fine-Tuning: training data formatting",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        92.398,
+        468.952,
+        129.557
+      ],
+      "heading_level": 1
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-formatting-p01-b02",
+      "text": "Overview",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        148.265,
+        129.8,
+        161.265
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-formatting-p01-b03",
+      "text": "I made a fine-tuned machine learning model to accurately answer customer live chats as well as a trained human with up-to-date company policy and product information that was performant enough to converse with real customers in real time. I did this work over the summer of 2024. I chose to fine-tune GPT-4o because it was the best model that was released at the time while also showing sufficient capability to meet the project requirements. In this section I’ve described the data processing stage of the project where I turned unstructured data into machine-readable semi-structured data.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        175.156,
+        538.791,
+        273.434
+      ]
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-formatting-p01-b04",
+      "text": "The problem",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        291.28,
+        149.986,
+        304.28
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-formatting-p01-b05",
+      "text": "Historical customer-employee live chats were stored in a Gmail account on a mail server within a custom domain the company owned. Each email contained one full live chat conversation within the body of the email with irregular formatting including date and other metadata information surrounding the main live chat conversation. There were 5,000+ live chat conversations to be retrieved.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        318.171,
+        532.635,
+        387.356
+      ]
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-formatting-p01-b06",
+      "text": "Reviewing the transcripts, I identified three distinct chat formats, each corresponding to a different date range.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        400.903,
+        503.974,
+        426.449
+      ]
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-formatting-p01-b07",
+      "text": "Much of the data was over the Covid period, meaning many chats were obsolete or contained out-of-date company policy. Some chats were very short (only one conversation turn) or were malformed. Employee names and customer names needed to be anonymised.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        439.995,
+        526.608,
+        480.088
+      ]
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-formatting-p01-b08",
+      "text": "OpenAI required training data to be structured in a .JSONL file structure.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        493.634,
+        423.935,
+        504.634
+      ]
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-formatting-p01-b09",
+      "text": "What was achieved?",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        524.48,
+        199.114,
+        537.48
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-formatting-p01-b10",
+      "text": "● Built a Python data pipeline for GPT-4o fine-tuning, parsing three historical livechat formats into a structured dataset of 5,000+ conversations and 74,000+ customer–staff messages.",
+      "kind": "list",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        90.0,
+        551.371,
+        525.142,
+        591.464
+      ]
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-formatting-p01-b11",
+      "text": "● Implemented Google Workspace mailbox access through Google Cloud service-account authentication, domain-wide delegation and read-only Gmail OAuth scopes, with paginated email extraction.",
+      "kind": "list",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        90.0,
+        605.01,
+        536.713,
+        645.103
+      ]
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-formatting-p01-b12",
+      "text": "● Developed programmatic quality filters to remove poor training data, including unanswered and short conversations, excluding 318 of 1,828 records in a verified filtering stage, alongside keyword, date-range and placeholder transformations.",
+      "kind": "list",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        90.0,
+        658.649,
+        503.353,
+        698.741
+      ]
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-formatting-p02-b01",
+      "text": "● Produced a 765-conversation JSONL training dataset containing 8,774 dialogue messages, with speaker normalisation, conversation reconstruction and custom format-validation utilities.",
+      "kind": "list",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        90.0,
+        73.649,
+        496.654,
+        113.741
+      ]
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-formatting-p02-b02",
+      "text": "Technical implementation",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        131.588,
+        230.633,
+        144.588
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-formatting-p02-b03",
+      "text": "This technical implementation will discuss the Google Cloud authentication, Gmail live chat retrieval and parsing, and the first stage of processing to get the three distinct storage formats into one definable block in the same structure. Further technical details will be discussed in other posts for this project.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        158.479,
+        527.203,
+        213.118
+      ]
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-formatting-p02-b04",
+      "text": "I used Google’s Python API libraries to connect to the company’s Google Workspace mailbox. Authentication used a Google Cloud service account with domain-wide delegation, allowing the application to act on behalf of the specified mailbox. I requested the Gmail.readonly OAuth scope because the pipeline only needed to retrieve messages.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        226.664,
+        533.349,
+        281.303
+      ]
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-formatting-p02-b05",
+      "text": "The script identified the Gmail label containing the live chat transcripts and retrieved the associated message IDs. I implemented pagination using nextPageToken, requesting up to 500 message IDs per page and continuing until all pages had been retrieved. Each message was then fetched in full, and its base64-encoded body was decoded, handling both plain-text and HTML parts. This was an automation script that did not hit the rate limits of the Gmail API yet ran for 1-1.5 hours. I believe that the network Wi-Fi speed played a large role in slowing down the retrieval of these emails.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        294.849,
+        535.189,
+        393.126
+      ]
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-formatting-p02-b06",
+      "text": "A single full customer-employee transcript was held within a single email body; once I had retrieved the transcripts, I wrote three parsers in Python, one for each of the live chat conversation storage formats. I kept local backup copies of the stored emails as I passed them through each stage of preprocessing.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        406.673,
+        531.472,
+        461.312
+      ]
+    },
+    {
+      "document_key": "gpt-formatting",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning finetuning_ training data formatting (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-formatting-p02-b07",
+      "text": "Each format used different combinations of timestamps, speaker labels and separators, including square brackets, vertical bars and lines of dashes. I used these patterns to locate the conversation within each email and separate the message text from surrounding metadata. The parsers also had to recognise automated “System assistant” messages and chat-platform footers, such as “Powered by LiveZilla”, so these could be excluded from the conversation. Individual replies could span several lines, meaning the parsing logic needed to distinguish a line break within a reply from the start of a new message. Depending on the format, I identified employees using either conventions in the original speaker labels or a list of known staff names. Each parser produced a common intermediate format, preserving the order of the messages and replacing the original speaker labels with [Customer] or [Employee] tags. This allowed conversations from all three source formats to pass through the same subsequent filtering and training-data formatting stages without training the AI on the names of employees or customers.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        474.858,
+        537.393,
+        645.867
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-quality-p01-b01",
+      "text": "GPT-4o Machine Learning Fine-Tuning: quality control & data filtering",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        92.398,
+        536.498,
+        129.557
+      ],
+      "heading_level": 1
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-quality-p01-b02",
+      "text": "Overview",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        148.265,
+        129.8,
+        161.265
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-quality-p01-b03",
+      "text": "This work is part of the LLM fine tuning I did to make an agent that could communicate with customers over live chat based on recorded human examples. In this section I’ve described the filtering process that went into curating the training data for the deployed model, including the problems with the dataset to motivate these choices.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        175.156,
+        534.53,
+        229.795
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-quality-p01-b04",
+      "text": "The problem",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        247.641,
+        149.986,
+        260.641
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-quality-p01-b05",
+      "text": "Much of the data was over the Covid period, meaning many chats were obsolete or contained out-of-date company policy. Some chats were very short (only one conversation turn) or were malformed. Employee names and customer names needed to be anonymised.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        274.532,
+        526.608,
+        314.625
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-quality-p01-b06",
+      "text": "Some chats contained customers swearing.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        328.171,
+        284.622,
+        339.171
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-quality-p01-b07",
+      "text": "Some chats represented poor training examples, in more nuanced ways that couldn’t be filtered out through a keyword or keyphrase filter.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        352.718,
+        535.769,
+        378.264
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-quality-p01-b08",
+      "text": "What was achieved?",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        398.11,
+        199.114,
+        411.11
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-quality-p01-b09",
+      "text": "I was able to reduce the occurrence of poor training data to produce a useful fine-tuned LLM. This was evaluated by the head of sales at the company, and was shown to be effective after integration into the company live chat software on real live chats. The evaluation covered the bot's jewellery knowledge, its ability to engage to keep the conversation going, and finally its ability to naturally get the customer to provide their email or phone number so other sales employees could continue the sales process over another channel with a higher conversion rate.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        425.001,
+        523.154,
+        523.279
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-quality-p01-b10",
+      "text": "The head of sales judged the model’s conversational performance, knowledge, and sales technique to be comparable to those of a trained sales employee and therefore judged the model suitable for deployment.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        536.825,
+        510.157,
+        576.917
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-quality-p01-b11",
+      "text": "Filtering rules",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        596.764,
+        157.936,
+        609.764
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-quality-p01-b12",
+      "text": "I selected high-performing sales employees, whose historical live chat conversations would be considered for use in the training data. This puts a large focus on the best live chat examples when training.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        623.655,
+        529.635,
+        663.747
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 1,
+      "block_id": "gpt-quality-p01-b13",
+      "text": "I removed Covid-influenced training examples through date-based filtering.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        677.294,
+        434.948,
+        688.294
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-quality-p02-b01",
+      "text": "I removed incorrect policy training examples using date-based filtering, keyword and keyphrase matching and a final manual review of remaining conversations.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        73.649,
+        534.524,
+        99.195
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-quality-p02-b02",
+      "text": "I required each live chat conversation to contain at least two customer messages and at least one employee response. Live chats were always started by the customer, and were subsequently responded to except when the message was obviously intended to be hurtful or hateful. I couldn’t train the model on any result where there was no recorded employee response.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        112.741,
+        525.414,
+        181.927
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-quality-p02-b03",
+      "text": "Further, I decided not to train on any example where the customer didn’t reply because it implies the response may not have been optimal or engaging enough. This decision lessened the amount of training data but only slightly. The variety of first responses that we wanted the model to provide eloquently was small, and our training data for successful conversation openers was already well covered by successful chats.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        195.473,
+        539.418,
+        264.658
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-quality-p02-b04",
+      "text": "Programmatic filtering was not enough to clean training data",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        278.504,
+        447.493,
+        291.504
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-quality-p02-b05",
+      "text": "After I removed many live chats that depended on training the AI on time-dependent company policy, the resultant fine-tuned large language model was not trained well enough to deploy. The issue was poor training examples still polluting the training set. The remaining problems concerned the quality of the responses and the judgement demonstrated in the conversation, making them difficult to identify through simple keyword or structural checks.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        305.395,
+        537.84,
+        374.58
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-quality-p02-b06",
+      "text": "I solved this problem through a final stage of manual dataset filtering. After consulting the head of sales and reviewing the company’s sales training documentation, I assessed the remaining transcripts against the company’s expectations for an effective customer conversation. Over three working days, I removed examples that demonstrated poor sales judgement or unsuitable conversational behaviour, selecting training examples that reflected how I wanted the model to respond.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        388.126,
+        535.152,
+        471.858
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-quality-p02-b07",
+      "text": "Evaluation and outcome",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        491.704,
+        222.2,
+        504.704
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-quality-p02-b08",
+      "text": "The head of sales initially reviewed the fine-tuned model and judged its responses to be below the standard of trained sales employees, making it unsuitable for deployment. After I manually curated the training data and retrained the model, he judged its conversational performance to be good relative to that of a trained sales employee. The model already demonstrated general knowledge of diamonds and jewellery before retraining and retained that knowledge afterwards. Company-specific product information and policies were introduced later through a vector database and were outside the scope of this evaluation. We also compared responses at several inference temperature settings.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        518.595,
+        536.401,
+        631.419
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-quality-p02-b09",
+      "text": "Examples of changes to the training data to improve the model",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        651.265,
+        460.507,
+        664.265
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 2,
+      "block_id": "gpt-quality-p02-b10",
+      "text": "One problem was losing the timing between messages. In one conversation, a customer was looking for a princess-cut engagement ring but had not found something they would be",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        680.156,
+        523.526,
+        705.703
+      ],
+      "continues_in_block": "gpt-quality-p03-b01",
+      "paragraph_group": "gpt-quality-p02-b10-complete"
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b01",
+      "text": "comfortable buying. The employee suggested three designs. In the unfiltered training data, the end of the employee’s response read:",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        73.649,
+        530.3,
+        99.195
+      ],
+      "continuation_of_block": "gpt-quality-p02-b10",
+      "paragraph_group": "gpt-quality-p02-b10-complete"
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b02",
+      "text": "Before — unfiltered training response",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        114.741,
+        269.284,
+        125.741
+      ],
+      "heading_level": 3
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b03",
+      "text": "These are all princess cut with high settings Hi are you still there?",
+      "kind": "example",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        102.0,
+        141.288,
+        420.928,
+        152.288
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b04",
+      "text": "The original email transcript shows that these two messages were sent minutes apart, except the training data processing interpreted them as one employee response. Grouping consecutive employee messages into one turn removed the distinction.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        167.834,
+        537.621,
+        207.927
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b05",
+      "text": "After — amended training response",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        223.473,
+        258.297,
+        234.473
+      ],
+      "heading_level": 3
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b06",
+      "text": "These are all princess cuts with high settings. If you let me know what you like/don't like I can send you more designs in line with what you might like.",
+      "kind": "example",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        102.0,
+        250.019,
+        507.956,
+        275.565
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b07",
+      "text": "This was preferred by the sales team because it gives the customer a specific next step and improves customer engagement.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        291.112,
+        518.632,
+        316.658
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b08",
+      "text": "Other replies depended on information missing from the training input. Another customer said they were just browsing and, when asked, confirmed that they had no particular deadline. The employee then replied:",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        332.204,
+        527.225,
+        372.297
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b09",
+      "text": "Before — original reply",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        387.843,
+        192.945,
+        398.843
+      ],
+      "heading_level": 3
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b10",
+      "text": "You are currently looking at the Magnolia",
+      "kind": "example",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        102.0,
+        414.389,
+        300.802,
+        425.389
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b11",
+      "text": "The customer had not named the Magnolia anywhere in the recorded conversation. The employee may have been able to see the visitor’s current product page, but that information was absent from the training input.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        440.935,
+        517.655,
+        481.028
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b12",
+      "text": "After — amended training reply",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        496.574,
+        235.696,
+        507.574
+      ],
+      "heading_level": 3
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b13",
+      "text": "Is there a design you are looking at? If you let me know I could give you some similar designs you may like.",
+      "kind": "example",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        102.0,
+        523.121,
+        480.226,
+        548.667
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b14",
+      "text": "The reply now asks for the missing information and explains how providing it would help.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        564.213,
+        501.529,
+        575.213
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b15",
+      "text": "Some conversations also mixed useful dialogue with temporary company procedures. A third conversation concerned an upcoming showroom visit. The employee answered the customer’s question about facilities, then gave pandemic-specific instructions about sanitiser, masks and symptom screening.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        590.759,
+        531.674,
+        645.398
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 3,
+      "block_id": "gpt-quality-p03-b16",
+      "text": "Before — excerpt from the later employee reply",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        660.944,
+        319.414,
+        671.944
+      ],
+      "heading_level": 3
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 4,
+      "block_id": "gpt-quality-p04-b01",
+      "text": "We also have complimentary disposable masks should you like to wear one (not obligatory). May I ask if either of you have experienced any fever, muscle aches, persistent dry cough or loss of taste/ smell in the last 7 days?",
+      "kind": "example",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        102.0,
+        73.649,
+        492.423,
+        113.741
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 4,
+      "block_id": "gpt-quality-p04-b02",
+      "text": "I retained the answer about showroom facilities and removed the screening exchange. The amended conversation closes with:",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        129.288,
+        513.168,
+        154.834
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 4,
+      "block_id": "gpt-quality-p04-b03",
+      "text": "After — closing reply in the amended conversation",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        170.38,
+        337.707,
+        181.38
+      ],
+      "heading_level": 3
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 4,
+      "block_id": "gpt-quality-p04-b04",
+      "text": "Wonderful, many thanks! See you tomorrow.",
+      "kind": "example",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        102.0,
+        196.927,
+        318.083,
+        207.927
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 4,
+      "block_id": "gpt-quality-p04-b05",
+      "text": "The revised versions of all three examples were retained in the final saved training dataset.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        223.473,
+        514.373,
+        234.473
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 4,
+      "block_id": "gpt-quality-p04-b06",
+      "text": "I also amended conversations that were already well written to give the customer a clearer reason to continue. In this example, the employee established the customer’s preferences and recommended a ring design. The original response ended with a general invitation to give feedback.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        250.019,
+        530.488,
+        304.658
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 4,
+      "block_id": "gpt-quality-p04-b07",
+      "text": "Before — excerpt from the later employee reply",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        320.204,
+        319.414,
+        331.204
+      ],
+      "heading_level": 3
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 4,
+      "block_id": "gpt-quality-p04-b08",
+      "text": "“Have a look at this one and let me know what you think. ”",
+      "kind": "example",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        108.0,
+        346.75,
+        389.672,
+        357.75
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 4,
+      "block_id": "gpt-quality-p04-b09",
+      "text": "After — closing reply in the amended conversation",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        373.297,
+        337.707,
+        384.297
+      ],
+      "heading_level": 3
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 4,
+      "block_id": "gpt-quality-p04-b10",
+      "text": "Have a look at this one and let me know what you think. If you could let me know what you like/dislike about this design, then I could get back to you with other examples you might like",
+      "kind": "example",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        102.0,
+        399.843,
+        494.273,
+        439.936
+      ]
+    },
+    {
+      "document_key": "gpt-quality",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ quality control (8).pdf",
+      "page_number": 4,
+      "block_id": "gpt-quality-p04-b11",
+      "text": "I expanded that invitation to ask what the customer liked or disliked about the design and explain that their answer would help identify further options.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        455.482,
+        503.41,
+        481.028
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 1,
+      "block_id": "gpt-retrieval-p01-b01",
+      "text": "GPT-4o Machine Learning Fine-Tuning: RAG & vector database",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        92.398,
+        476.965,
+        129.557
+      ],
+      "heading_level": 1
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 1,
+      "block_id": "gpt-retrieval-p01-b02",
+      "text": "Overview",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        148.265,
+        129.8,
+        161.265
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 1,
+      "block_id": "gpt-retrieval-p01-b03",
+      "text": "I’ve described how I got the model to know up-to-date company policy and product information. This describes the design of the database, why I chose a vector database, how I created it, and how I integrated it into the fine-tuned LLM’s responses.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        175.156,
+        535.174,
+        215.249
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 1,
+      "block_id": "gpt-retrieval-p01-b04",
+      "text": "The problem",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        229.095,
+        149.986,
+        242.095
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 1,
+      "block_id": "gpt-retrieval-p01-b05",
+      "text": "After training, the model wouldn’t know the correct company policy if it was ever updated.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        255.986,
+        504.578,
+        266.986
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 1,
+      "block_id": "gpt-retrieval-p01-b06",
+      "text": "The company has 698 distinct products, and I trained the model on approximately 700 training examples. This isn’t sufficient to learn what the company has to offer. Many products never show up in the training data. Despite this, it needs to be able to provide product suggestions to a customer and ask relevant questions.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        280.532,
+        530.912,
+        335.171
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 1,
+      "block_id": "gpt-retrieval-p01-b07",
+      "text": "Customers will describe a style or a preference without knowing a product name or the terminology used on the website's page. For example, “I’d like a simple ring that isn’t too flashy and is comfortable to wear daily” might need to match relevant product descriptions even when those words don’t match any product description exactly.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        348.718,
+        532.699,
+        403.356
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 1,
+      "block_id": "gpt-retrieval-p01-b08",
+      "text": "The model can’t search the internet, and so doesn’t know the website links to direct the customer to products they might like.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        416.903,
+        494.828,
+        442.449
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 1,
+      "block_id": "gpt-retrieval-p01-b09",
+      "text": "What was achieved?",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        462.295,
+        199.114,
+        475.295
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 1,
+      "block_id": "gpt-retrieval-p01-b10",
+      "text": "I built a local vector database (1000+ entries) so that relevant product and policy information could be matched semantically without exactly matching words or phrasing. It retrieves the three most relevant records based on the conversation so far at each turn and provides the data to the model before it responds.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        489.186,
+        539.398,
+        543.825
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 1,
+      "block_id": "gpt-retrieval-p01-b11",
+      "text": "The database provides the model with the exact URL links for product pages that may be helpful in the conversation. For each it stores the product description on the website, its name, and other keywords associated with the product. If the customer provides the URL, the bot will be provided with the stored product data. If the customer provides a description, the bot will have the names, URLs and keywords of relevant products.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        557.371,
+        529.649,
+        626.556
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 1,
+      "block_id": "gpt-retrieval-p01-b12",
+      "text": "Within this database, there is one entry for each product, one entry for each key idea in the employee training documents, and one entry for each company policy.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        640.103,
+        513.168,
+        665.649
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 1,
+      "block_id": "gpt-retrieval-p01-b13",
+      "text": "Example of product data:",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        703.741,
+        194.21,
+        714.741
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 2,
+      "block_id": "gpt-retrieval-p02-b01",
+      "text": "Example of policy information:",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        222.127,
+        218.631,
+        233.127
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 2,
+      "block_id": "gpt-retrieval-p02-b02",
+      "text": "\"Samara James offers a 60-day returns policy, giving you 60 days to get the opinion of your friends and family to ensure you’ve made the right choice.\"",
+      "kind": "example",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        246.674,
+        514.818,
+        272.22
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 2,
+      "block_id": "gpt-retrieval-p02-b03",
+      "text": "\"If you’re not completely satisfied with your jewellery, Samara James will pay the costs of return shipping. This is only for a refund or exchange. It is not the case for repairs or resizes.\"",
+      "kind": "example",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        285.766,
+        534.508,
+        311.312
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 2,
+      "block_id": "gpt-retrieval-p02-b04",
+      "text": "Technical implementation",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        696.806,
+        230.633,
+        709.806
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 3,
+      "block_id": "gpt-retrieval-p03-b01",
+      "text": "I implemented the knowledge base in Python as a local JSONL dataset, combining product catalogue information with standalone passages covering company policies and staff knowledge. I used OpenAI’s text-embedding-ada-002 model to represent text as 1,536-dimensional vectors. Product records had separate searchable embeddings for their name, short description and full description, while general information used a single text embedding. Each vector remained associated with its original record, allowing a match against one field to return the complete product details and URL. The saved dataset contained 1,006 records represented by 2,402 searchable embeddings.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        73.649,
+        530.862,
+        186.473
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 3,
+      "block_id": "gpt-retrieval-p03-b02",
+      "text": "At runtime, the application loaded the stored vectors into NumPy arrays and converted the customer’s latest message into a query embedding. When available, the previous assistant response was included in the search text to give follow-up questions additional context. I normalised the query and stored vectors, then calculated cosine similarity using vectorised dot products to rank the candidates locally. The search initially selected the three highest-scoring vectors, with additional filtering and logic to widen the candidate search when too few results remained. This allowed retrieval to use similarity between text representations without requiring the customer’s wording to exactly match the stored descriptions.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        202.019,
+        533.896,
+        314.843
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 3,
+      "block_id": "gpt-retrieval-p03-b03",
+      "text": "I integrated retrieval with the fine-tuned GPT-4o model by adding the retrieved text to the messages sent through the chat completions API, alongside the customer’s question, system instructions and conversation history. The generated response was then added to the history for subsequent turns. Fine-tuning was used to adapt the model’s conversational behaviour to examples of staff interactions, while retrieval supplied product and policy information when answering each question. This separation meant that changes to company knowledge could be made available by updating the stored records, regenerating the affected embeddings and reloading the index, without retraining the conversational model.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        330.389,
+        537.404,
+        443.213
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 3,
+      "block_id": "gpt-retrieval-p03-b04",
+      "text": "Drawbacks to this architecture",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        459.059,
+        261.233,
+        472.059
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 3,
+      "block_id": "gpt-retrieval-p03-b05",
+      "text": "The model had a tendency to make up product URLs. This was unexpected given that it had exact URLs to select from within the context window. This hallucination appeared often; about 5-10% of URLs it showed during testing led nowhere and didn’t match any URLs it had been presented with in its context window. In anticipation of this problem, I programmatically removed anything resembling a website link from the training data so it could not have been getting confused by misremembered training examples. This unfortunately made product recommendations unreliable: customers needed a working link to follow through on the advice, and retrieving the right product information didn’t always mean the model would write the correct URL.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        487.95,
+        539.406,
+        615.32
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 3,
+      "block_id": "gpt-retrieval-p03-b06",
+      "text": "If I were to do this project again, I would train the model to use the RAG suggestions accurately in the fine-tuning process. If this failed, I would programmatically insert the URL(s) after training the AI to insert placeholders wherever it wanted a URL to go. The last change would be to use a model that was substantially more advanced and less prone to hallucinations. At the time, GPT-4o was the best on the market, but other models now provide a substantially better hallucination rate.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        630.867,
+        538.834,
+        714.598
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 4,
+      "block_id": "gpt-retrieval-p04-b01",
+      "text": "The reason I didn’t want to use a low temperature setting to make this hallucination less likely is because we saw the best results from the model at a temperature of about 0.4 - and this was the temperature at which the model was evaluated. There are other more reliable solutions that would be less likely to impact the quality of the answer it was giving around the URL.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        73.649,
+        536.354,
+        128.288
+      ]
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 4,
+      "block_id": "gpt-retrieval-p04-b02",
+      "text": "Graph and figures: an extension to the technical implementation",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        189.226,
+        469.887,
+        202.226
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 4,
+      "block_id": "gpt-retrieval-p04-b03",
+      "text": "The below graph shows the vectors, each with more than 1500+ dimensions, projected onto a two-dimensional plane that preserves 20.6% of the variance.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        210.118,
+        527.531,
+        235.664
+      ],
+      "caption_role": "figure_explanation"
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 5,
+      "block_id": "gpt-retrieval-p05-b01",
+      "text": "The diagram below shows a flow chart describing how the vector database was planned to be used to provide accurate up-to-date data to the LLM.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        262.673,
+        527.219,
+        288.22
+      ],
+      "caption_role": "figure_explanation"
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 5,
+      "block_id": "gpt-retrieval-p05-b02",
+      "text": "The diagram below shows how the vector DB was used in the final Python app that I created. To respond to a customer query, the app needs to query two APIs: one to convert the query into a vector using a text embedding model (ada002), and another to obtain a response from the fine-tuned model. The vector search is performed locally.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        407.041,
+        538.817,
+        461.68
+      ],
+      "caption_role": "figure_explanation"
+    },
+    {
+      "document_key": "gpt-retrieval",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ RAG & vector database (5).pdf",
+      "page_number": 6,
+      "block_id": "gpt-retrieval-p06-b01",
+      "text": "The diagram below shows how records are checked in the database to determine whether they are sufficiently relevant to be returned. Specifically, it shows how the customer question is converted into an embedding and then compared to three stored embeddings for a single product page. This diagram leaves out how it handles the URL for simplicity as it is handled differently than the embedding search. For the URL, if a match is found in the customer's query, then the data is returned alongside the results of the ordinary vector search, which returns similar products.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        380.924,
+        535.606,
+        479.201
+      ],
+      "caption_role": "figure_explanation"
+    },
+    {
+      "document_key": "gpt-integration",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ training the model (2).pdf",
+      "page_number": 1,
+      "block_id": "gpt-integration-p01-b01",
+      "text": "GPT-4o Machine Learning Fine-Tuning: live chat Integration",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        92.398,
+        524.071,
+        108.398
+      ],
+      "heading_level": 1
+    },
+    {
+      "document_key": "gpt-integration",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ training the model (2).pdf",
+      "page_number": 1,
+      "block_id": "gpt-integration-p01-b02",
+      "text": "Overview",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        127.107,
+        129.8,
+        140.107
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-integration",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ training the model (2).pdf",
+      "page_number": 1,
+      "block_id": "gpt-integration-p01-b03",
+      "text": "I built a Python application that combined the fine-tuned model with retrieval of product and policy information. We then commissioned the developer of the company’s live chat software to integrate my application into the existing system, allowing sales staff to use AI suggestions within their usual chat interface.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        153.998,
+        533.504,
+        208.637
+      ]
+    },
+    {
+      "document_key": "gpt-integration",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ training the model (2).pdf",
+      "page_number": 1,
+      "block_id": "gpt-integration-p01-b04",
+      "text": "The problem",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        226.483,
+        149.986,
+        239.483
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-integration",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ training the model (2).pdf",
+      "page_number": 1,
+      "block_id": "gpt-integration-p01-b05",
+      "text": "The fine-tuned model and vector database needed an application around them before they could be used in customer live chats. Each incoming message had to be combined with the conversation history, relevant product and policy information had to be retrieved, and the resulting answer had to be returned to the company’s live chat software. This required coordinating the locally stored vector database with the external embedding and language-model APIs.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        255.374,
+        515.605,
+        339.106
+      ]
+    },
+    {
+      "document_key": "gpt-integration",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ training the model (2).pdf",
+      "page_number": 1,
+      "block_id": "gpt-integration-p01-b06",
+      "text": "I also needed a practical way to test different model versions and response settings.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        354.652,
+        479.964,
+        365.652
+      ]
+    },
+    {
+      "document_key": "gpt-integration",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ training the model (2).pdf",
+      "page_number": 1,
+      "block_id": "gpt-integration-p01-b07",
+      "text": "The application needed a consistent runtime environment, with its Python dependencies, embedding dataset and configuration available wherever it was hosted.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        381.198,
+        502.791,
+        406.744
+      ]
+    },
+    {
+      "document_key": "gpt-integration",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ training the model (2).pdf",
+      "page_number": 1,
+      "block_id": "gpt-integration-p01-b08",
+      "text": "What was achieved?",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        426.59,
+        199.114,
+        439.59
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "gpt-integration",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ training the model (2).pdf",
+      "page_number": 1,
+      "block_id": "gpt-integration-p01-b09",
+      "text": "I built a testing application for trained models to evaluate training and variations on the RAG (vector DB).",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        453.482,
+        517.453,
+        479.028
+      ]
+    },
+    {
+      "document_key": "gpt-integration",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ training the model (2).pdf",
+      "page_number": 4,
+      "block_id": "gpt-integration-p04-b01",
+      "text": "Sales staff also used the application to evaluate the model and report incorrect responses.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        488.377,
+        510.53,
+        499.377
+      ]
+    },
+    {
+      "document_key": "gpt-integration",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ training the model (2).pdf",
+      "page_number": 5,
+      "block_id": "gpt-integration-p05-b01",
+      "text": "We commissioned the developer of the company’s live chat software to integrate my Python application into the existing operator interface. Employees could review AI-generated suggestions, send them directly, edit them before sending, or write their own replies.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        73.649,
+        518.229,
+        113.741
+      ]
+    },
+    {
+      "document_key": "gpt-integration",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ training the model (2).pdf",
+      "page_number": 5,
+      "block_id": "gpt-integration-p05-b02",
+      "text": "I also requested a report button so employees could flag poor responses. The integration recorded the model’s input and suggested reply, together with the associated chat and employee, for later review.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        129.288,
+        504.017,
+        169.38
+      ]
+    },
+    {
+      "document_key": "gpt-integration",
+      "original_path": "C:/Users/fredd/Downloads/GPT4o Machine Learning Finetuning_ training the model (2).pdf",
+      "page_number": 5,
+      "block_id": "gpt-integration-p05-b03",
+      "text": "The model was trained to use an <employee> placeholder instead of an employee’s name. The integration replaced this placeholder with the name of the employee handling the chat, so the same model could generate personalised greetings for different members of staff.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        184.927,
+        534.98,
+        225.019
+      ]
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 1,
+      "block_id": "blender-p01-b01",
+      "text": "Python Blender 3D Model Generation Pipeline",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        92.548,
+        442.115,
+        109.548
+      ],
+      "heading_level": 1
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 1,
+      "block_id": "blender-p01-b02",
+      "text": "The problem",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        128.429,
+        149.986,
+        141.429
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 1,
+      "block_id": "blender-p01-b03",
+      "text": "I developed a small set of 3D-printable clay roller 3D-models used for pressing designs into soft clay. The workflow required images which were transformed into height-maps Blender could interpret. This was then further processed into Blender geometry for a 3d model of a clay impression roller.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        157.321,
+        535.735,
+        211.959
+      ]
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 1,
+      "block_id": "blender-p01-b04",
+      "text": "After validating the designs commercially, the manual workflow became the bottleneck. Producing dozens of designs and several resolutions of each design required repeating essentially the same sequence of UI and Blender operations.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        227.506,
+        496.089,
+        267.598
+      ]
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 1,
+      "block_id": "blender-p01-b05",
+      "text": "I therefore built a Blender pipeline in python that could convert a folder of designs into marketable 3D assets automatically.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        283.144,
+        487.528,
+        308.691
+      ]
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 1,
+      "block_id": "blender-p01-b06",
+      "text": "What I built",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        326.537,
+        142.02,
+        339.537
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 1,
+      "block_id": "blender-p01-b07",
+      "text": "The pipeline receives source images stored within a directory and automatically processes each design through the Blender modelling workflow. For each design, it generates both .blend project files and 3D printable .STL models at two different resolutions.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        355.428,
+        538.185,
+        395.521
+      ]
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 1,
+      "block_id": "blender-p01-b08",
+      "text": "The system was designed for batch execution; I was able to leave it running unattended overnight while it processed large groups of designs without requiring manual intervention. It had produced over 80GB of files which were subsequently uploaded to the cloud and deleted locally.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        411.067,
+        524.214,
+        465.706
+      ]
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 1,
+      "block_id": "blender-p01-b09",
+      "text": "The project required the python script to run as a sub-process to be automatically started within blender to produce a single model. Blender was controlled in headless mode (without a GUI), which made all the processing faster and more reliable.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        481.252,
+        534.524,
+        521.344
+      ]
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 1,
+      "block_id": "blender-p01-b10",
+      "text": "Outcomes",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        539.19,
+        135.555,
+        552.19
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 1,
+      "block_id": "blender-p01-b11",
+      "text": "Products generated through the workflow have produced more than £1,100 in sales.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        568.082,
+        480.801,
+        579.082
+      ]
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 1,
+      "block_id": "blender-p01-b12",
+      "text": "The workflow has been used to create more than 100 original clay roller designs, with additional variations of all designs.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        594.628,
+        536.985,
+        620.174
+      ]
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 1,
+      "block_id": "blender-p01-b13",
+      "text": "I began by manually creating designs to validate market demand, then successfully scaled by developing an automated pipeline that allowed me to produce these files rapidly and cheaply.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        635.72,
+        525.378,
+        661.267
+      ]
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 2,
+      "block_id": "blender-p02-b01",
+      "text": "Technical implementation",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        73.949,
+        230.633,
+        86.949
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 2,
+      "block_id": "blender-p02-b02",
+      "text": "I implemented the workflow in Python as a procedural pipeline, organised into a sequence of clearly defined processing stages. It handles the file management in one main python process to parse the input folder, and passes responsibility to a spawned child subprocess which is designed to produce one single blender model for a single input image. This was most appropriate because it allowed the blender operations to all start from a clean and new blender workflow without risking the blender workspace being contaminated or influenced from a previous set of actions from the program. On top of this, the procedural nature of the program fell naturally out of processing each of the input designs sequentially without needing objects or entity relationships. The complexity of the project fell mainly in the blender workflow, and so it was important to keep this isolated so one mistake didn’t cascade across subsequent generated models.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        94.84,
+        538.834,
+        251.303
+      ]
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 2,
+      "block_id": "blender-p02-b03",
+      "text": "The modelling stage relies on a reusable Blender template I created that stores the cylinder’s dimensions and other default settings to reduce the scope of the programmatic workflow and increase the speed of the automation program.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        269.395,
+        523.752,
+        309.488
+      ]
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 3,
+      "block_id": "blender-p03-b01",
+      "text": "Artwork to 3D relief",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        566.902,
+        180.743,
+        577.902
+      ],
+      "removed_formatting_prefix": "## ",
+      "heading_level": 2
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 3,
+      "block_id": "blender-p03-b02",
+      "text": "The source artwork is converted into a smoothed heightmap, which controls the surface relief on the cylindrical model. The figure follows the same bee motif from the source image to the generated geometry.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        595.994,
+        521.058,
+        636.087
+      ],
+      "removed_formatting_prefix": "**Caption:** ",
+      "caption_role": "visible_caption"
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 3,
+      "block_id": "blender-p03-b03",
+      "text": "Three matching details show bee artwork, its blurred grayscale heightmap, and a rendered roller surface with the bee raised from the cylinder.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        654.179,
+        521.691,
+        679.726
+      ],
+      "removed_formatting_prefix": "**Alt text:** ",
+      "caption_role": "alt_text"
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 3,
+      "block_id": "blender-p03-b04",
+      "text": "Embossed and debossed rollers",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        697.818,
+        229.04,
+        708.818
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 4,
+      "block_id": "blender-p04-b01",
+      "text": "Original and inverted heightmaps produce complementary roller surfaces: raised motifs create recessed impressions in clay, while recessed motifs leave raised impressions. Both sides show actual renders of the existing full-resolution models.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        88.195,
+        523.527,
+        128.288
+      ],
+      "removed_formatting_prefix": "**Caption:** ",
+      "caption_role": "visible_caption"
+    },
+    {
+      "document_key": "blender",
+      "original_path": "C:/Users/fredd/Downloads/Python Blender 3D Model Generation Pipeline (6).pdf",
+      "page_number": 4,
+      "block_id": "blender-p04-b02",
+      "text": "Side-by-side renders show an embossed bee roller with raised details and a debossed roller with recessed details, each accompanied by an enlarged view of the surface.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        146.38,
+        524.163,
+        171.927
+      ],
+      "removed_formatting_prefix": "**Alt text:** ",
+      "caption_role": "alt_text"
+    },
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "page_number": 1,
+      "block_id": "maze-p01-b01",
+      "text": "Java Maze Solver with Route Memory",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        92.548,
+        374.18,
+        109.548
+      ],
+      "heading_level": 1
+    },
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "page_number": 1,
+      "block_id": "maze-p01-b02",
+      "text": "I built a Java program for a simulated robot navigating procedurally generated mazes. On its first run, the robot explored using local observations and backtracked when a route led nowhere. The final controller could remember a successful route and use it to reach the target more directly on subsequent runs. I completed the project for CS118 at the University of Warwick, developing the navigation logic within a supplied simulator and adapting it to different maze structures and restrictions on the information it could store.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        120.13,
+        531.5,
+        203.861
+      ]
+    },
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "page_number": 1,
+      "block_id": "maze-p01-b03",
+      "text": "The problem",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        223.707,
+        149.986,
+        236.707
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "page_number": 1,
+      "block_id": "maze-p01-b04",
+      "text": "This project sought to analyse the differences between strategies in Java to solve classes of mazes with different types of generated structures. This includes loops, voids where no walls are generated, and mazes where the end point is at the center of one of these voids. We were then asked to look at the efficiency of the solutions with respect to the number of steps the program would take on average to complete the maze. The project was then extended to ask students to provide solvers for the existing classes of mazes with some restrictions, such as: not being allowed to store coordinates of cells in the maze.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        244.598,
+        538.762,
+        342.876
+      ]
+    },
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "page_number": 1,
+      "block_id": "maze-p01-b05",
+      "text": "Design decisions",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        360.722,
+        178.89,
+        373.722
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "page_number": 1,
+      "block_id": "maze-p01-b06",
+      "text": "A central design challenge was choosing what information to store. I initially saw the application of a hashmap to store positions of junctions efficiently using coordinates as keys. It importantly provided constant time lookups and retrievals for exploring and backtracking through the maze. For an exercise that prohibited recording junction locations, I adapted the controller to use a stack to implicitly store the order the agent found junctions.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        381.613,
+        535.764,
+        450.798
+      ]
+    },
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "page_number": 1,
+      "block_id": "maze-p01-b07",
+      "text": "I reused the exploration stack to remember the route to the target. During the first run, the stack stored the information needed to backtrack through earlier junctions. As the robot abandoned unsuccessful branches, their entries were removed, leaving a record of the successful route. On subsequent runs, the controller read the remaining information in start-to-finish order and used it to choose the appropriate exit at each junction. This allowed the robot to follow the known route without repeating the exploration required on its first attempt or storing a separate data structure.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        466.344,
+        538.811,
+        564.622
+      ]
+    },
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "page_number": 1,
+      "block_id": "maze-p01-b08",
+      "text": "Testing and edge cases",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        584.468,
+        217.656,
+        597.468
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "page_number": 1,
+      "block_id": "maze-p01-b09",
+      "text": "Some mazes were generated as test edge cases designed to trick algorithms. For instance, a blank maze that contained no walls was supposed to be navigated by an agent, as well as mazes that contained “voids” of empty spaces rather than narrow corridors.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        611.359,
+        525.969,
+        651.452
+      ]
+    },
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "page_number": 1,
+      "block_id": "maze-p01-b10",
+      "text": "A more subtle edge case arose when the robot started in a cell with two exits. Most generated mazes allowed only one possible first move, which made it easy to overlook the start as a place where a decision had to be recorded. When the robot reaches an",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        666.998,
+        492.369,
+        707.091
+      ],
+      "continues_in_block": "maze-p02-b01",
+      "paragraph_group": "maze-p01-b10-complete"
+    },
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "page_number": 2,
+      "block_id": "maze-p02-b01",
+      "text": "ordinary corridor, one exit is the route it came from. At the starting cell, neither exit has that role: both are unexplored alternatives. A controller that records decisions only at three- or four-way junctions can miss this distinction and leave the first choice out of its traversal history. After exploring the chosen branch, its backtracking logic may then have no record that another route remains available at the start. The starting cell therefore needs to be accounted for as a decision point, even though its layout looks like a corridor. This was a small difference in the initial conditions with a significant consequence: a controller could navigate many complex mazes successfully while still leaving part of a much simpler maze unexplored.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        73.649,
+        506.462,
+        201.019
+      ],
+      "continuation_of_block": "maze-p01-b10",
+      "paragraph_group": "maze-p01-b10-complete"
+    },
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "page_number": 4,
+      "block_id": "maze-p04-b01",
+      "text": "First run and later run",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        518.127,
+        531.304,
+        558.22
+      ],
+      "source_text_before_editorial_removal": "First run and later run — place side by side under “Route memory”. This shows the difference between the first run and the later run for the bot that learns the correct route after exploring on the first run through the maze."
+    },
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "page_number": 4,
+      "block_id": "maze-p04-b01-caption",
+      "text": "This shows the difference between the first run and the later run for the bot that learns the correct route after exploring on the first run through the maze.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        518.127,
+        531.304,
+        558.22
+      ],
+      "caption_role": "visible_caption"
+    }
+  ],
+  "excluded_editorial_instructions": [
+    {
+      "document_key": "maze",
+      "original_path": "C:/Users/fredd/Downloads/Java Maze Solver with Route Memory (1).pdf",
+      "page_number": 4,
+      "block_id": "maze-p04-b01",
+      "text": "— place side by side under “Route memory”.",
+      "reason": "Editorial image-placement instruction; not article copy."
+    }
+  ],
+  "validation": {
+    "all_30_pages_checked": true,
+    "native_text_round_trip_passed": true,
+    "pages": [
+      {
+        "document_key": "gpt-formatting",
+        "page_number": 1,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-formatting",
+        "page_number": 2,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-formatting",
+        "page_number": 3,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-formatting",
+        "page_number": 4,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-formatting",
+        "page_number": 5,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-quality",
+        "page_number": 1,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-quality",
+        "page_number": 2,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-quality",
+        "page_number": 3,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-quality",
+        "page_number": 4,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-retrieval",
+        "page_number": 1,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-retrieval",
+        "page_number": 2,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-retrieval",
+        "page_number": 3,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-retrieval",
+        "page_number": 4,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-retrieval",
+        "page_number": 5,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-retrieval",
+        "page_number": 6,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-retrieval",
+        "page_number": 7,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-integration",
+        "page_number": 1,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-integration",
+        "page_number": 2,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-integration",
+        "page_number": 3,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-integration",
+        "page_number": 4,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "gpt-integration",
+        "page_number": 5,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "blender",
+        "page_number": 1,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "blender",
+        "page_number": 2,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "blender",
+        "page_number": 3,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "blender",
+        "page_number": 4,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "maze",
+        "page_number": 1,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "maze",
+        "page_number": 2,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "maze",
+        "page_number": 3,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "maze",
+        "page_number": 4,
+        "native_text_exact_after_whitespace_normalisation": true
+      },
+      {
+        "document_key": "maze",
+        "page_number": 5,
+        "native_text_exact_after_whitespace_normalisation": true
+      }
+    ]
+  }
+}

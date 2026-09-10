@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "source_pdfs_checked": [
+    {
+      "document": "gpt-formatting",
+      "pages": 5,
+      "sha256_verified": true
+    },
+    {
+      "document": "gpt-quality",
+      "pages": 4,
+      "sha256_verified": true
+    },
+    {
+      "document": "gpt-retrieval",
+      "pages": 7,
+      "sha256_verified": true
+    },
+    {
+      "document": "gpt-integration",
+      "pages": 5,
+      "sha256_verified": true
+    },
+    {
+      "document": "blender",
+      "pages": 4,
+      "sha256_verified": true
+    },
+    {
+      "document": "maze",
+      "pages": 5,
+      "sha256_verified": true
+    }
+  ],
+  "rendered_source_elements_verified": 152,
+  "verbatim_source_elements": 146,
+  "explicitly_approved_copy_edits": 6,
+  "unique_source_blocks_used": 135,
+  "pages": [
+    {
+      "page": "about/index.html",
+      "source_text_elements": 0
+    },
+    {
+      "page": "contact/index.html",
+      "source_text_elements": 0
+    },
+    {
+      "page": "index.html",
+      "source_text_elements": 5
+    },
+    {
+      "page": "projects/blender-pipeline/index.html",
+      "source_text_elements": 19
+    },
+    {
+      "page": "projects/gpt-finetuning/data-preparation/index.html",
+      "source_text_elements": 19
+    },
+    {
+      "page": "projects/gpt-finetuning/index.html",
+      "source_text_elements": 8
+    },
+    {
+      "page": "projects/gpt-finetuning/quality-control/index.html",
+      "source_text_elements": 49
+    },
+    {
+      "page": "projects/gpt-finetuning/retrieval/index.html",
+      "source_text_elements": 27
+    },
+    {
+      "page": "projects/gpt-finetuning/testing-and-integration/index.html",
+      "source_text_elements": 13
+    },
+    {
+      "page": "projects/maze-solver/index.html",
+      "source_text_elements": 12
+    }
+  ],
+  "allowed_editorial_changes": [
+    "Display titles and navigation labels",
+    "Short figure labels and alt text; source captions preserved where available",
+    "Paragraph placement, before/after comparison layout and whitespace",
+    "Stat labels; coursework scores supplied directly by Frederick on 10 September 2026",
+    "Skills labels based on the user request, Desktop source and LinkedIn",
+    "Explicit copy edits recorded in content/approved-edits.json"
+  ],
+  "errors": []
+}

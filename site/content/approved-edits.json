@@ -1,0 +1,23 @@
+{
+  "blender-card-intro": {
+    "source_block": "blender-p01-b05",
+    "original": "I therefore built a Blender pipeline in python that could convert a folder of designs into marketable 3D assets automatically.",
+    "replacement": "I built a Blender pipeline in python that could convert a folder of designs into marketable 3D assets automatically.",
+    "scope": "Homepage project-selection card and the sentence directly beneath the Blender project title",
+    "approval": "Frederick explicitly requested removing 'therefore' from the card, and subsequently from the sentence beneath the Blender project title, on 10 September 2026."
+  },
+  "rag-knowledge-base": {
+    "source_block": "gpt-retrieval-p03-b01",
+    "original": "I implemented the knowledge base in Python as a local JSONL dataset, combining product catalogue information with standalone passages covering company policies and staff knowledge. I used OpenAI’s text-embedding-ada-002 model to represent text as 1,536-dimensional vectors. Product records had separate searchable embeddings for their name, short description and full description, while general information used a single text embedding. Each vector remained associated with its original record, allowing a match against one field to return the complete product details and URL. The saved dataset contained 1,006 records represented by 2,402 searchable embeddings.",
+    "replacement": "I implemented the knowledge base in Python as a JSONL dataset, combining product information with company policies and staff training documents. I used OpenAI’s text-embedding-ada-002 model to represent text as 1,536-dimensional vectors. Product records had separate searchable embeddings for their name, short description and full description, while general information used a single text embedding. Each vector remained associated with its original record, allowing a match against one field to return the complete product details and URL. The saved dataset contained 1,006 records represented by 2,402 searchable embeddings.",
+    "scope": "Visual explanation popup and RAG chapter",
+    "approval": "Frederick supplied the exact replacement sentence on 10 September 2026. Other sentences remain unchanged."
+  },
+  "rag-vector-projection": {
+    "source_block": "gpt-retrieval-p04-b03",
+    "original": "The below graph shows the vectors, each with more than 1500+ dimensions, projected onto a two-dimensional plane that preserves 20.6% of the variance.",
+    "replacement": "The below graph shows the position vectors, each with 1536 dimensions, projected onto a two-dimensional plane that preserves 20.6% of the variance.",
+    "scope": "Visual explanation popup and RAG chapter",
+    "approval": "Frederick supplied the exact replacement sentence on 10 September 2026. Other sentences remain unchanged."
+  }
+}
