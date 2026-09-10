@@ -1,4 +1,11 @@
 {
+  "gpt-evaluation-outcome": {
+    "source_block": "gpt-quality-p02-b08",
+    "original": "The head of sales initially reviewed the fine-tuned model and judged its responses to be below the standard of trained sales employees, making it unsuitable for deployment. After I manually curated the training data and retrained the model, he judged its conversational performance to be good relative to that of a trained sales employee. The model already demonstrated general knowledge of diamonds and jewellery before retraining and retained that knowledge afterwards. Company-specific product information and policies were introduced later through a vector database and were outside the scope of this evaluation. We also compared responses at several inference temperature settings.",
+    "replacement": "The head of sales reviewed the first fine-tuned model, and judged its responses to be below the standard of trained sales employees, making it unsuitable for deployment. After I manually curated the training data and retrained the model, he judged its conversational performance to be good relative to that of a trained sales employee. The model already demonstrated general knowledge of diamonds and jewellery but showed improved alignment to the sales process after retraining. Company-specific product information and policies were introduced later through a vector database so it would always know the latest product and policy information.",
+    "scope": "Evaluation and outcome section on the GPT project overview and Quality control & curation chapter",
+    "approval": "Frederick supplied the exact replacement paragraph on 10 September 2026."
+  },
   "blender-card-intro": {
     "source_block": "blender-p01-b05",
     "original": "I therefore built a Blender pipeline in python that could convert a folder of designs into marketable 3D assets automatically.",

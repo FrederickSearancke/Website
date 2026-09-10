@@ -120,7 +120,7 @@ overview+='<h2>Explore the project</h2><div class="chapter-cards">'
 for i,(slug,title,desc) in enumerate(CHAPTERS,1):
     overview+=f'<a class="chapter-card" href="{BASE}{slug}/"><span class="chapter-num">{i:02}</span><div><h3>{title}</h3><p>{desc}</p></div><span class="arrow" aria-hidden="true">↗</span></a>'
 overview+='</div><h2>The application</h2>'+author('gpt-integration-p01-b03')
-overview+='<h2>Evaluation and outcome</h2>'+author('gpt-quality-p02-b08')
+overview+='<h2>Evaluation and outcome</h2>'+approved('gpt-evaluation-outcome','p')
 write(BASE,gpt_page('GPT-4o fine-tuning<br>for customer live chat.',author('gpt-integration-p01-b03','span',excerpt='I built a Python application that combined the fine-tuned model with retrieval of product and policy information.'),overview))
 
 chapter_bodies={}
@@ -135,6 +135,7 @@ quality_skip={
  'gpt-quality-p04-b08','gpt-quality-p04-b09','gpt-quality-p04-b10',
 }
 quality_comparisons={
+ 'gpt-quality-p02-b08':approved('gpt-evaluation-outcome','p'),
  'gpt-quality-p03-b02':comparison('gpt-quality-p03-b02','gpt-quality-p03-b03','gpt-quality-p03-b05','gpt-quality-p03-b06'),
  'gpt-quality-p03-b09':comparison('gpt-quality-p03-b09','gpt-quality-p03-b10','gpt-quality-p03-b12','gpt-quality-p03-b13'),
  'gpt-quality-p03-b16':author('gpt-quality-p04-b02')+comparison('gpt-quality-p03-b16','gpt-quality-p04-b01','gpt-quality-p04-b03','gpt-quality-p04-b04'),
