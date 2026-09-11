@@ -92,11 +92,12 @@ def gpt_pagination(active='overview', position='bottom'):
     sections = [('overview', BASE, 'Project overview')] + [(slug, BASE+slug+'/', title) for slug,title,desc in CHAPTERS]
     index = next(i for i,section in enumerate(sections) if section[0] == active)
     previous = sections[index-1][1:] if index else None
-    following = sections[index+1][1:] if index+1 < len(sections) else ('/#projects', 'All projects')
-    previous_link = f'<a href="{previous[0]}"><small>← Previous</small>{escape(previous[1])}</a>' if previous else ''
+    following = sections[index+1][1:] if index+1 < len(sections) else None
+    previous_link = f'<a class="chapter-previous" href="{previous[0]}"><small>← Previous</small>{escape(previous[1])}</a>' if previous else ''
+    following_link = f'<a href="{following[0]}"><small>Next →</small>{escape(following[1])}</a>' if following else ''
     return (f'<nav class="chapter-pagination chapter-pagination-{position}" aria-label="Project navigation ({position})">'
             f'{previous_link}'
-            f'<a href="{following[0]}"><small>Next →</small>{escape(following[1])}</a></nav>')
+            f'{following_link}</nav>')
 
 def gpt_page(title,desc,article,active='overview',label='Machine learning · Applied AI'):
     breadcrumb='<div class="breadcrumbs"><a href="/#projects">All projects</a><span aria-hidden="true">/</span><a href="/projects/gpt-finetuning/">GPT fine-tuning</a></div>'

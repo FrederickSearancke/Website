@@ -80,6 +80,7 @@ main{flex:1}
 .site-header{flex-shrink:0;background:var(--paper)}
 .project-hero .lede:empty,.project-tags:empty{display:none}
 .skills-page{padding-bottom:56px}
+.chapter-pagination a.chapter-previous{margin-left:0;text-align:left}
 .project-hero.skills-hero h1{font-size:36px;line-height:1.2}
 .project-hero.skills-hero{padding-top:42px;padding-bottom:28px}
 .skills-page .skill-list li{margin-bottom:10.5px}
