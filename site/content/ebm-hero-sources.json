@@ -78,7 +78,7 @@
     "positive": "#F4B352"
   },
   "layout": {
-    "placement": "First item in the homepage project list, under All projects and Machine learning. The standalone hero section has been removed.",
+    "placement": "Last item in the homepage project list, under All projects and Machine learning. Links to /projects/ebm-volatility/, which displays Project writeup coming soon until the user supplies the article.",
     "graphic_frame": "Same image column and 91:83 frame ratio as the other project thumbnails, with object-fit: contain to preserve the entire chart and legend.",
     "caption_placement": "Beside the chart beneath the project title: Premarket x opening / Learned weights; ordered volatility buckets / 653 observed days.",
     "heading": "MY PROJECTS, followed by Selected work.",

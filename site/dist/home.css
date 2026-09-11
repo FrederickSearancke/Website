@@ -19,12 +19,6 @@
   width:calc(100% + 3px);height:calc(100% + 3px);max-width:none;
   object-fit:cover;object-position:right bottom;clip-path:none;
 }
-/* The first row awaits its project page; the whole row is its future control. */
-.home .project-row-target{
-  position:absolute;inset:0;z-index:1;width:100%;height:100%;
-  padding:0;border:0;border-radius:inherit;background:transparent;
-  color:inherit;cursor:pointer;
-}
 .home .project-row:focus-within{background:var(--surface-hover);}
 .home .project-row:focus-within h3{color:var(--accent2);}
 @media(max-width:760px){

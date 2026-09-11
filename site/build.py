@@ -57,7 +57,7 @@ def footer():
 def page(title, description, body, *, home=False, current=''):
     title = re.sub(r'<[^>]+>', ' ', title).strip().rstrip('.')
     description = unescape(re.sub(r'<[^>]+>', '', description))
-    preload = f'<link rel="stylesheet" href="/home.css?v={HOME_CSS_VERSION}"><link rel="preload" as="image" href="/assets/ebm-paired-interaction-chart.svg">' if home else ''
+    preload = f'<link rel="stylesheet" href="/home.css?v={HOME_CSS_VERSION}"><link rel="preload" as="image" href="/assets/ebm-options-thumbnail.png">' if home else ''
     return f'''<!doctype html><html lang="en" style="background:{THEME_COLOR};color-scheme:dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{escape(title)} — Frederick Searancke</title><meta name="description" content="{escape(description)}"><meta name="theme-color" content="{THEME_COLOR}"><meta name="color-scheme" content="dark"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/theme.css?v={THEME_CSS_VERSION}">{preload}<script src="/app.js" defer></script></head><body class="{'home' if home else 'inner-page'}">{header(current,home=home)}{body}{footer()}</body></html>'''
 
 def write(route, html):
@@ -102,18 +102,14 @@ def gpt_page(title,desc,article,active='overview',label='Machine learning · App
     return page(title,desc,f'<main id="main" class="gpt-project"><div class="wrap">{breadcrumb}{gpt_pagination(active,"top")}{hero}<div class="single-article"><article class="article">{article}</article>{gpt_pagination(active)}</div></div></main>',current='projects')
 
 projects = [
- # TODO: When the volatility-forecasting project page is supplied, set its slug and remove pending.
- # Keep this first project unlinked until then; do not send it to another project.
- {'slug':'ebm-volatility','pending':True,'category':'machine-learning','label':'Machine learning','meta':'Explainable Boosting Machines','image':'ebm-paired-interaction-chart.svg','imageclass':'ebm','alt':'Premarket and opening volatility: 14 by 14 equal square buckets showing learned weights, with 653 observed training days. Blue lowers the forecast and amber raises it.','width':660,'height':430,'title':'Forecasting market volatility using explainable AI.','desc':'Premarket &times; opening &middot; Learned weights<br>Ordered volatility buckets &middot; 653 observed days'},
  {'slug':'ebm-options-profitability','category':'machine-learning','label':'Machine learning','meta':'Explainable Boosting Machines','image':'ebm-options-thumbnail.png','imageclass':'ebm-options','alt':'EBM: Predicting options profit. IV response in two saved fits, with 827 trades and 27 inputs.','width':2000,'height':2000,'title':author('ebm-options-p01-b01','span'),'desc':author('ebm-options-p01-b03','span',excerpt='I attempted to train an Explainable Boosting Machine (EBM) to predict the profitability of options trades.')+' '+author('ebm-options-p01-b03','span',excerpt='I didn’t get a fit that was stable enough to rely on.')},
  {'slug':'gpt-finetuning','category':'machine-learning','label':'Machine learning','meta':'','image':'vectors.png','imageclass':'vector','alt':'RAG visualised: projection of product and policy embeddings','width':2048,'height':1536,'title':'Can GPT-4o Learn to Handle Customer Support?','desc':author('gpt-integration-p01-b03','span',excerpt='I built a Python application that combined the fine-tuned model with retrieval of product and policy information.')},
  {'slug':'blender-pipeline','category':'automation','label':'Automation','meta':'Python + Blender','image':'artwork-to-relief.png','imageclass':'blender','alt':'Full artwork-to-relief comparison: bee artwork, heightmap and generated clay roller','width':1800,'height':850,'title':'From artwork to<br>3D-printable rollers','desc':approved('blender-card-intro')},
  {'slug':'maze-solver','category':'algorithms','label':'Algorithms','meta':'Java','image':'maze-first.png','imageclass':'maze','alt':'Maze from the route-memory controller project','width':910,'height':830,'title':'A maze solver<br>that remembers its route','desc':author('maze-p01-b02','span',excerpt='The final controller could remember a successful route and use it to reach the target more directly on subsequent runs.')},
+ {'slug':'ebm-volatility','category':'machine-learning','label':'Machine learning','meta':'Explainable Boosting Machines','image':'ebm-paired-interaction-chart.svg','imageclass':'ebm','alt':'Premarket and opening volatility: 14 by 14 equal square buckets showing learned weights, with 653 observed training days. Blue lowers the forecast and amber raises it.','width':660,'height':430,'title':'Forecasting market volatility using explainable AI.','desc':'Premarket &times; opening &middot; Learned weights<br>Ordered volatility buckets &middot; 653 observed days'},
 ]
 
-def project_thumbnail(p):
-    if p['imageclass'] == 'ebm':
-        return f'<div class="project-image ebm"><img src="/assets/{p["image"]}" alt="{p["alt"]}" width="{p["width"]}" height="{p["height"]}" fetchpriority="high"></div>'
+def project_thumbnail(p, *, first=False):
     if p['imageclass'] == 'blender':
         stages = [
             ('01', 'Source artwork', 'blender-source-artwork.jpg', 1024, 1024, 'artwork'),
@@ -122,18 +118,13 @@ def project_thumbnail(p):
         ]
         panels = ''.join(f'<span class="blender-stage"><span class="blender-stage-label"><span class="blender-stage-number">{number}</span>{label}</span><span class="blender-stage-image {kind}"><img src="/assets/{file}" alt="" width="{width}" height="{height}" loading="lazy" decoding="async"></span></span>' for number,label,file,width,height,kind in stages)
         return f'<div class="project-image blender" role="img" aria-label="The same bee and honeycomb pattern through three stages: original artwork, smoothed grayscale heightmap, and embossed 3D relief">{panels}</div>'
-    return f'<div class="project-image {p["imageclass"]}"><img src="/assets/{p["image"]}" alt="{p["alt"]}" loading="lazy" decoding="async" width="{p["width"]}" height="{p["height"]}"></div>'
+    loading = 'fetchpriority="high"' if first else 'loading="lazy" decoding="async"'
+    return f'<div class="project-image {p["imageclass"]}"><img src="/assets/{p["image"]}" alt="{p["alt"]}" {loading} width="{p["width"]}" height="{p["height"]}"></div>'
 
 rows=''
 for i,p in enumerate(projects,1):
     metadata = f'<span aria-hidden="true">·</span><span>{p["meta"]}</span>' if p['meta'] else ''
-    pending = p.get('pending', False)
-    title_id = f'project-{p["slug"]}-title'
-    status_id = f'project-{p["slug"]}-status'
-    opening = f'<article class="project-row project-pending" data-category="{p["category"]}"><button class="project-row-target" type="button" aria-disabled="true" aria-labelledby="{title_id}" aria-describedby="{status_id}" title="Project page coming soon"></button>' if pending else f'<a class="project-row" href="/projects/{p["slug"]}/" data-category="{p["category"]}">'
-    heading_id = f' id="{title_id}"' if pending else ''
-    closing = f'<span id="{status_id}" class="visually-hidden">This project page is coming soon.</span></article>' if pending else '</a>'
-    rows+=f'''{opening}{project_thumbnail(p)}<div class="project-copy"><div class="project-meta"><span class="index">0{i}</span><span>{p['label']}</span>{metadata}</div><h3{heading_id}>{p['title']}</h3><p>{p['desc']}</p></div><span class="row-arrow" aria-hidden="true">↗</span>{closing}'''
+    rows+=f'''<a class="project-row" href="/projects/{p['slug']}/" data-category="{p['category']}">{project_thumbnail(p,first=i==1)}<div class="project-copy"><div class="project-meta"><span class="index">0{i}</span><span>{p['label']}</span>{metadata}</div><h3>{p['title']}</h3><p>{p['desc']}</p></div><span class="row-arrow" aria-hidden="true">↗</span></a>'''
 
 visual_dialog=f'''<dialog class="visual-inspector" id="visual-inspector" aria-labelledby="visual-inspector-title"><form method="dialog" class="visual-close-form"><button class="visual-close" aria-label="Close visual explanation" autofocus><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></form><div class="visual-inspector-layout"><div class="visual-inspector-figure"><img src="/assets/vectors.png" alt="Two-dimensional projection of product names, short and full descriptions, and company information embeddings" width="2048" height="1536" loading="lazy"></div><div class="visual-inspector-copy"><p class="visual-inspector-kicker">Behind the visual</p><h2 id="visual-inspector-title">A map of the AI’s knowledge.</h2>{approved('rag-knowledge-base','p',excerpt='I implemented the knowledge base in Python as a JSONL dataset, combining product information with company policies and staff training documents.')}{approved('rag-vector-projection','p')}<a class="visual-chapter-link" href="/projects/gpt-finetuning/retrieval/#vector-projection">How I built it <span aria-hidden="true">↗</span></a></div></div></dialog>'''
 
@@ -141,6 +132,11 @@ home=f'''<main id="main"><section class="section wrap project-section" id="proje
 {visual_dialog}
 </main>'''
 write('/',page('Projects & research','Projects in machine learning, software automation and algorithms by Frederick Searancke.',home,home=True))
+
+# TODO: Replace this placeholder with the user's volatility-forecasting writeup when supplied.
+volatility_title = 'Forecasting market volatility using explainable AI.'
+volatility_hero = project_hero('Machine learning · Explainable Boosting Machines',volatility_title,'Project writeup coming soon',[])
+write('/projects/ebm-volatility/',page(volatility_title,'Project writeup coming soon',f'<main id="main"><div class="wrap"><div class="breadcrumbs"><a href="/#projects">← All projects</a></div>{volatility_hero}</div></main>',current='projects'))
 
 # The article uses only the PDF's own title, prose, headings and captions.
 # Creative changes are presentation only: no rewritten copy or added commentary.
