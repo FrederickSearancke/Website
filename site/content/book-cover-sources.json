@@ -1,0 +1,61 @@
+{
+  "retrieved": "2026-09-10",
+  "covers": [
+    {
+      "image_url": "https://application.wiley-vch.de/books/tis/cover_big/1118129857.jpg",
+      "dimensions": [
+        300,
+        450
+      ],
+      "bytes": 25579,
+      "format": "JPEG",
+      "title": "Professional Automated Trading: Theory and Practice",
+      "authors": "Eugene A. Durenard",
+      "source_page": "https://www.wiley-vch.de/en/areas-interest/finance-economics-law/finance-investments-13fi/finance-investments-special-topics-13fiz/professional-automated-trading-978-1-118-12985-2",
+      "verification": "Wiley publisher front cover; visually checked title and author.",
+      "asset": "book-professional-automated-trading.jpg"
+    },
+    {
+      "image_url": "https://application.wiley-vch.de/books/tis/cover_big/1119583519.jpg",
+      "dimensions": [
+        300,
+        445
+      ],
+      "bytes": 19848,
+      "format": "JPEG",
+      "title": "Positional Option Trading: An Advanced Guide",
+      "authors": "Euan Sinclair",
+      "source_page": "https://www.wiley-vch.de/en/areas-interest/finance-economics-law/finance-investments-13fi/trading-13fi4/positional-option-trading-978-1-119-58351-6",
+      "verification": "Wiley publisher front cover; visually checked title and author.",
+      "asset": "book-positional-option-trading.jpg"
+    },
+    {
+      "image_url": "https://media.wiley.com/product_data/coverImage300/37/11183471/1118347137.jpg",
+      "dimensions": [
+        300,
+        453
+      ],
+      "bytes": 82335,
+      "format": "JPEG",
+      "title": "Volatility Trading",
+      "authors": "Euan Sinclair",
+      "source_page": "https://books.wiley.com/titles/9781118416723/",
+      "verification": "Wiley publisher front cover for the second edition; the user did not specify an edition, so the website book title need not add an edition claim.",
+      "asset": "book-volatility-trading.jpg"
+    },
+    {
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/6bada203-4952-49b0-bcfc-172f44d2be3d_238x357.png",
+      "dimensions": [
+        238,
+        357
+      ],
+      "bytes": 146231,
+      "format": "PNG",
+      "title": "Retail Options Trading",
+      "authors": "Euan Sinclair and Andrew Mack",
+      "source_page": "https://blog.moontower.ai/the-book-for-retail-option-traders/",
+      "verification": "Cover from launch post by Kris Abdelmessih, who wrote the foreword to this book. Visually checked both authors and title.",
+      "asset": "book-retail-options-trading.png"
+    }
+  ]
+}

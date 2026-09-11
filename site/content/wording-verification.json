@@ -1,5 +1,5 @@
 {
-  "passed": true,
+  "passed": false,
   "source_pdfs_checked": [
     {
       "document": "gpt-formatting",
@@ -76,6 +76,10 @@
     {
       "page": "projects/maze-solver/index.html",
       "source_text_elements": 12
+    },
+    {
+      "page": "skills/index.html",
+      "source_text_elements": 0
     }
   ],
   "allowed_editorial_changes": [
@@ -86,5 +90,7 @@
     "Skills labels based on the user request, Desktop source and LinkedIn",
     "Explicit copy edits recorded in content/approved-edits.json"
   ],
-  "errors": []
+  "errors": [
+    "Skills must have 4 columns with 4 entries each"
+  ]
 }

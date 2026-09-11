@@ -1,4 +1,5 @@
 from pathlib import Path
+from hashlib import sha256
 import json
 from html import escape, unescape
 import re
@@ -8,6 +9,10 @@ ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'dist'
 PROFILE = json.loads((ROOT / 'profile.json').read_text(encoding='utf-8'))
 BASE = '/projects/gpt-finetuning/'
+# Selected palette: 01 Cobalt & Amber. Match first paint to dist/theme.css.
+THEME_COLOR = '#031B3A'
+THEME_CSS_VERSION = sha256((OUT / 'theme.css').read_bytes()).hexdigest()[:12]
+HOME_CSS_VERSION = sha256((OUT / 'home.css').read_bytes()).hexdigest()[:12]
 CHAPTERS = [
  ('data-preparation', 'Training-data preparation', author('gpt-formatting-p01-b06','span')),
  ('quality-control', 'Quality control & curation', author('gpt-quality-p01-b03','span',excerpt='In this section I’ve described the filtering process that went into curating the training data for the deployed model, including the problems with the dataset to motivate these choices.')),
@@ -28,18 +33,22 @@ def social_links():
 
 def portrait(large=False):
     if PROFILE.get('portrait'):
-        return f'<img class="{"contact-portrait" if large else "portrait"}" src="{escape(PROFILE["portrait"])}" alt="Frederick Searancke" width="{300 if large else 62}" height="{375 if large else 62}">'
+        if large:
+            return f'<div class="portrait-frame"><img class="contact-portrait" src="{escape(PROFILE["portrait"])}" alt="Frederick Searancke" width="1024" height="1536"></div>'
+        return f'<img class="portrait" src="{escape(PROFILE["portrait"])}" alt="Frederick Searancke" width="62" height="62">'
     return '<div class="portrait monogram" aria-label="Frederick Searancke initials">FS</div>' if not large else ''
 
-def header(current=''):
+def header(current='', *, home=False):
     def nav(label, url, key):
         return f'<a href="{url}"' + (' aria-current="page"' if current == key else '') + f'>{label}</a>'
-    resume = f'<a class="nav-resume" href="{PROFILE["resume"]}" target="_blank" rel="noopener noreferrer">Resume <span aria-hidden="true">↗</span></a>' if PROFILE.get('resume') else ''
+    resume = f'<a class="nav-resume" href="{PROFILE["resume"]}" target="_blank" rel="noopener noreferrer">CV <span aria-hidden="true">↗</span></a>' if PROFILE.get('resume') else ''
+    identity = f'<div class="identity-details">{portrait()}<div><p class="identity-name">Frederick Searancke</p><p class="identity-role">Aspiring quant researcher <span aria-hidden="true">·</span> Computer Science, University of Warwick</p></div></div>' if home else ''
+    home_button = '' if home else '<a class="nav-home" href="/">Home</a>'
     return f'''<a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header"><div class="wrap header-inner">
+    <header class="site-header"><div class="wrap header-inner">{identity}
       <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-navigation">Menu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 7h18M3 16h18"/></svg></button>
       <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
-      {nav('Projects','/#projects','projects')}{nav('Skills','/#skills','skills')}{nav('About me','/about/','about')}{nav('Contact','/contact/','contact')}{resume}
+      {home_button}{nav('Skills','/skills/','skills')}{nav('About me','/about/','about')}{nav('Contact','/contact/','contact')}{resume}
       </nav></div></header>'''
 
 def footer():
@@ -48,8 +57,8 @@ def footer():
 def page(title, description, body, *, home=False, current=''):
     title = re.sub(r'<[^>]+>', ' ', title).strip().rstrip('.')
     description = unescape(re.sub(r'<[^>]+>', '', description))
-    preload = '<link rel="preload" as="image" href="/assets/vectors.png">' if home else ''
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{escape(title)} — Frederick Searancke</title><meta name="description" content="{escape(description)}"><meta name="theme-color" content="#101e2b"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css">{preload}<script src="/app.js" defer></script></head><body class="{'home' if home else 'inner-page'}">{header(current)}{body}{footer()}</body></html>'''
+    preload = f'<link rel="stylesheet" href="/home.css?v={HOME_CSS_VERSION}"><link rel="preload" as="image" href="/assets/ebm-paired-interaction-chart.svg">' if home else ''
+    return f'''<!doctype html><html lang="en" style="background:{THEME_COLOR};color-scheme:dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{escape(title)} — Frederick Searancke</title><meta name="description" content="{escape(description)}"><meta name="theme-color" content="{THEME_COLOR}"><meta name="color-scheme" content="dark"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/theme.css?v={THEME_CSS_VERSION}">{preload}<script src="/app.js" defer></script></head><body class="{'home' if home else 'inner-page'}">{header(current,home=home)}{body}{footer()}</body></html>'''
 
 def write(route, html):
     dest = OUT / route.strip('/') / 'index.html'
@@ -78,50 +87,86 @@ def project_hero(label,title,lede,tags):
 def summary(items):
     return '<div class="project-summary">'+''.join(f'<div><small>{label}</small><strong>{value}</strong></div>' for label,value in items)+'</div>'
 
-def chapter_nav(active='overview'):
-    menu = f'<a href="{BASE}" class="{"active" if active=="overview" else ""}"'+(' aria-current="page"' if active=='overview' else '')+'><span>—</span>Project overview</a>'
-    for i,(slug,title,desc) in enumerate(CHAPTERS,1):
-        menu += f'<a href="{BASE}{slug}/" class="{"active" if active==slug else ""}"'+(' aria-current="page"' if active==slug else '')+f'><span>{i:02}</span>{title}</a>'
-    return f'<aside class="chapter-nav"><h2>Explore the project</h2><nav class="chapter-links" aria-label="Project chapters">{menu}</nav><a class="chapter-back" href="/#projects">← All projects</a></aside>'
+def gpt_pagination(active='overview', position='bottom'):
+    sections = [('overview', BASE, 'Project overview')] + [(slug, BASE+slug+'/', title) for slug,title,desc in CHAPTERS]
+    index = next(i for i,section in enumerate(sections) if section[0] == active)
+    previous = sections[index-1][1:] if index else ('/#projects', 'All projects')
+    following = sections[index+1][1:] if index+1 < len(sections) else ('/#projects', 'All projects')
+    return (f'<nav class="chapter-pagination chapter-pagination-{position}" aria-label="Project navigation ({position})">'
+            f'<a href="{previous[0]}"><small>← Previous</small>{escape(previous[1])}</a>'
+            f'<a href="{following[0]}"><small>Next →</small>{escape(following[1])}</a></nav>')
 
 def gpt_page(title,desc,article,active='overview',label='Machine learning · Applied AI'):
     breadcrumb='<div class="breadcrumbs"><a href="/#projects">All projects</a><span aria-hidden="true">/</span><a href="/projects/gpt-finetuning/">GPT fine-tuning</a></div>'
     hero=project_hero(label,title,desc,['Python','Fine-tuning','Retrieval','Data engineering'])
-    return page(title,desc,f'<main id="main"><div class="wrap">{breadcrumb}{hero}<div class="reading-layout">{chapter_nav(active)}<article class="article">{article}</article></div></div></main>',current='projects')
+    return page(title,desc,f'<main id="main" class="gpt-project"><div class="wrap">{breadcrumb}{gpt_pagination(active,"top")}{hero}<div class="single-article"><article class="article">{article}</article>{gpt_pagination(active)}</div></div></main>',current='projects')
 
 projects = [
- {'slug':'gpt-finetuning','category':'machine-learning','label':'Machine learning','meta':'4 chapters','image':'vectors.png','imageclass':'vector','alt':'Projection of product and policy embeddings','title':'GPT-4o fine-tuning<br>for customer live chat','desc':author('gpt-integration-p01-b03','span',excerpt='I built a Python application that combined the fine-tuned model with retrieval of product and policy information.'),'stat':'74,000+','statlabel':'messages parsed'},
- {'slug':'blender-pipeline','category':'automation','label':'Automation','meta':'Python + Blender','image':'artwork-to-relief.png','imageclass':'blender','alt':'Generated bee and honeycomb relief on a clay roller model','title':'From artwork to<br>3D-printable rollers','desc':approved('blender-card-intro'),'stat':'£1,100+','statlabel':'in product sales'},
- {'slug':'maze-solver','category':'algorithms','label':'Algorithms','meta':'Java','image':'maze-first.png','imageclass':'maze','alt':'Maze from the route-memory controller project','title':'A maze solver<br>that remembers its route','desc':author('maze-p01-b02','span',excerpt='The final controller could remember a successful route and use it to reach the target more directly on subsequent runs.'),'stat':'85% &amp; 87%','statlabel':'coursework marks'},
+ # TODO: When the volatility-forecasting project page is supplied, set its slug and remove pending.
+ # Keep this first project unlinked until then; do not send it to another project.
+ {'slug':'ebm-volatility','pending':True,'category':'machine-learning','label':'Machine learning','meta':'Explainable Boosting Machines','image':'ebm-paired-interaction-chart.svg','imageclass':'ebm','alt':'Premarket and opening volatility: 14 by 14 equal square buckets showing learned weights, with 653 observed training days. Blue lowers the forecast and amber raises it.','width':660,'height':430,'title':'Forecasting market volatility using explainable AI.','desc':'Premarket &times; opening &middot; Learned weights<br>Ordered volatility buckets &middot; 653 observed days'},
+ {'slug':'ebm-options-profitability','category':'machine-learning','label':'Machine learning','meta':'Explainable Boosting Machines','image':'ebm-options-thumbnail.png','imageclass':'ebm-options','alt':'EBM: Predicting options profit. IV response in two saved fits, with 827 trades and 27 inputs.','width':2000,'height':2000,'title':author('ebm-options-p01-b01','span'),'desc':author('ebm-options-p01-b03','span',excerpt='I attempted to train an Explainable Boosting Machine (EBM) to predict the profitability of options trades.')+' '+author('ebm-options-p01-b03','span',excerpt='I didn’t get a fit that was stable enough to rely on.')},
+ {'slug':'gpt-finetuning','category':'machine-learning','label':'Machine learning','meta':'','image':'vectors.png','imageclass':'vector','alt':'RAG visualised: projection of product and policy embeddings','width':2048,'height':1536,'title':'Can GPT-4o Learn to Handle Customer Support?','desc':author('gpt-integration-p01-b03','span',excerpt='I built a Python application that combined the fine-tuned model with retrieval of product and policy information.')},
+ {'slug':'blender-pipeline','category':'automation','label':'Automation','meta':'Python + Blender','image':'artwork-to-relief.png','imageclass':'blender','alt':'Full artwork-to-relief comparison: bee artwork, heightmap and generated clay roller','width':1800,'height':850,'title':'From artwork to<br>3D-printable rollers','desc':approved('blender-card-intro')},
+ {'slug':'maze-solver','category':'algorithms','label':'Algorithms','meta':'Java','image':'maze-first.png','imageclass':'maze','alt':'Maze from the route-memory controller project','width':910,'height':830,'title':'A maze solver<br>that remembers its route','desc':author('maze-p01-b02','span',excerpt='The final controller could remember a successful route and use it to reach the target more directly on subsequent runs.')},
 ]
+
+def project_thumbnail(p):
+    if p['imageclass'] == 'ebm':
+        return f'<div class="project-image ebm"><img src="/assets/{p["image"]}" alt="{p["alt"]}" width="{p["width"]}" height="{p["height"]}" fetchpriority="high"></div>'
+    if p['imageclass'] == 'blender':
+        stages = [
+            ('01', 'Source artwork', 'blender-source-artwork.jpg', 1024, 1024, 'artwork'),
+            ('02', 'Smoothed heightmap', 'blender-smoothed-heightmap.jpg', 1024, 1024, 'heightmap'),
+            ('03', 'Generated relief', 'blender-embossed-detail.png', 640, 1400, 'relief'),
+        ]
+        panels = ''.join(f'<span class="blender-stage"><span class="blender-stage-label"><span class="blender-stage-number">{number}</span>{label}</span><span class="blender-stage-image {kind}"><img src="/assets/{file}" alt="" width="{width}" height="{height}" loading="lazy" decoding="async"></span></span>' for number,label,file,width,height,kind in stages)
+        return f'<div class="project-image blender" role="img" aria-label="The same bee and honeycomb pattern through three stages: original artwork, smoothed grayscale heightmap, and embossed 3D relief">{panels}</div>'
+    return f'<div class="project-image {p["imageclass"]}"><img src="/assets/{p["image"]}" alt="{p["alt"]}" loading="lazy" decoding="async" width="{p["width"]}" height="{p["height"]}"></div>'
 
 rows=''
 for i,p in enumerate(projects,1):
-    rows+=f'''<a class="project-row" href="/projects/{p['slug']}/" data-category="{p['category']}"><div class="project-image {p['imageclass']}"><img src="/assets/{p['image']}" alt="{p['alt']}" loading="lazy" decoding="async" width="530" height="352"></div><div class="project-copy"><div class="project-meta"><span class="index">0{i}</span><span>{p['label']}</span><span>·</span><span>{p['meta']}</span></div><h3>{p['title']}</h3><p>{p['desc']}</p></div><div class="project-stat"><strong>{p['stat']}</strong><small>{p['statlabel']}</small><span class="row-arrow" aria-hidden="true">↗</span></div></a>'''
+    metadata = f'<span aria-hidden="true">·</span><span>{p["meta"]}</span>' if p['meta'] else ''
+    pending = p.get('pending', False)
+    title_id = f'project-{p["slug"]}-title'
+    status_id = f'project-{p["slug"]}-status'
+    opening = f'<article class="project-row project-pending" data-category="{p["category"]}"><button class="project-row-target" type="button" aria-disabled="true" aria-labelledby="{title_id}" aria-describedby="{status_id}" title="Project page coming soon"></button>' if pending else f'<a class="project-row" href="/projects/{p["slug"]}/" data-category="{p["category"]}">'
+    heading_id = f' id="{title_id}"' if pending else ''
+    closing = f'<span id="{status_id}" class="visually-hidden">This project page is coming soon.</span></article>' if pending else '</a>'
+    rows+=f'''{opening}{project_thumbnail(p)}<div class="project-copy"><div class="project-meta"><span class="index">0{i}</span><span>{p['label']}</span>{metadata}</div><h3{heading_id}>{p['title']}</h3><p>{p['desc']}</p></div><span class="row-arrow" aria-hidden="true">↗</span>{closing}'''
 
 visual_dialog=f'''<dialog class="visual-inspector" id="visual-inspector" aria-labelledby="visual-inspector-title"><form method="dialog" class="visual-close-form"><button class="visual-close" aria-label="Close visual explanation" autofocus><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></form><div class="visual-inspector-layout"><div class="visual-inspector-figure"><img src="/assets/vectors.png" alt="Two-dimensional projection of product names, short and full descriptions, and company information embeddings" width="2048" height="1536" loading="lazy"></div><div class="visual-inspector-copy"><p class="visual-inspector-kicker">Behind the visual</p><h2 id="visual-inspector-title">A map of the AI’s knowledge.</h2>{approved('rag-knowledge-base','p',excerpt='I implemented the knowledge base in Python as a JSONL dataset, combining product information with company policies and staff training documents.')}{approved('rag-vector-projection','p')}<a class="visual-chapter-link" href="/projects/gpt-finetuning/retrieval/#vector-projection">How I built it <span aria-hidden="true">↗</span></a></div></div></dialog>'''
 
-home=f'''<main id="main"><section class="hero project-first" aria-labelledby="home-title"><img class="hero-art" src="/assets/vectors.png" width="2048" height="1536" alt="" fetchpriority="high"><div class="hero-shade"></div><div class="wrap hero-inner"><p class="featured-label">Featured project <span aria-hidden="true">/</span> Machine learning</p><h1 id="home-title">GPT-4o fine-tuning<br>for customer<br>live chat<span style="color:var(--accent)">.</span></h1><div class="hero-cta"><a class="button primary" href="#projects">View projects <span aria-hidden="true">↓</span></a><a class="featured-project-button" href="/projects/gpt-finetuning/">Learn about this project <span aria-hidden="true">↗</span></a></div><div class="hero-bottom"><a class="scroll-link" href="#projects"><span aria-hidden="true">↓</span> Scroll to projects</a><a class="visual-trigger" href="/projects/gpt-finetuning/retrieval/#vector-projection" data-open-visual aria-haspopup="dialog" aria-controls="visual-inspector"><span class="visual-trigger-icon" aria-hidden="true">+</span><span>Explore this visual</span></a></div></div></section>{visual_dialog}
-<section class="section wrap" id="projects" aria-labelledby="projects-title"><p class="section-label">Projects</p><div class="section-heading"><h2 id="projects-title">Selected work<span style="color:var(--accent)">.</span></h2></div><div class="filter-bar" role="group" aria-label="Filter projects"><button class="filter" data-filter="all" aria-pressed="true">All projects</button><button class="filter" data-filter="machine-learning" aria-pressed="false">Machine learning</button><button class="filter" data-filter="automation" aria-pressed="false">Automation</button><button class="filter" data-filter="algorithms" aria-pressed="false">Algorithms</button></div><p id="filter-status" class="visually-hidden" aria-live="polite">3 projects shown</p><div class="project-list">{rows}</div></section>
-<section class="identity-section wrap" aria-label="About the author"><div class="identity-details">{portrait()}<div><h2>Frederick Searancke</h2><p>Quant Researcher <span aria-hidden="true">·</span> Computer Science, University of Warwick</p></div></div><a class="identity-about" href="/about/">About me <span aria-hidden="true">↗</span></a></section>
-<section class="section skills-section wrap" id="skills" aria-labelledby="skills-title"><div class="skills-layout"><div><p class="section-label">Technical toolkit</p><h2 id="skills-title">Skills in practice.</h2></div><div class="skill-groups">
-<div class="skill-group"><h3>Machine learning</h3><ul class="skill-list"><li>EBM model training</li><li>Loss functions &amp; regularisation</li><li>Overfitting &amp; underfitting diagnostics</li><li>LLM fine-tuning &amp; RAG</li></ul></div>
-<div class="skill-group"><h3>Quantitative research</h3><ul class="skill-list"><li>Walk-forward backtesting</li><li>Hypothesis testing &amp; null models</li><li>Parameter sweeps &amp; overfitting</li><li>Volatility &amp; slippage modelling</li></ul></div>
-<div class="skill-group"><h3>Software &amp; data</h3><ul class="skill-list"><li>Python and Java</li><li>SQL</li><li>Data pipelines</li><li>Feature engineering</li></ul></div>
-<div class="skill-group"><h3>Building systems</h3><ul class="skill-list"><li>End-to-end project delivery</li><li>Modular system architecture</li><li>TCP APIs · IBKR TWS</li><li>REST API integration</li></ul></div>
-</div></div></section></main>'''
+home=f'''<main id="main"><section class="section wrap project-section" id="projects" aria-labelledby="projects-title"><h1 class="section-label">My projects</h1><div class="section-heading"><h2 id="projects-title">Selected work<span style="color:var(--accent)">.</span></h2></div><div class="filter-bar" role="group" aria-label="Filter projects"><button class="filter" data-filter="all" aria-pressed="true">All projects</button><button class="filter" data-filter="machine-learning" aria-pressed="false">Machine learning</button><button class="filter" data-filter="automation" aria-pressed="false">Automation</button><button class="filter" data-filter="algorithms" aria-pressed="false">Algorithms</button></div><p id="filter-status" class="visually-hidden" aria-live="polite">{len(projects)} projects shown</p><div class="project-list">{rows}</div></section>
+{visual_dialog}
+</main>'''
 write('/',page('Projects & research','Projects in machine learning, software automation and algorithms by Frederick Searancke.',home,home=True))
+
+# The article uses only the PDF's own title, prose, headings and captions.
+# Creative changes are presentation only: no rewritten copy or added commentary.
+options_title = paragraph_text('ebm-options-p01-b01')
+options_description = author('ebm-options-p01-b03','span',excerpt='I attempted to train an Explainable Boosting Machine (EBM) to predict the profitability of options trades.')
+options_hero = '<div class="project-hero">'+author('ebm-options-p01-b01','h1')+'</div>'
+def options_figure(file, caption_id):
+    return figure(file,paragraph_text(caption_id),author(caption_id,'span'))
+options_article = document('ebm-options',after={
+ 'ebm-options-p01-b06':options_figure('ebm-options-trade-profits.png','ebm-options-p01-b07'),
+ 'ebm-options-p02-b02':options_figure('ebm-options-training-examples.png','ebm-options-p02-b03'),
+ 'ebm-options-p03-b04':options_figure('ebm-options-iv-trend.png','ebm-options-p03-b05'),
+ 'ebm-options-p03-b06':options_figure('ebm-options-correlations.png','ebm-options-p04-b01')+options_figure('ebm-options-feature-overlap.png','ebm-options-p04-b02'),
+ 'ebm-options-p05-b01':options_figure('ebm-options-iv-comparison.png','ebm-options-p05-b02'),
+ 'ebm-options-p05-b03':options_figure('ebm-options-iv-diagnostics.png','ebm-options-p06-b01'),
+ 'ebm-options-p06-b03':options_figure('ebm-options-profit-risk.png','ebm-options-p07-b01'),
+ 'ebm-options-p07-b07':options_figure('ebm-options-loss-functions.png','ebm-options-p08-b01'),
+})+source('ebm-options-profitability.pdf')
+write('/projects/ebm-options-profitability/',page(options_title,options_description,f'<main id="main"><div class="wrap"><div class="breadcrumbs"><a href="/#projects">← All projects</a></div>{options_hero}<div class="single-article"><article class="article">{options_article}</article></div></div></main>',current='projects'))
 
 
 overview='<h2>Overview</h2>'
 overview+=author('gpt-formatting-p01-b03',excerpt='I made a fine-tuned machine learning model to accurately answer customer live chats as well as a trained human with up-to-date company policy and product information that was performant enough to converse with real customers in real time. I did this work over the summer of 2024.')
-overview+=summary([('Data processing','74,000+ messages'),('Retrieval index','2,402 embeddings'),('Project context','Summer 2024')])
-overview+='<h2>Explore the project</h2><div class="chapter-cards">'
-for i,(slug,title,desc) in enumerate(CHAPTERS,1):
-    overview+=f'<a class="chapter-card" href="{BASE}{slug}/"><span class="chapter-num">{i:02}</span><div><h3>{title}</h3><p>{desc}</p></div><span class="arrow" aria-hidden="true">↗</span></a>'
-overview+='</div><h2>The application</h2>'+author('gpt-integration-p01-b03')
+overview+='<h2>The application</h2>'+author('gpt-integration-p01-b03')
 overview+='<h2>Evaluation and outcome</h2>'+approved('gpt-evaluation-outcome','p')
-write(BASE,gpt_page('GPT-4o fine-tuning<br>for customer live chat.',author('gpt-integration-p01-b03','span',excerpt='I built a Python application that combined the fine-tuned model with retrieval of product and policy information.'),overview))
+write(BASE,gpt_page('Can GPT-4o Learn to Handle Customer Support?',author('gpt-integration-p01-b03','span',excerpt='I built a Python application that combined the fine-tuned model with retrieval of product and policy information.'),overview))
 
 chapter_bodies={}
 chapter_bodies['data-preparation']=document('gpt-formatting',after={
@@ -158,15 +203,7 @@ chapter_bodies['testing-and-integration']=document('gpt-integration',after={
 })+source('gpt-testing-and-integration.pdf')
 
 for i,(slug,title,desc) in enumerate(CHAPTERS):
-    pagination='<nav class="chapter-pagination" aria-label="Adjacent chapters">'
-    prev = (BASE,'Project overview') if i==0 else (BASE+CHAPTERS[i-1][0]+'/',CHAPTERS[i-1][1])
-    pagination+=f'<a href="{prev[0]}"><small>← Previous</small>{prev[1]}</a>'
-    if i<3:
-        pagination+=f'<a href="{BASE}{CHAPTERS[i+1][0]}/"><small>Next →</small>{CHAPTERS[i+1][1]}</a>'
-    else:
-        pagination+='<a href="/#projects"><small>Continue exploring →</small>All projects</a>'
-    pagination+='</nav>'
-    write(BASE+slug+'/',gpt_page(title+'.',desc,chapter_bodies[slug]+pagination,slug,f'GPT fine-tuning · Part {i+1:02} of 04'))
+    write(BASE+slug+'/',gpt_page(title+'.',desc,chapter_bodies[slug],slug,f'GPT fine-tuning · Part {i+1:02} of 04'))
 
 blender_hero=project_hero('Automation · Python + Blender','From artwork to<br>3D-printable rollers.',approved('blender-card-intro'),['Python','Blender','Procedural modelling','3D printing'])
 blender=document('blender',skip={'blender-p03-b01','blender-p03-b04'},after={
@@ -184,17 +221,48 @@ maze=document('maze',skip={'maze-p04-b01'},after={
 })+source('java-maze-solver.pdf')
 write('/projects/maze-solver/',page('Java maze solver with route memory',paragraph_text('maze-p01-b02'),f'<main id="main"><div class="wrap"><div class="breadcrumbs"><a href="/#projects">← All projects</a></div>{maze_hero}{summary([("Coursework 1","85%"),("Coursework 2","87%"),("Highest section mark","97%")])}<div class="single-article"><article class="article">{maze}</article></div></div></main>',current='projects'))
 
-about_hero=project_hero('About me','Beyond the projects.','Computer science at Warwick, an interest in quantitative research, and time away from the screen.',[])
-about=f'''<main id="main"><div class="wrap">{about_hero}<div class="about-copy"><h2>Thinking through making.</h2><p>My projects span applied machine learning, software automation and algorithms. I enjoy taking a problem apart, building something that works, and understanding the decisions that shape the result.</p><p>I study Computer Science at the University of Warwick. This portfolio collects my work and the technical detail behind it.</p><h2 style="margin-top:45px">Away from the screen.</h2><p>My interests include fencing, skiing and boxing. I hold a BASI Level 1 ski instructor qualification and have completed the Gold Duke of Edinburgh’s Award.</p><div style="margin-top:35px"><a class="button" href="/contact/">Get in touch <span aria-hidden="true">↗</span></a></div></div></div></main>'''
-write('/about/',page('About me','About Frederick Searancke: Computer Science at Warwick, quantitative research interests, and sport.',about,current='about'))
 
-contact_hero=project_hero('Contact','Let’s get in touch.','For conversations about quantitative research, software, or any of the projects here.',[])
+skills_hero='<div class="project-hero skills-hero"><h1>Skills in practice.</h1></div>'
+skills=f'''<main id="main"><div class="wrap">{skills_hero}<section class="skills-page" aria-label="Technical skills"><div class="skill-groups">
+<div class="skill-group"><h3>Machine learning</h3><ul class="skill-list"><li>Volatility modeling with ML</li><li>Explainable Boosting Machines</li><li>LLM fine-tuning &amp; RAG</li></ul></div>
+<div class="skill-group"><h3>Quantitative research</h3><ul class="skill-list"><li>Walk-forward backtesting</li><li>Hypothesis testing</li><li>Parameter sweeps &amp; overfitting</li><li>Slippage modelling</li></ul></div>
+<div class="skill-group"><h3>Software &amp; data</h3><ul class="skill-list"><li>Python</li><li>Java</li><li>SQL</li></ul></div>
+<div class="skill-group"><h3>Building systems</h3><ul class="skill-list"><li>End-to-end project delivery</li><li>Modular system architecture</li><li>TCP APIs · IBKR TWS</li><li>REST API integration</li></ul></div>
+</div></section>
+<section class="reading-section" aria-labelledby="reading-title"><h2 id="reading-title">Books I’ve read</h2>
+<ul class="book-list">
+<li class="book-item book-item-with-project"><img class="book-cover" src="/assets/book-professional-automated-trading.jpg" alt="" width="300" height="450" loading="lazy" decoding="async"><h3>Professional Automated Trading: Theory and Practice</h3><p class="book-author">Eugene A. Durenard</p>
+<!-- TODO(stock-market-trading-bots-project): When Frederick supplies the stock-market trading-bot project to add, connect this book's arrow CTA to that project's final route. Replace the disabled button #trading-bots-project-cta with an anchor using the same class and SVG, set its href to the new project, retain it inside .book-project-tail, update aria-label to "Read about my stock-market trading bots", and remove type, disabled, aria-describedby, title and the #trading-bots-project-status coming-soon label. Keep this placeholder unlinked until that project exists. -->
+<p class="book-note">I used this book to build a set of stock-market trading bots, which I run with <span class="book-project-tail">my own money. <button id="trading-bots-project-cta" class="book-project-button" type="button" disabled aria-label="Trading-bot project — coming soon" aria-describedby="trading-bots-project-status" title="Project coming soon"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></span><span id="trading-bots-project-status" class="visually-hidden">Project coming soon</span></p></li>
+<li class="book-item"><img class="book-cover" src="/assets/book-positional-option-trading.jpg" alt="" width="300" height="445" loading="lazy" decoding="async"><h3>Positional Option Trading: An Advanced Guide</h3><p class="book-author">Euan Sinclair</p></li>
+<li class="book-item"><img class="book-cover" src="/assets/book-volatility-trading.jpg" alt="" width="300" height="453" loading="lazy" decoding="async"><h3>Volatility Trading</h3><p class="book-author">Euan Sinclair</p></li>
+<li class="book-item"><img class="book-cover" src="/assets/book-retail-options-trading.png" alt="" width="238" height="357" loading="lazy" decoding="async"><h3>Retail Options Trading</h3><p class="book-author">Euan Sinclair and Andrew Mack</p></li>
+</ul></section></div></main>'''
+write('/skills/',page('Skills','Skills in machine learning, quantitative research, software and systems, plus books I’ve read and applied to my own trading bots.',skills,current='skills'))
+
+about_hero='<div class="project-hero"><h1 class="section-label">About me</h1></div>'
+about=f'''<main id="main"><div class="wrap">{about_hero}<div class="about-copy">
+<h2>1st place at Saxon Novices 2026.</h2>
+<p><strong>I finished first out of 22 fencers, with 12 wins and no losses.</strong> I won the men’s senior foil competition at Saxon Novices on 19 April 2026, going unbeaten through both group rounds and the knockout stages.</p>
+<div class="fencing-gallery">
+<figure><a href="/assets/fencing-action.jpg" target="_blank" rel="noopener noreferrer" aria-label="Enlarge fencing action photo"><img src="/assets/fencing-action.jpg" alt="Frederick fencing on the right during a foil bout" width="1600" height="739" decoding="async"></a><figcaption>In action on the piste — I’m on the right.</figcaption></figure>
+<figure><a href="/assets/fencing-medal-presentation.jpg" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Saxon Novices medal presentation photo"><img src="/assets/fencing-medal-presentation.jpg" alt="Frederick, second from the left, at the Saxon Novices medal presentation" width="1600" height="1200" decoding="async"></a><figcaption>Saxon Novices medal presentation — I’m second from the left.</figcaption></figure>
+</div>
+<h2 style="margin-top:45px">Skiing</h2>
+<p>I hold a BASI Level 1 ski instructor qualification, combining my interest in skiing with teaching others.</p>
+<p>I volunteered for 35 hours helping children aged 4–8 learn to ski for the first time. This meant introducing them to the basics and helping them become comfortable on skis.</p>
+<h2 style="margin-top:45px">Introducing Python.</h2>
+<p>For around five years, I volunteered at a computer science club, teaching Year 7 and Year 8 pupils to code in Python for the first time. The club gave me the opportunity to share my interest in programming and help younger pupils get started.</p>
+<div style="margin-top:35px"><a class="button" href="/contact/">Get in touch <span aria-hidden="true">↗</span></a></div></div></div></main>'''
+write('/about/',page('About me','Frederick Searancke: Saxon Novices 2026 foil winner, BASI Level 1 ski instructor, and volunteer teaching young skiers and Python beginners.',about,current='about'))
+
+contact_hero='<div class="project-hero"><h1 class="section-label">Contact me</h1></div>'
 contact_items=f'''<div class="contact-item"><div><small>Email</small><a href="mailto:{escape(PROFILE['email'])}">{escape(PROFILE['email'])}</a></div><span class="external-arrow" aria-hidden="true">↗</span></div><div class="contact-item"><div><small>Phone</small><a href="tel:{escape(PROFILE['phoneHref'])}">{escape(PROFILE['phone'])}</a></div><span class="external-arrow" aria-hidden="true">↗</span></div>'''
 for label,key in [('LinkedIn','linkedin'),('GitHub','github')]:
     if PROFILE.get(key):
         contact_items+=f'<div class="contact-item"><div><small>{label}</small><a href="{escape(PROFILE[key])}" target="_blank" rel="noopener noreferrer">Find me on {label}</a></div><span class="external-arrow" aria-hidden="true">↗</span></div>'
 if PROFILE.get('resume'):
-    contact_items+=f'<div class="contact-item"><div><small>Resume</small><a href="{PROFILE["resume"]}" target="_blank" rel="noopener noreferrer">Read my resume</a></div><span class="external-arrow" aria-hidden="true">↗</span></div>'
+    contact_items+=f'<div class="contact-item"><div><small>CV</small><a href="{PROFILE["resume"]}" target="_blank" rel="noopener noreferrer">Read my CV</a></div><span class="external-arrow" aria-hidden="true">↗</span></div>'
 contact=f'<main id="main"><div class="wrap">{contact_hero}<div class="contact-layout"><div class="contact-list">{contact_items}</div><div>{portrait(True)}</div></div></div></main>'
 write('/contact/',page('Contact','Contact Frederick Searancke by email or phone.',contact,current='contact'))
 

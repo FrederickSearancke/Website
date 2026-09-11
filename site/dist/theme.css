@@ -1,0 +1,57 @@
+/* Selected theme: 01 Cobalt & Amber. Keep this after styles.css. */
+:root{--ink:#E7F1FF;--heading:#FFE3BE;--navy:#031B3A;--muted:#ADC1DB;--accent:#F4B352;--accent2:#AACFFF;--paper:#031B3A;--surface:#0C2A4E;--surface-hover:#173861;--line:#365275;--control-line:#6A84A4;--button-bg:#EFAC44;--button-ink:#0C1B2E;--button-hover:#dda042;--hero-rgb:3,27,58;}
+
+html{color-scheme:dark;background:var(--paper)}
+body,.home .site-header,.hero{color:var(--ink)}
+.hero{background:var(--paper);isolation:isolate}
+/* Match the selected Cobalt & Amber preview while preserving the RAG asset. */
+.hero-art{filter:grayscale(1) contrast(1.7);mix-blend-mode:screen}
+.hero-shade,.project-first .hero-shade{background:linear-gradient(90deg,rgb(var(--hero-rgb)) 0%,rgba(var(--hero-rgb),.98) 26%,rgba(var(--hero-rgb),.75) 48%,rgba(var(--hero-rgb),.10) 77%)}
+.project-section{background:var(--surface)}
+.project-row:hover{background:var(--surface-hover)}
+.button.primary{background:var(--button-bg);border-color:var(--button-bg);color:var(--button-ink)}
+.button.primary:hover{background:var(--button-hover);border-color:var(--button-hover);color:var(--button-ink)}
+.featured-label,.featured-label>span,.hero-bottom,.identity-top .university,.art-caption,.art-caption strong,.featured-description{color:var(--muted)}
+.featured-project-button{color:var(--ink);border-bottom-color:var(--line)}
+.featured-project-button>span,.hero-role,.scroll-link span,.blender-stage-number,.hero-project-link strong span{color:var(--accent)}
+.hero-project-link{color:var(--ink);border-bottom-color:var(--line)}
+.hero-project-link>span{color:var(--muted)}
+.hero-project-link:hover{color:var(--ink);border-color:var(--accent)}
+.monogram{background:var(--surface);color:var(--muted)}
+.portrait-frame{border-color:var(--line)}
+.chapter-links a span,.flow-arrow{color:var(--muted)}
+.article .callout,.article .source-example{border-left-color:var(--accent)}
+.compare .after .label{color:var(--accent)}
+.project-image.vector{background:#121e2a;box-shadow:0 0 0 1px var(--line)}
+.project-image.ebm-options,.project-image.blender{border:2px solid var(--line);box-shadow:none}
+.visual-inspector{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.visual-inspector-figure{background:#101e2b}
+.visual-inspector-kicker,.visual-chapter-link span{color:var(--accent)}
+.visual-inspector-copy p[data-source-blocks]{color:var(--muted)}
+.visual-close,.visual-chapter-link{color:var(--ink);border-color:var(--line);background:var(--surface)}
+.visual-close:hover,.visual-chapter-link:hover{color:var(--ink);background:var(--surface-hover);border-color:var(--accent)}
+h1,h2,h3,h4,.about-copy h2,.identity-name{color:var(--heading)}
+.featured-label,.featured-label>span{color:var(--accent)}
+.main-nav .nav-resume{background:var(--button-bg);border-color:var(--button-bg);color:var(--button-ink)}
+.main-nav .nav-resume:hover{background:var(--button-hover);border-color:var(--button-hover)}
+.main-nav a:not(.nav-resume):hover,.main-nav a:not(.nav-resume)[aria-current=page]{color:var(--accent2)}
+.main-nav a::after{background:var(--accent2)}
+.main-nav .nav-home{border-color:var(--control-line)}
+.filter[aria-pressed=true]{background:var(--button-bg);border-color:var(--button-bg);color:var(--button-ink)}
+.filter[aria-pressed=true]:hover{background:var(--button-hover);border-color:var(--button-hover);color:var(--button-ink)}
+.project-meta .index,.skill-group h3,.chapter-card .chapter-num,.blender-stage-number{color:var(--accent2)}
+.project-row>.row-arrow,.contact-item .external-arrow{color:var(--accent)}
+.project-row:hover h3,.footer-links>a:hover,.contact-item a:hover{color:var(--accent2)}
+.button:not(.primary){border-color:var(--control-line)}
+.portrait-frame{border-color:var(--control-line)}
+::selection{background:var(--button-bg);color:var(--button-ink)}
+@media(max-width:520px){.main-nav .nav-resume{padding:9px 12px}}
+
+/* GPT project: matching navigation above the title and below the article. */
+.gpt-project .chapter-pagination{gap:16px;padding:0;border:0}
+.gpt-project .chapter-pagination-top{margin:24px 0 32px}
+.gpt-project .chapter-pagination a{flex:0 1 46%;min-width:0;padding:13px 18px;border:1px solid var(--line);border-radius:4px;background:var(--surface);transition:background .18s,border-color .18s}
+.gpt-project .chapter-pagination a:hover,.gpt-project .chapter-pagination a:focus-visible{background:var(--surface-hover);border-color:var(--accent)}
+.gpt-project .chapter-pagination small{color:var(--accent2)}
+.gpt-project .single-article .article>h2:first-child{margin-top:0}
+@media(max-width:520px){.gpt-project .chapter-pagination{gap:12px}.gpt-project .chapter-pagination a{padding:11px 12px;font-size:13px}}

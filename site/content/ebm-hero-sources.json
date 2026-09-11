@@ -1,0 +1,115 @@
+{
+  "selected_design": "Term 1 from user-supplied PDF: premarket x opening",
+  "asset": "dist/assets/ebm-paired-interaction-chart.svg",
+  "source_pdf": "C:\\Users\\fredd\\Downloads\\Latest_EBM_Learned_Functions_756_seed_20260901.pdf",
+  "source_pdf_sha256": "cc7fa9a8224eb12fd864c437243c930739e80ed00114da2c92c9fae613783fc8",
+  "source_pdf_page": 1,
+  "source_pdf_chart": "Left-hand chart, Term 1",
+  "source_model": "C:\\Users\\fredd\\OneDrive\\Desktop\\TRAIN AN EBM MODEL\\outputs\\pairwise_rv_rolling_premarket_training_filter\\models\\rolling756\\pairwise_rv_seed_20260901.pkl",
+  "source_model_sha256": "b1078569d9050db3917da46d1231aa1a79c9225d298e008bfdf5293b0475ba66",
+  "source_model_matches_pdf_build_audit": true,
+  "source_data": "C:\\Users\\fredd\\Documents\\Codex\\2026-08-10\\for-this\\outputs\\pairwise_rv_rolling_premarket_interaction\\rv_with_premarket_daily_model_data_2009_2026.csv",
+  "source_data_sha256": "0d24899f5ef40c51083a0bf0491c5b8f72e6e182deb374beb360200f5e2a4cf5",
+  "source_pdf_build_audit": "C:\\Users\\fredd\\Documents\\Codex\\2026-08-10\\for-this\\tmp\\pdfs\\latest_learned_functions\\chart_validation.json",
+  "frozen_source_data": "content/ebm-interaction-grid.csv",
+  "frozen_observations": "content/ebm-interaction-observations.json",
+  "model_root_seed": 20260901,
+  "model_fit_seed": 21260900,
+  "term_index_one_based": 1,
+  "model_intercept": 9.205710764488554,
+  "training": {
+    "candidate_window": 756,
+    "candidate_start": "2023-05-03",
+    "candidate_end": "2026-05-20",
+    "retained_days": 665,
+    "excluded_days": 91,
+    "filter_rule": "reject when current rv_1500_1514 > max(previous 9 modeling dates)",
+    "filter_lookback_days": 9,
+    "fit_scope": "Final saved fit; not historical out-of-sample fold."
+  },
+  "x": "09:00-09:29 annualised realised volatility, ordered native bins",
+  "y": "09:30-09:59 annualised realised volatility, ordered native bins",
+  "score": "Additive contribution to forecast annualised RV in percentage points",
+  "target_window": "15:15-16:00",
+  "annualisation": "Original 252 x 390 minute-return RV scale",
+  "iv_rv_correction": "No IV shown. The separate 2.312571 RV-to-IV comparison factor is not applied, consistent with the source PDF.",
+  "model_max_interaction_bins": 16,
+  "display_grid": [
+    14,
+    14
+  ],
+  "reserved_bins": "Missing and unknown bins omitted; all 14 ordinary bins remain.",
+  "values_modified": false,
+  "interpolation": "No interpolation of term scores. Observations are mapped piecewise linearly within their own numerical bins to equal-size cells.",
+  "display_domain": {
+    "x": [
+      0,
+      16.687288770116677
+    ],
+    "y": [
+      0,
+      29.53602609048843
+    ],
+    "rule": "Same 99th-percentile limits as the PDF."
+  },
+  "points": {
+    "count": 653,
+    "selection": "Exactly the retained training days shown in PDF Term 1. Points outside either 99th-percentile domain are omitted as in PDF.",
+    "meaning": "Observed training support, not forecast performance or confidence intervals."
+  },
+  "colour_limits": [
+    -1.5,
+    1.5
+  ],
+  "colour_clipping": false,
+  "score_range": [
+    -0.688914262792963,
+    1.026384178663221
+  ],
+  "presentation": "User explicitly restored equal-sized square buckets and their matching dot positions after discussing the coordinate transformation. Axes show ordered bins, not equal numerical ranges.",
+  "selection_reason": "Term 1 explicitly selected by the user.",
+  "rebuild": "python site/content/render_ebm_interaction.py",
+  "website_button": "First project row, with an aria-disabled whole-row control until the EBM project page is supplied.",
+  "asset_sha256": "4f8cb198aa1f1823b0d55ecae422b853081fb63032607e86484e0eb71ce79db3",
+  "colours": {
+    "background": "#0C2A4E",
+    "negative": "#307AB0",
+    "zero": "#D6E2EB",
+    "positive": "#F4B352"
+  },
+  "layout": {
+    "placement": "First item in the homepage project list, under All projects and Machine learning. The standalone hero section has been removed.",
+    "graphic_frame": "Same image column and 91:83 frame ratio as the other project thumbnails, with object-fit: contain to preserve the entire chart and legend.",
+    "caption_placement": "Beside the chart beneath the project title: Premarket x opening / Learned weights; ordered volatility buckets / 653 observed days.",
+    "heading": "MY PROJECTS, followed by Selected work.",
+    "projects_spacing": "Immediately after the header, with 24px top margin and padding (20px on mobile).",
+    "homepage_axis_titles": "Both time-window axis titles remain removed; Low/High directions and contribution legend retained. Standalone source figure unchanged.",
+    "homepage_chart_viewbox": "0 0 660 430",
+    "unchanged": "Term 1 scores, observations, square bucket geometry, colours, graph asset and project title."
+  },
+  "validation": {
+    "point_count": 653,
+    "cell_count": 196,
+    "all_cells_square": true,
+    "cell_size": 26,
+    "restored_bucket_geometry_and_point_positions": true,
+    "score_values_unchanged": true,
+    "no_colour_clipping": true
+  },
+  "colour_contrast_adjustment": {
+    "previous_limits": [
+      -2,
+      2
+    ],
+    "current_limits": [
+      -1.5,
+      1.5
+    ],
+    "normalised_colour_strength_multiplier": 1.3333333333333333,
+    "legend_updated": true,
+    "values_changed": false,
+    "values_clipped": false
+  },
+  "standalone_asset": "dist/assets/ebm-paired-interaction.svg",
+  "homepage_asset_sha256": "7b656a9f6471a9114ac6d3106de0138ba8a95c5c5faa1c576e497a210f7ef37e"
+}

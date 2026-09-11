@@ -1,0 +1,773 @@
+{
+  "schema_version": 1,
+  "document_key": "ebm-options",
+  "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+  "source_sha256": "0135c34dbf1ff50c790da6b6f76a41b21d831c309102389c0877e802e53c6269",
+  "page_count": 8,
+  "normalisation": "Only PDF line breaks and repeated spacing normalised; all native prose, headings and captions retained. A paragraph continuing from page 2 to page 3 is joined when rendered.",
+  "figures": "All nine embedded PNGs extracted unchanged. Their chart labels, data and colours are preserved.",
+  "pages": [
+    {
+      "page_number": 1,
+      "native_text_round_trip": true,
+      "native_text_block_count": 7,
+      "image_count": 1
+    },
+    {
+      "page_number": 2,
+      "native_text_round_trip": true,
+      "native_text_block_count": 8,
+      "image_count": 1
+    },
+    {
+      "page_number": 3,
+      "native_text_round_trip": true,
+      "native_text_block_count": 6,
+      "image_count": 1
+    },
+    {
+      "page_number": 4,
+      "native_text_round_trip": true,
+      "native_text_block_count": 2,
+      "image_count": 2
+    },
+    {
+      "page_number": 5,
+      "native_text_round_trip": true,
+      "native_text_block_count": 3,
+      "image_count": 1
+    },
+    {
+      "page_number": 6,
+      "native_text_round_trip": true,
+      "native_text_block_count": 3,
+      "image_count": 1
+    },
+    {
+      "page_number": 7,
+      "native_text_round_trip": true,
+      "native_text_block_count": 7,
+      "image_count": 1
+    },
+    {
+      "page_number": 8,
+      "native_text_round_trip": true,
+      "native_text_block_count": 4,
+      "image_count": 1
+    }
+  ],
+  "blocks": [
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 1,
+      "block_id": "ebm-options-p01-b01",
+      "text": "EBM Machine Learning: predicting options profitability",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        74.398,
+        488.799,
+        90.398
+      ],
+      "heading_level": 1
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 1,
+      "block_id": "ebm-options-p01-b02",
+      "text": "Overview",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        109.107,
+        129.8,
+        122.107
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 1,
+      "block_id": "ebm-options-p01-b03",
+      "text": "I attempted to train an Explainable Boosting Machine (EBM) to predict the profitability of options trades. This was my first EBM experiment, intended to provide an additional entry condition for a strategy based on the variance risk premium (VRP). Before I could use it in the strategy, I needed to establish whether the model could make useful predictions. I didn’t get a fit that was stable enough to rely on.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        135.998,
+        539.403,
+        205.183
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 1,
+      "block_id": "ebm-options-p01-b04",
+      "text": "The problem",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        223.029,
+        149.986,
+        236.029
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 1,
+      "block_id": "ebm-options-p01-b05",
+      "text": "The idea was to use information available before entering a trade to estimate a filter that would leave the remaining trades slightly more profitable on average. I was working towards an additional edge for a VRP strategy, but this model tried to predict trade profit directly. Realised and implied volatility were among its inputs; neither was the prediction target.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        249.921,
+        531.497,
+        304.559
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 1,
+      "block_id": "ebm-options-p01-b06",
+      "text": "The training examples were SPX 0DTE put debit spreads, generally entered at about 15:15 and held to expiry that day at 16:00. The model therefore had to account for the direction and size of the remaining price move, the entry cost and the spread’s payoff. A good estimate of volatility alone wouldn’t necessarily tell it whether the put spread would make money.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        318.106,
+        537.624,
+        372.744
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 1,
+      "block_id": "ebm-options-p01-b07",
+      "text": "The target was the profit from each recorded trade. The mean was about −$41, but individual outcomes ranged from −$7,770 to $12,450.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        647.26,
+        529.026,
+        670.484
+      ],
+      "caption_role": "figure_caption"
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 2,
+      "block_id": "ebm-options-p02-b01",
+      "text": "What was achieved?",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        73.949,
+        199.114,
+        86.949
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 2,
+      "block_id": "ebm-options-p02-b02",
+      "text": "I assembled 827 trade examples from 2022 to the middle of 2025, with 27 input variables. I built the data processing and training scripts and produced graphs of the functions the model had learned. This made it possible to inspect how individual inputs were affecting the prediction.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        100.84,
+        536.385,
+        140.932
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 2,
+      "block_id": "ebm-options-p02-b03",
+      "text": "827 examples in total. The final year only runs to the end of June.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        415.448,
+        361.507,
+        425.448
+      ],
+      "caption_role": "figure_caption"
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 2,
+      "block_id": "ebm-options-p02-b04",
+      "text": "I tried several training configurations, but the models were either too flexible or too restricted. Reducing the apparent overfit often left a model that didn’t learn enough to be useful. The experiment did not establish a reliable profit filter.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        438.822,
+        522.301,
+        478.914
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 2,
+      "block_id": "ebm-options-p02-b05",
+      "text": "Technical implementation",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        496.76,
+        230.633,
+        509.76
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 2,
+      "block_id": "ebm-options-p02-b06",
+      "text": "I used Excel, DuckDB and Python for different parts of the data preparation. Excel was useful for inspecting and formatting intermediate data. I used Python scripts to calculate features from the intraday data, then DuckDB queries to join the separate feature tables by date and export the training CSVs using SQL.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        523.652,
+        533.308,
+        578.29
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 2,
+      "block_id": "ebm-options-p02-b07",
+      "text": "The inputs covered price ranges, returns over different parts of the session, implied volatility at entry and changes in IV. I also calculated realised volatility and absolute movement from one-minute and five-minute prices, together with volume and VWAP measures and the trade’s maximum risk. This gave the model several descriptions of the same trading session.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        591.837,
+        530.035,
+        646.475
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 2,
+      "block_id": "ebm-options-p02-b08",
+      "text": "The first specification had 21 main effects and 9 paired interactions, giving 30 learned terms from the 27 variables. Six variables were only used in interactions. For example, I paired the slope of the IV regression line with its R², so that the model could consider the direction of the",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        660.022,
+        525.98,
+        700.114
+      ],
+      "continues_in_block": "ebm-options-p03-b01"
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 3,
+      "block_id": "ebm-options-p03-b01",
+      "text": "trend together with how closely the observations followed it. I did the same for price and volume trends.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        73.649,
+        536.365,
+        99.195
+      ],
+      "continuation_of_block": "ebm-options-p02-b08"
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 3,
+      "block_id": "ebm-options-p03-b02",
+      "text": "I used InterpretML’s ExplainableBoostingRegressor with its default RMSE objective. With the identity link, the prediction was an intercept plus the contributions from the individual terms. I could inspect these as one-dimensional functions and two-dimensional interaction plots. At this stage I wasn’t comparing regression loss functions or experimenting with log links.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        112.741,
+        532.103,
+        167.38
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 3,
+      "block_id": "ebm-options-p03-b03",
+      "text": "Why this did not work",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        185.226,
+        207.008,
+        198.226
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 3,
+      "block_id": "ebm-options-p03-b04",
+      "text": "There were too many flexible terms for the amount of training data. Hundreds of intraday prices still produced only one trade example for a day. Once those 827 examples were divided between different feature ranges and paired combinations, some regions had very little data behind them. Market conditions also persisted across days, so successive examples weren’t independent observations of entirely new conditions.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        212.117,
+        533.907,
+        281.302
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 3,
+      "block_id": "ebm-options-p03-b05",
+      "text": "The dots are actual training examples. Colour shows the contribution from pairing the IV trend with its R². Some parts of the fitted surface had very few observations behind them.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        575.318,
+        535.375,
+        598.542
+      ],
+      "caption_role": "figure_caption"
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 3,
+      "block_id": "ebm-options-p03-b06",
+      "text": "Many inputs were almost duplicates. In the original training data, the correlation between the one-minute absolute-movement measure and realised volatility over the 74-minute period before entry was about 0.994. Several other movement and volatility pairs were above 0.98. Adding these variables gave the model more ways to explain the same observations without adding much new information. It also made the contribution attributed to any one feature harder to trust.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        611.916,
+        535.177,
+        695.647
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 4,
+      "block_id": "ebm-options-p04-b01",
+      "text": "These are eight of the 27 inputs. The blocks of high correlation show how much overlap there was among the movement and volatility measures.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        385.618,
+        538.193,
+        408.842
+      ],
+      "caption_role": "figure_caption"
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 4,
+      "block_id": "ebm-options-p04-b02",
+      "text": "Each point is one trade day. I have put the two inputs on a common scale here; their correlation is unchanged.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        663.685,
+        503.001,
+        686.909
+      ],
+      "caption_role": "figure_caption"
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 5,
+      "block_id": "ebm-options-p05-b01",
+      "text": "My initial training settings used one outer bag and disabled early stopping. It printed errors calculated on the data passed to fit, so those figures couldn’t establish how the model would perform on future trades. I later tried more bagging, smoothing and regularisation, as well as different bin counts, but didn’t find a stable fit.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        73.649,
+        519.866,
+        128.288
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 5,
+      "block_id": "ebm-options-p05-b02",
+      "text": "One saved fit learned a large, jagged IV contribution. In a later, more regularised fit it was almost flat. These curves show the learned terms; they are not out-of-sample results.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        383.303,
+        517.062,
+        406.527
+      ],
+      "caption_role": "figure_caption"
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 5,
+      "block_id": "ebm-options-p05-b03",
+      "text": "The saved graph below shows the contribution from IV at entry and the distribution of training examples. There are large changes in the contribution over small changes in IV, including regions with few observations. EBM functions are binned, so steps alone don’t prove overfit, but this was the sort of behaviour that needed to hold up on new data before I could use it.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        419.901,
+        536.986,
+        474.54
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 6,
+      "block_id": "ebm-options-p06-b01",
+      "text": "IV at entry from the saved model diagnostics. The lower panel shows where the training observations were concentrated.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        350.728,
+        518.727,
+        373.951
+      ],
+      "caption_role": "figure_caption"
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 6,
+      "block_id": "ebm-options-p06-b02",
+      "text": "The target was very difficult for the model to learn. Trade profit included the cost of buying options whose market prices already reflected expectations about future movement. The model needed to find something useful beyond that pricing. I underestimated how difficult this would be with a small dataset and largely overlapping market features",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        387.325,
+        539.263,
+        441.964
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 6,
+      "block_id": "ebm-options-p06-b03",
+      "text": "Profit also mixed the quality of the entry with the amount at risk and the eventual payoff. Large dollar errors could dominate squared-error training even when they didn’t identify the most useful entry rule. Conversely, a lower average prediction error wouldn’t necessarily improve the trades selected after costs.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        455.51,
+        533.686,
+        510.149
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 7,
+      "block_id": "ebm-options-p07-b01",
+      "text": "The target combined the entry decision with the size and payoff of the spread. These are recorded trade outcomes, before applying an EBM filter.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        334.618,
+        531.535,
+        357.842
+      ],
+      "caption_role": "figure_caption"
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 7,
+      "block_id": "ebm-options-p07-b02",
+      "text": "What I would do differently",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        375.516,
+        238.052,
+        388.516
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 7,
+      "block_id": "ebm-options-p07-b03",
+      "text": "I would start with a much smaller set of inputs and a simple baseline, testing additions on a later validation period before committing to the final specification.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        402.407,
+        537.582,
+        427.953
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 7,
+      "block_id": "ebm-options-p07-b04",
+      "text": "My later EBM work made me pay more attention to walk-forward testing, comparisons across random seeds and the number of observations supporting each learned function. I would choose the settings using the in sample period, then a walk forward on subsequent periods. I would also compare the strategy with and without the filter, including models for trading costs I’ve developed for other projects.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        441.5,
+        524.074,
+        510.685
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 7,
+      "block_id": "ebm-options-p07-b05",
+      "text": "The later volatility models gave me a more specific prediction problem. Estimating the remaining realised variance and comparing it with the variance implied by options was closer to the VRP idea I was trying to use. It still required a separate test of whether the resulting entry condition improved the strategy.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        524.231,
+        538.77,
+        578.87
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 7,
+      "block_id": "ebm-options-p07-b06",
+      "text": "Choice of loss function",
+      "kind": "heading",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        596.715,
+        215.683,
+        609.715
+      ],
+      "heading_level": 2
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 7,
+      "block_id": "ebm-options-p07-b07",
+      "text": "For the original profit target, I would test pseudo-Huber loss alongside RMSE. It behaves approximately like squared error for small residuals and becomes closer to absolute error for large ones, reducing the influence of a few large errors.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        623.607,
+        521.051,
+        663.7
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 8,
+      "block_id": "ebm-options-p08-b01",
+      "text": "δ sets the transition from squared-error behaviour to a gentler penalty for large errors. I hadn’t tested pseudo-Huber at this stage.",
+      "kind": "caption",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        334.618,
+        515.945,
+        357.842
+      ],
+      "caption_role": "figure_caption"
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 8,
+      "block_id": "ebm-options-p08-b02",
+      "text": "I wouldn’t assume it would be better. Squared-error loss is appropriate when the quantity I want is expected profit. Pseudo-Huber doesn’t generally estimate mean profit, and large gains and losses can be economically important. I would keep RMSE as the baseline and compare the forecasts and the trades selected on later data, including the largest losses.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        371.216,
+        534.538,
+        425.854
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 8,
+      "block_id": "ebm-options-p08-b03",
+      "text": "Gamma deviance and a log link, which I used in later volatility work, wouldn’t directly suit this original target. Profit can be negative, Gamma deviance requires positive targets, and a log link forces the predicted value to be positive. If I changed the task to predicting the probability of a profitable trade, log loss would be appropriate, but the win probability would still need to be considered alongside the size of wins and losses.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        439.401,
+        533.928,
+        508.586
+      ]
+    },
+    {
+      "document_key": "ebm-options",
+      "original_path": "C:/Users/fredd/Downloads/EBM Machine Learning_ predicting options profitability.pdf",
+      "page_number": 8,
+      "block_id": "ebm-options-p08-b04",
+      "text": "Changing the loss could have made training less sensitive to large residuals. It wouldn’t have supplied the missing data or shown that the original inputs contained a repeatable trading edge.",
+      "kind": "paragraph",
+      "extraction": "native_pdf_text",
+      "source_bbox": [
+        72.0,
+        522.132,
+        536.427,
+        547.678
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "page_number": 1,
+      "source_image": "X7.png",
+      "filename": "ebm-options-trade-profits.png",
+      "width": 2160,
+      "height": 1170,
+      "sha256": "125f6ce567ad51b4cc7455f3dc3c229d2858e0a102af4d29eaf167aae7385f40"
+    },
+    {
+      "page_number": 2,
+      "source_image": "X11.png",
+      "filename": "ebm-options-training-examples.png",
+      "width": 2160,
+      "height": 1170,
+      "sha256": "67bb6b0199bb00d579f3f6fbea738611eb598733240b144a5975b583d5fc1d24"
+    },
+    {
+      "page_number": 3,
+      "source_image": "X14.png",
+      "filename": "ebm-options-iv-trend.png",
+      "width": 2160,
+      "height": 1260,
+      "sha256": "74bd5e63499f9f3d35d7ef7d37a4794a2f697554d3de6a3fd86df795ade5f4d4"
+    },
+    {
+      "page_number": 4,
+      "source_image": "X17.png",
+      "filename": "ebm-options-correlations.png",
+      "width": 2160,
+      "height": 1404,
+      "sha256": "c292078ba2c18b6e326d961dffab48a1c6740ae7a8a3f23a05a04165a6c8d56c"
+    },
+    {
+      "page_number": 4,
+      "source_image": "X18.png",
+      "filename": "ebm-options-feature-overlap.png",
+      "width": 2160,
+      "height": 1080,
+      "sha256": "8edd96d89a4b2ba80ec90e500451942ec74d71222d95abb4310243a0b7cd2ba6"
+    },
+    {
+      "page_number": 5,
+      "source_image": "X21.png",
+      "filename": "ebm-options-iv-comparison.png",
+      "width": 2160,
+      "height": 1080,
+      "sha256": "4762191c5485070249adba4755ce44fdb9d098042bb97ddfa27f223e10e266e7"
+    },
+    {
+      "page_number": 6,
+      "source_image": "X24.png",
+      "filename": "ebm-options-iv-diagnostics.png",
+      "width": 2084,
+      "height": 1182,
+      "sha256": "37abb75b0a417702a5aea58260f5318fabe4f98d461f7aecb23dc454790e925d"
+    },
+    {
+      "page_number": 7,
+      "source_image": "X27.png",
+      "filename": "ebm-options-profit-risk.png",
+      "width": 2160,
+      "height": 1170,
+      "sha256": "44007e1fcbb71334709eb3ae88ca8476857d0ecea6e92c695d9b7cd3236e7674"
+    },
+    {
+      "page_number": 8,
+      "source_image": "X31.png",
+      "filename": "ebm-options-loss-functions.png",
+      "width": 2160,
+      "height": 1170,
+      "sha256": "61fbe613f3be6ed5bce3575eb67e0edcf70ac7bd1467fab690b6e2c690b74668"
+    }
+  ],
+  "authoring_policy": "The user explicitly requires the PDF wording unchanged. Creative changes are presentation only; do not add or rewrite article prose.",
+  "validation": {
+    "source_text_blocks": 40,
+    "all_source_blocks_present_in_order": true,
+    "rendered_source_text_exact_after_whitespace_normalisation": true,
+    "original_figures": 9,
+    "figures_unchanged": true,
+    "original_pdf_unchanged": true
+  },
+  "thumbnail": {
+    "original_path": "C:/Users/fredd/Downloads/EBM options profitability - thumbnail.png",
+    "filename": "ebm-options-thumbnail.png",
+    "width": 2000,
+    "height": 2000,
+    "sha256": "1c7832e5aedbe81d382102e5bc6343abb86a1904d5f7542660944465cae22618",
+    "selection": "Exact thumbnail supplied and explicitly selected by the user.",
+    "presentation": "Contained in the existing project image frame without cropping or distortion.",
+    "article_unchanged": true
+  }
+}

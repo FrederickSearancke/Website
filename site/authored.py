@@ -9,6 +9,9 @@ import json
 import re
 
 DATA = json.loads((Path(__file__).parent / 'content/source-blocks.json').read_text(encoding='utf-8'))
+# New project PDFs keep their source text and extraction audit in separate bundles.
+for supplemental in sorted((Path(__file__).parent / 'content/supplemental').glob('*.json')):
+    DATA['blocks'].extend(json.loads(supplemental.read_text(encoding='utf-8'))['blocks'])
 BLOCKS = {b['block_id']: b for b in DATA['blocks']}
 APPROVED_EDITS = json.loads((Path(__file__).parent / 'content/approved-edits.json').read_text(encoding='utf-8'))
 

@@ -79,10 +79,11 @@ def main():
         for n in nodes:
             if n.tag=='footer' and '2026' in n.text():errors.append(f'{file}: footer year remains')
             if n.tag in {'a','div'} and norm(n.text())=='FS':errors.append(f'{file}: initials placeholder remains')
-        if file==ROOT/'dist/index.html':
+        if file==ROOT/'dist/skills/index.html':
             groups=[n for n in nodes if 'skill-group' in n.attrs.get('class','').split()]
             if len(groups)!=4 or any(sum(c.tag=='li' for c in g.nodes())!=4 for g in groups):errors.append('Skills must have 4 columns with 4 entries each')
             if any(term in ' '.join(g.text() for g in groups).lower() for term in ['blender automation','graph traversal','stacks and backtracking','vector similarity']):errors.append('An excluded skill remains')
+        if file==ROOT/'dist/index.html':
             if '01 — 03' in parser.root.text() or 'From the work' in parser.root.text():errors.append('Removed homepage labels remain')
     result={'passed':not errors,'source_pdfs_checked':pdf_checks,'rendered_source_elements_verified':verified,'verbatim_source_elements':verified-approved_count,'explicitly_approved_copy_edits':approved_count,'unique_source_blocks_used':len(unique),'pages':pages,'allowed_editorial_changes':['Display titles and navigation labels','Short figure labels and alt text; source captions preserved where available','Paragraph placement, before/after comparison layout and whitespace','Stat labels; coursework scores supplied directly by Frederick on 10 September 2026','Skills labels based on the user request, Desktop source and LinkedIn','Explicit copy edits recorded in content/approved-edits.json'],'errors':errors}
     (ROOT/'content/wording-verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')

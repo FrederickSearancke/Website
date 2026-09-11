@@ -1,0 +1,37 @@
+{
+  "fencing_result": {
+    "event": "Saxon Novices 2026 / 16th Saxon Novice Foil",
+    "date": "2026-04-19",
+    "category": "Men's Senior Foil",
+    "source_document": "Novices2026-Foil-Men-Senior.pdf",
+    "source_email_subject": "Saxon Novices 2026 - Results",
+    "source_email_date": "2026-04-19",
+    "name_in_results": "Freddie Searancke",
+    "placement": 1,
+    "competitors_present": 22,
+    "classification_page": 23,
+    "wins": 12,
+    "losses": 0,
+    "record_method": "Four victories in each of two poule rounds, then four direct elimination victories. The table-of-32 bye is not counted as a win.",
+    "bout_evidence_pages": [7, 13, 17, 19]
+  },
+  "photos": [
+    {
+      "asset": "fencing-action.jpg",
+      "original_filename": "aa39cdc2-3dac-4e79-be4a-fc973fb923f9.JPEG",
+      "source": "User's iCloud Photos, fencing search",
+      "icloud_date": "2026-04-21 09:35",
+      "identity": "User confirmed he is the fencer on the right.",
+      "method": "Unmodified original JPEG, displayed at its full aspect ratio."
+    },
+    {
+      "asset": "fencing-medal-presentation.jpg",
+      "original_filename": "5c68faea-8f15-49f5-8466-9dc21e8dba33.JPEG",
+      "source": "User's iCloud Photos, fencing search",
+      "icloud_date": "2026-04-19 14:39",
+      "identity": "User confirmed he is second from the left, with his brother on the left.",
+      "method": "Unmodified original JPEG, displayed at its full aspect ratio."
+    }
+  ],
+  "skiing_and_python": "BASI Level 1 supported by the user's CV and explicit confirmation. The user supplied the skiing volunteering ages (4–8), 35-hour total, and approximately five years teaching Year 7–8 Python beginners."
+}
