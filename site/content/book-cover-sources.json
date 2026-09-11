@@ -55,7 +55,8 @@
       "authors": "Euan Sinclair and Andrew Mack",
       "source_page": "https://blog.moontower.ai/the-book-for-retail-option-traders/",
       "verification": "Cover from launch post by Kris Abdelmessih, who wrote the foreword to this book. Visually checked both authors and title.",
-      "asset": "book-retail-options-trading.png"
+      "asset": "book-retail-options-trading.png",
+      "display_crop": "User requested removal of the white top line on 11 September 2026. CSS clips the 238x357 source to x=2..237, y=4..357, removing four white rows at the top and the narrow white side padding. Cover height remains 64px on desktop and 60px on mobile; source image unchanged."
     },
     {
       "slug": "black-swan",

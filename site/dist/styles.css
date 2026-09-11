@@ -91,6 +91,9 @@ main{flex:1}
 .book-cover-earthsea{width:42.76px;overflow:hidden}
 /* Show only the cover artwork: x=29..470, y=29..689 in the 500x750 source. */
 .book-cover-earthsea img{position:absolute;left:-6.575964%;top:-4.393939%;width:113.378685%;height:auto;max-width:none;display:block}
+.book-cover-retail-options{width:42.6062px;overflow:hidden}
+/* Exclude the white source padding: x=2..237, y=4..357 in the 238x357 image. */
+.book-cover-retail-options img{position:absolute;left:-0.851064%;top:-1.133144%;width:101.276596%;height:auto;max-width:none;display:block}
 .book-item-with-project .book-cover{height:96px}
 .book-item:last-child{border-bottom:1px solid var(--line)}
 .book-item h3{font-size:22px;line-height:1.4;letter-spacing:-.02em}
@@ -107,6 +110,7 @@ main{flex:1}
 @media(prefers-reduced-motion:reduce){.book-project-button,.book-project-button svg{transition:none}.book-project-button:hover svg,.book-project-button:focus-visible svg{transform:none}}
 @media(max-width:760px){.reading-section{padding:36px 0 68px}.book-item{grid-template-columns:1fr;gap:8px;padding:22px 0 22px 64px}.book-item h3{font-size:21px}.book-item .book-note{margin-top:4px}.book-cover{left:25px;height:60px}.book-item-with-project .book-cover{height:72px}}
 @media(max-width:760px){.book-cover-earthsea{width:40.09px}}
+@media(max-width:760px){.book-cover-retail-options{width:39.9433px}}
 .skills-page .skill-groups{margin-top:0}
 .contact-item small{font-size:14px}
 
