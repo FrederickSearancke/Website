@@ -225,7 +225,7 @@ write('/projects/maze-solver/',page('Java maze solver with route memory',paragra
 
 skills_hero='<div class="project-hero skills-hero"><h1>Skills in practice.</h1></div>'
 skills=f'''<main id="main"><div class="wrap">{skills_hero}<section class="skills-page" aria-label="Technical skills"><div class="skill-groups">
-<div class="skill-group"><h3>Machine learning</h3><ul class="skill-list"><li>Volatility modeling with ML</li><li>Explainable Boosting Machines</li><li>LLM fine-tuning &amp; RAG</li></ul></div>
+<div class="skill-group"><h3>Machine learning</h3><ul class="skill-list"><li>Volatility modelling with ML</li><li>Explainable Boosting Machines</li><li>LLM fine-tuning &amp; RAG</li></ul></div>
 <div class="skill-group"><h3>Quantitative research</h3><ul class="skill-list"><li>Walk-forward backtesting</li><li>Hypothesis testing</li><li>Parameter sweeps &amp; overfitting</li><li>Slippage modelling</li></ul></div>
 <div class="skill-group"><h3>Software &amp; data</h3><ul class="skill-list"><li>Python</li><li>Java</li><li>SQL</li></ul></div>
 <div class="skill-group"><h3>Building systems</h3><ul class="skill-list"><li>End-to-end project delivery</li><li>Modular system architecture</li><li>TCP APIs · IBKR TWS</li><li>REST API integration</li></ul></div>
