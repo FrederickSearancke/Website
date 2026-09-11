@@ -205,6 +205,21 @@
       "image_integrity_verified": true,
       "asset": "book-a-world-without-work.jpg",
       "retrieved": "2026-09-11"
+    },
+    {
+      "slug": "mistborn",
+      "title": "Mistborn: The Final Empire",
+      "author": "Brandon Sanderson",
+      "source_page": "https://us.macmillan.com/books/9781250868282/mistborn/",
+      "image_url": "https://mpd-biblio-covers.imgix.net/9781250868282.jpg",
+      "width": 1840,
+      "height": 2774,
+      "format": "JPEG",
+      "bytes": 809000,
+      "image_integrity_verified": true,
+      "asset": "book-mistborn.jpg",
+      "retrieved": "2026-09-11",
+      "display_usage": "First book cover only, representing the user-requested group of eight Mistborn books."
     }
   ]
 }
