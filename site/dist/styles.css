@@ -122,6 +122,9 @@ main{flex:1}
 .skills-page .skill-groups{grid-template-columns:minmax(0,1fr);gap:20px;margin-top:0}
 .skills-page .skill-group{min-width:0;padding:26px 28px;background:var(--surface);border:1px solid var(--line);border-radius:4px}
 .skills-page .skill-group h3{margin-bottom:20px;font-size:20px}
+.skills-page .skill-group-heading{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.skills-page .skill-group-heading h3{margin-bottom:0}
+.skills-page .skill-group-heading .book-project-button{flex-shrink:0;margin-left:0}
 .skills-page .skill-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10.5px 32px}
 .skills-page .skill-group .skill-list li{min-width:0;margin:0}
 .skills-page .skill-list li.skill-highlight{position:relative;color:var(--ink);font-weight:550}

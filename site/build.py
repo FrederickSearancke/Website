@@ -227,18 +227,30 @@ maze=document('maze',skip={'maze-p04-b01'},after={
 write('/projects/maze-solver/',page('Java maze solver with route memory',paragraph_text('maze-p01-b02'),f'<main id="main"><div class="wrap"><div class="breadcrumbs"><a href="/#projects">← All projects</a></div>{maze_hero}{summary([("Coursework 1","85%"),("Coursework 2","87%"),("Highest section mark","97%")])}<div class="single-article"><article class="article">{maze}</article></div></div></main>',current='projects'))
 
 
+# The user requested a working project route with a completely blank visible page.
+TRADING_BOTS_ROUTE = '/projects/trading-bots/'
+write(TRADING_BOTS_ROUTE, f'<!doctype html><html lang="en" style="background:{THEME_COLOR};color-scheme:dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Trading Bots — Frederick Searancke</title><meta name="theme-color" content="{THEME_COLOR}"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/styles.css?v={STYLES_CSS_VERSION}"><link rel="stylesheet" href="/theme.css?v={THEME_CSS_VERSION}"></head><body></body></html>')
+
+def trading_bots_button(element_id):
+    return f'<a id="{element_id}" class="book-project-button" href="{TRADING_BOTS_ROUTE}" aria-label="View trading bots project" title="View trading bots project"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>'
+
 skills_hero='<div class="project-hero skills-hero"><h1>Skills in practice.</h1><a class="button reading-jump" href="#reading-title">My favourite books <span aria-hidden="true">↓</span></a></div>'
 skills_data=json.loads((ROOT / 'content/skills.json').read_text(encoding='utf-8'))
 highlighted_skills=set(skills_data.get('highlighted_skills', []))
-skill_groups=''.join('<div class="skill-group"><h3>'+escape(group['heading'])+'</h3><ul class="skill-list">'+''.join('<li'+(' class="skill-highlight"' if skill in highlighted_skills else '')+'>'+escape(skill)+'</li>' for skill in group['skills'])+'</ul></div>' for group in skills_data['groups'])
+def skill_group_html(group):
+    heading='<h3>'+escape(group['heading'])+'</h3>'
+    if group['heading'] == 'Trading Bots':
+        heading='<div class="skill-group-heading">'+heading+trading_bots_button('trading-bots-skills-cta')+'</div>'
+    items=''.join('<li'+(' class="skill-highlight"' if skill in highlighted_skills else '')+'>'+escape(skill)+'</li>' for skill in group['skills'])
+    return '<div class="skill-group">'+heading+'<ul class="skill-list">'+items+'</ul></div>'
+skill_groups=''.join(skill_group_html(group) for group in skills_data['groups'])
 skills=f'''<main id="main"><div class="wrap">{skills_hero}<section class="skills-page" aria-label="Technical skills"><div class="skill-groups">
 {skill_groups}
 </div></section>
 <section class="reading-section" aria-labelledby="reading-title"><h2 id="reading-title">My favourite books</h2>
 <ul class="book-list">
 <li class="book-item book-item-with-project"><img class="book-cover" src="/assets/book-professional-automated-trading.jpg" alt="" width="300" height="450" loading="lazy" decoding="async"><h3>Professional Automated Trading: Theory and Practice</h3><p class="book-author">Eugene A. Durenard</p>
-<!-- TODO(stock-market-trading-bots-project): When Frederick supplies the stock-market trading-bot project to add, connect this book's arrow CTA to that project's final route. Replace the disabled button #trading-bots-project-cta with an anchor using the same class and SVG, set its href to the new project, retain it inside .book-project-tail, update aria-label to "Read about my stock-market trading bots", and remove type, disabled, aria-describedby, title and the #trading-bots-project-status coming-soon label. Keep this placeholder unlinked until that project exists. -->
-<p class="book-note">I used this book to build a set of stock-market trading bots, which I run with <span class="book-project-tail">my own money. <button id="trading-bots-project-cta" class="book-project-button" type="button" disabled aria-label="Trading-bot project — coming soon" aria-describedby="trading-bots-project-status" title="Project coming soon"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></span><span id="trading-bots-project-status" class="visually-hidden">Project coming soon</span></p></li>
+<p class="book-note">I used this book to build a set of stock-market trading bots, which I run with <span class="book-project-tail">my own money. {trading_bots_button('trading-bots-project-cta')}</span></p></li>
 <li class="book-item"><img class="book-cover" src="/assets/book-positional-option-trading.jpg" alt="" width="300" height="445" loading="lazy" decoding="async"><h3>Positional Option Trading: An Advanced Guide</h3><p class="book-author">Euan Sinclair</p></li>
 <li class="book-item"><img class="book-cover" src="/assets/book-volatility-trading.jpg" alt="" width="300" height="453" loading="lazy" decoding="async"><h3>Volatility Trading</h3><p class="book-author">Euan Sinclair</p></li>
 <li class="book-item"><span class="book-cover book-cover-retail-options" aria-hidden="true"><img src="/assets/book-retail-options-trading.png" alt="" width="238" height="357" loading="lazy" decoding="async"></span><h3>Retail Options Trading</h3><p class="book-author">Euan Sinclair and Andrew Mack</p></li>
