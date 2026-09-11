@@ -227,7 +227,7 @@ maze=document('maze',skip={'maze-p04-b01'},after={
 write('/projects/maze-solver/',page('Java maze solver with route memory',paragraph_text('maze-p01-b02'),f'<main id="main"><div class="wrap"><div class="breadcrumbs"><a href="/#projects">← All projects</a></div>{maze_hero}{summary([("Coursework 1","85%"),("Coursework 2","87%"),("Highest section mark","97%")])}<div class="single-article"><article class="article">{maze}</article></div></div></main>',current='projects'))
 
 
-skills_hero='<div class="project-hero skills-hero"><h1>Skills in practice.</h1></div>'
+skills_hero='<div class="project-hero skills-hero"><h1>Skills in practice.</h1><a class="button reading-jump" href="#reading-title">My favourite books <span aria-hidden="true">↓</span></a></div>'
 skills_data=json.loads((ROOT / 'content/skills.json').read_text(encoding='utf-8'))
 highlighted_skills=set(skills_data.get('highlighted_skills', []))
 skill_groups=''.join('<div class="skill-group"><h3>'+escape(group['heading'])+'</h3><ul class="skill-list">'+''.join('<li'+(' class="skill-highlight"' if skill in highlighted_skills else '')+'>'+escape(skill)+'</li>' for skill in group['skills'])+'</ul></div>' for group in skills_data['groups'])

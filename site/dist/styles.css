@@ -82,7 +82,10 @@ main{flex:1}
 .skills-page{padding-bottom:56px}
 .chapter-pagination a.chapter-previous{margin-left:0;text-align:left}
 .project-hero.skills-hero h1{font-size:36px;line-height:1.2}
-.project-hero.skills-hero{padding-top:42px;padding-bottom:28px}
+.project-hero.skills-hero{display:flex;align-items:center;justify-content:space-between;gap:18px 24px;flex-wrap:wrap;padding-top:42px;padding-bottom:28px}
+.skills-hero .reading-jump{flex-shrink:0;padding:10px 16px;gap:14px;font-size:14px;border-color:var(--line)}
+.skills-hero .reading-jump span{font-size:20px;line-height:1;color:var(--accent)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .skills-page .skill-list li{margin-bottom:10.5px}
 @media(max-width:760px){.project-hero.skills-hero{padding-top:28px;padding-bottom:20px}}
 @media(max-width:520px){.skills-page .skill-list li{margin-bottom:7px}}
