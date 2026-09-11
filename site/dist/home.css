@@ -11,6 +11,13 @@
   object-fit:contain;object-position:center;transform:none;transition:none;
 }
 .home .project-image.ebm,.home .project-image.ebm-options{background:#101e2b;}
+/* Preserve the title while cropping out the PNG's footer. Uniformly enlarge
+   and lower its original graph without redrawing or distorting the curves. */
+.home .ebm-thumbnail-layout{position:absolute;top:0;left:50%;height:100%;aspect-ratio:1;transform:translateX(-50%);}
+.home .project-image.ebm-options .ebm-options-labels{clip-path:inset(0 0 70%);}
+.home .project-image.ebm-options .ebm-options-plot{
+  clip-path:inset(32.5% 6% 27%);transform:translateY(10%) scale(1.12);transform-origin:center;
+}
 /* Crop the source image's light top/left rim within the thumbnail frame.
    Overscan avoids a transparent seam and keeps the frame completely filled. */
 .home .project-image.maze{background:#636363;}

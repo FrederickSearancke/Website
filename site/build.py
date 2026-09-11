@@ -102,7 +102,7 @@ def gpt_page(title,desc,article,active='overview',label='Machine learning · App
     return page(title,desc,f'<main id="main" class="gpt-project"><div class="wrap">{breadcrumb}{gpt_pagination(active,"top")}{hero}<div class="single-article"><article class="article">{article}</article>{gpt_pagination(active)}</div></div></main>',current='projects')
 
 projects = [
- {'slug':'ebm-options-profitability','category':'machine-learning','label':'Machine learning','meta':'Explainable Boosting Machines','image':'ebm-options-thumbnail.png','imageclass':'ebm-options','alt':'EBM: Predicting options profit. IV response in two saved fits, with 827 trades and 27 inputs.','width':2000,'height':2000,'title':author('ebm-options-p01-b01','span'),'desc':author('ebm-options-p01-b03','span',excerpt='I attempted to train an Explainable Boosting Machine (EBM) to predict the profitability of options trades.')+' '+author('ebm-options-p01-b03','span',excerpt='I didn’t get a fit that was stable enough to rely on.')},
+ {'slug':'ebm-options-profitability','category':'machine-learning','label':'Machine learning','meta':'Explainable Boosting Machines','image':'ebm-options-thumbnail.png','imageclass':'ebm-options','alt':'EBM: Predicting options profit, with two saved IV-response curves.','width':2000,'height':2000,'title':author('ebm-options-p01-b01','span'),'desc':author('ebm-options-p01-b03','span',excerpt='I attempted to train an Explainable Boosting Machine (EBM) to predict the profitability of options trades.')+' '+author('ebm-options-p01-b03','span',excerpt='I didn’t get a fit that was stable enough to rely on.')},
  {'slug':'gpt-finetuning','category':'machine-learning','label':'Machine learning','meta':'','image':'vectors.png','imageclass':'vector','alt':'RAG visualised: projection of product and policy embeddings','width':2048,'height':1536,'title':'Can GPT-4o Learn to Handle Customer Support?','desc':author('gpt-integration-p01-b03','span',excerpt='I built a Python application that combined the fine-tuned model with retrieval of product and policy information.')},
  {'slug':'blender-pipeline','category':'automation','label':'Automation','meta':'Python + Blender','image':'artwork-to-relief.png','imageclass':'blender','alt':'Full artwork-to-relief comparison: bee artwork, heightmap and generated clay roller','width':1800,'height':850,'title':'From artwork to<br>3D-printable rollers','desc':approved('blender-card-intro')},
  {'slug':'maze-solver','category':'algorithms','label':'Algorithms','meta':'Java','image':'maze-first.png','imageclass':'maze','alt':'Maze from the route-memory controller project','width':910,'height':830,'title':'A maze solver<br>that remembers its route','desc':author('maze-p01-b02','span',excerpt='The final controller could remember a successful route and use it to reach the target more directly on subsequent runs.')},
@@ -110,6 +110,11 @@ projects = [
 ]
 
 def project_thumbnail(p, *, first=False):
+    if p['imageclass'] == 'ebm-options':
+        # Reframe the supplied PNG in two clipped layers; retain the actual plotted lines.
+        loading = 'fetchpriority="high"' if first else 'loading="lazy" decoding="async"'
+        layers = ''.join(f'<img class="ebm-options-{layer}" src="/assets/{p["image"]}" alt="" width="{p["width"]}" height="{p["height"]}" {loading}>' for layer in ['labels','plot'])
+        return f'<div class="project-image ebm-options" role="img" aria-label="{escape(p["alt"])}"><div class="ebm-thumbnail-layout" aria-hidden="true">{layers}</div></div>'
     if p['imageclass'] == 'blender':
         stages = [
             ('01', 'Source artwork', 'blender-source-artwork.jpg', 1024, 1024, 'artwork'),
