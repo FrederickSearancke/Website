@@ -118,6 +118,8 @@ def render_svg():
     chart = ET.fromstring(full_svg)
     chart.set('viewBox', '0 0 660 430')
     chart.set('height', '430')
+    # Match the EBM options thumbnail and its surrounding frame in home.css.
+    chart.find('{http://www.w3.org/2000/svg}rect').set('fill', '#101e2b')
     homepage_omitted_labels = {'09:00–09:29 volatility', '09:30–09:59 volatility', 'Forecast contribution (pp)'}
     for element in list(chart):
         if element.tag.endswith('}text') and (

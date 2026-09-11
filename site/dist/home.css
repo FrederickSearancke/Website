@@ -10,7 +10,7 @@
   position:absolute;inset:0;width:100%;height:100%;
   object-fit:contain;object-position:center;transform:none;transition:none;
 }
-.home .project-image.ebm-options{background:#101e2b;}
+.home .project-image.ebm,.home .project-image.ebm-options{background:#101e2b;}
 /* Crop the source image's light top/left rim within the thumbnail frame.
    Overscan avoids a transparent seam and keeps the frame completely filled. */
 .home .project-image.maze{background:#636363;}

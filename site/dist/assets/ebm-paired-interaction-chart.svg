@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 430" width="660" height="430" role="img" aria-labelledby="title desc">
 <title id="title">Term 1: premarket and opening volatility</title>
 <desc id="desc">Term 1 from page 1 of Latest EBM Learned Functions, 756-observation window, seed 20260901. Inputs: 09:00–09:29 and 09:30–09:59 volatility. Each of 14 by 14 equal square cells is one native bucket pair. Axes show ordered buckets, not equal numerical ranges; the 653 observed training-day points follow the same within-bin mapping. Blue lowers the forecast and amber raises it. The colour scale is minus 1.5 to plus 1.5 percentage points to make the pattern clearer, without clipping or altering any term score.</desc>
-<rect x="0" y="0" width="660" height="526" fill="#0C2A4E" />
+<rect x="0" y="0" width="660" height="526" fill="#101e2b" />
 <rect x="128" y="366" width="26" height="26" fill="#c6d8e5" data-bin-x="0" data-bin-y="0" data-score="-0.1488157549806338" />
 <rect x="128" y="340" width="26" height="26" fill="#c4d7e5" data-bin-x="0" data-bin-y="1" data-score="-0.16037302242537427" />
 <rect x="128" y="314" width="26" height="26" fill="#bfd4e3" data-bin-x="0" data-bin-y="2" data-score="-0.2077807601323399" />
