@@ -265,6 +265,8 @@ about=f'''<main id="main"><div class="wrap">{about_hero}<div class="about-copy">
 <p>I volunteered for 35 hours helping children aged 4–8 learn to ski for the first time. This meant introducing them to the basics and helping them become comfortable on skis.</p>
 <h2 style="margin-top:45px">Introducing Python.</h2>
 <p>I volunteered at my school's computer science club, teaching Year 7 and Year 8 pupils to code in Python for over 5 years. I really enjoyed the opportunity to share my passion for programming, helping young students see how exciting coding can be.</p>
+<h2 style="margin-top:45px">Duke of Edinburgh’s Gold Award.</h2>
+<p>I also completed my Gold Duke of Edinburgh’s Award.</p>
 <div style="margin-top:35px"><a class="button" href="/contact/">Get in touch <span aria-hidden="true">↗</span></a></div></div></div></main>'''
 write('/about/',page('About me','Frederick Searancke: Saxon Novices 2026 foil winner, BASI Level 1 ski instructor, and volunteer teaching young skiers and Python beginners.',about,current='about'))
 
