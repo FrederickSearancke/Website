@@ -23,7 +23,7 @@ body,.home .site-header,.hero{color:var(--ink)}
 .article .callout,.article .source-example{border-left-color:var(--accent)}
 .compare .after .label{color:var(--accent)}
 .project-image.vector{background:#121e2a;box-shadow:0 0 0 1px var(--line)}
-.project-image.ebm-options,.project-image.blender{border:2px solid var(--line);box-shadow:none}
+.project-image.ebm,.project-image.ebm-options,.project-image.blender{border:2px solid var(--line);box-shadow:none}
 .visual-inspector{background:var(--surface);color:var(--ink);border-color:var(--line)}
 .visual-inspector-figure{background:#101e2b}
 .visual-inspector-kicker,.visual-chapter-link span{color:var(--accent)}
