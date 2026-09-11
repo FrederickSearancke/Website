@@ -81,8 +81,10 @@ def main():
             if n.tag in {'a','div'} and norm(n.text())=='FS':errors.append(f'{file}: initials placeholder remains')
         if file==ROOT/'dist/skills/index.html':
             groups=[n for n in nodes if 'skill-group' in n.attrs.get('class','').split()]
-            if [sum(c.tag=='li' for c in g.nodes()) for g in groups] != [3,4,3,4]:errors.append('Skills must retain the existing 3 / 4 / 3 / 4 entries across four groups')
-            if any(term in ' '.join(g.text() for g in groups).lower() for term in ['blender automation','graph traversal','stacks and backtracking','vector similarity']):errors.append('An excluded skill remains')
+            expected_groups=json.loads((ROOT/'content/skills.json').read_text(encoding='utf-8'))['groups']
+            actual_groups=[{'heading':next(c.text() for c in g.nodes() if c.tag=='h3'),'skills':[c.text() for c in g.nodes() if c.tag=='li']} for g in groups]
+            if actual_groups!=expected_groups:errors.append('Rendered skills must match every supplied heading and entry in content/skills.json, in order')
+            if re.search(r'\bback\s*test\w*\b',' '.join(g.text() for g in groups),re.I):errors.append('Skills must use the user-requested spelling back-testing')
         if file==ROOT/'dist/index.html':
             if '01 — 03' in parser.root.text() or 'From the work' in parser.root.text():errors.append('Removed homepage labels remain')
     result={'passed':not errors,'source_pdfs_checked':pdf_checks,'rendered_source_elements_verified':verified,'verbatim_source_elements':verified-approved_count,'explicitly_approved_copy_edits':approved_count,'unique_source_blocks_used':len(unique),'pages':pages,'allowed_editorial_changes':['Display titles and navigation labels','Short figure labels and alt text; source captions preserved where available','Paragraph placement, before/after comparison layout and whitespace','Stat labels; coursework scores supplied directly by Frederick on 10 September 2026','Skills labels based on the user request, Desktop source and LinkedIn','Explicit copy edits recorded in content/approved-edits.json'],'errors':errors}

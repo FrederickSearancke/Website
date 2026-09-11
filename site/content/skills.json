@@ -1,0 +1,73 @@
+{
+  "source": "Frederick supplied these four replacement sections on 11 September 2026. Spelling, capitalisation, punctuation and minor grammar corrected; back-testing standardised at his request.",
+  "groups": [
+    {
+      "heading": "AWS",
+      "skills": [
+        "Installed CloudWatch monitoring on trading VPSs",
+        "Built CloudWatch dashboards for RAM and storage usage",
+        "Configured variable CloudWatch sampling rates",
+        "Set up AWS billing alarms",
+        "Configured AWS SQS messaging between separate VPSs",
+        "Created restricted AWS permissions for SQS access",
+        "Created and set custom AWS permissions profiles"
+      ]
+    },
+    {
+      "heading": "Trading Bots",
+      "skills": [
+        "Built an automated options trading bot with IBKR",
+        "Aligned IBKR trading bots with back-testing software",
+        "Experience with TCP and REST API integration",
+        "Created modular multi-threaded data processing layers",
+        "Refined limit-order logic using live fill data to maximise premium",
+        "Refined execution logic using observed live fills",
+        "Prevented duplicate bot instances using unique resource keys",
+        "Reconciled internal bot state against broker positions and orders",
+        "Logged multi-threaded trading activity to custom text files",
+        "Configured cloud infrastructure for automated trading systems"
+      ]
+    },
+    {
+      "heading": "Back-testing",
+      "skills": [
+        "Used QuantConnect for back-testing",
+        "Used WhisperTrades for back-testing",
+        "Tested EMA crossover strategy variations",
+        "Tested Donchian breakout strategy variations",
+        "Tested Bollinger Bands strategy variations",
+        "Tested machine learning strategies",
+        "Evaluated the statistical significance of back-testing results",
+        "Experimented with back-testing the variance risk premium on SPX",
+        "Analysed ES futures volatility using machine learning",
+        "Modelled slippage and trading costs within back-testing"
+      ]
+    },
+    {
+      "heading": "Machine Learning",
+      "skills": [
+        "Built Explainable Boosting Machine volatility models",
+        "Predicted final-hour realised volatility from intraday data",
+        "Used implied volatility as a model baseline",
+        "Built additive corrections to baseline volatility estimates",
+        "Used Gamma regression with a log link",
+        "Tuned EBM learning and regularisation parameters",
+        "Used early stopping during model training",
+        "Tested model stability across multiple random seeds",
+        "Compared predictions across independently trained models",
+        "Used rolling training windows for model evaluation",
+        "Built chronological walk-forward validation pipelines",
+        "Prevented look-ahead bias in model evaluation",
+        "Tested quarterly model retraining schedules",
+        "Applied decay weighting to historical training data",
+        "Tested different training-data decay rates",
+        "Applied monotonic constraints to selected features",
+        "Integrated ML predictions into trading back-testing",
+        "Analysed model robustness across different market periods",
+        "Built models around incomplete historical feature availability",
+        "Tested sensitivity to training-window choices",
+        "Used SQL and Python to prepare training data from local files"
+      ]
+    }
+  ]
+}

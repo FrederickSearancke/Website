@@ -228,11 +228,10 @@ write('/projects/maze-solver/',page('Java maze solver with route memory',paragra
 
 
 skills_hero='<div class="project-hero skills-hero"><h1>Skills in practice.</h1></div>'
+skills_data=json.loads((ROOT / 'content/skills.json').read_text(encoding='utf-8'))
+skill_groups=''.join('<div class="skill-group"><h3>'+escape(group['heading'])+'</h3><ul class="skill-list">'+''.join('<li>'+escape(skill)+'</li>' for skill in group['skills'])+'</ul></div>' for group in skills_data['groups'])
 skills=f'''<main id="main"><div class="wrap">{skills_hero}<section class="skills-page" aria-label="Technical skills"><div class="skill-groups">
-<div class="skill-group"><h3>Machine learning</h3><ul class="skill-list"><li>Volatility modelling with ML</li><li>Explainable Boosting Machines</li><li>LLM fine-tuning &amp; RAG</li></ul></div>
-<div class="skill-group"><h3>Quantitative research</h3><ul class="skill-list"><li>Walk-forward backtesting</li><li>Hypothesis testing</li><li>Parameter sweeps &amp; overfitting</li><li>Slippage modelling</li></ul></div>
-<div class="skill-group"><h3>Software &amp; data</h3><ul class="skill-list"><li>Python</li><li>Java</li><li>SQL</li></ul></div>
-<div class="skill-group"><h3>Building systems</h3><ul class="skill-list"><li>End-to-end project delivery</li><li>Modular system architecture</li><li>TCP APIs · IBKR TWS</li><li>REST API integration</li></ul></div>
+{skill_groups}
 </div></section>
 <section class="reading-section" aria-labelledby="reading-title"><h2 id="reading-title">My favourite books</h2>
 <ul class="book-list">
