@@ -177,6 +177,20 @@
       "image_integrity_verified": true,
       "asset": "book-andromeda-strain.jpg",
       "retrieved": "2026-09-11"
+    },
+    {
+      "slug": "alexs-adventures-in-numberland",
+      "title": "Alex’s Adventures in Numberland",
+      "author": "Alex Bellos",
+      "source_page": "https://www.alexbellos.com/numberland",
+      "image_url": "https://images.squarespace-cdn.com/content/v1/542851b9e4b0c110b8c60d81/1412615819717-2UHEGQXO7VBIK0NMEH1E/image-asset.jpeg",
+      "width": 1516,
+      "height": 2333,
+      "format": "JPEG",
+      "bytes": 1089566,
+      "image_integrity_verified": true,
+      "asset": "book-alexs-adventures-in-numberland.jpg",
+      "retrieved": "2026-09-11"
     }
   ]
 }

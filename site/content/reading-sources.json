@@ -1,5 +1,5 @@
 {
-  "reading_and_application_claims": "The user described the original four books and how Professional Automated Trading informed his trading bots. On 11 September 2026 he renamed the section My favourite books and supplied seven additions, in the order retained here. No additional claims about applying the seven new books have been added. The user also requested The Pattern on the Stone by W. Daniel Hillis in the professional reading list on 11 September 2026. The user requested The Andromeda Strain in the fiction list on 11 September 2026.",
+  "reading_and_application_claims": "The user described the original four books and how Professional Automated Trading informed his trading bots. On 11 September 2026 he renamed the section My favourite books and supplied seven additions, in the order retained here. No additional claims about applying the seven new books have been added. The user also requested The Pattern on the Stone by W. Daniel Hillis in the professional reading list on 11 September 2026. The user requested The Andromeda Strain in the fiction list on 11 September 2026. The user requested Alex's Adventures in Numbers on 11 September 2026, identified as Alex’s Adventures in Numberland by Alex Bellos and added to the nonfiction list.",
   "books": [
     {
       "title": "Professional Automated Trading: Theory and Practice",
@@ -62,6 +62,14 @@
         "W. Daniel Hillis"
       ],
       "bibliographic_source": "https://www.hachettebookgroup.com/titles/w-daniel-hillis/the-pattern-on-the-stone/9780465066933/",
+      "section": "Main list"
+    },
+    {
+      "title": "Alex’s Adventures in Numberland",
+      "authors": [
+        "Alex Bellos"
+      ],
+      "bibliographic_source": "https://www.alexbellos.com/numberland",
       "section": "Main list"
     },
     {
