@@ -105,20 +105,22 @@
       "section": "Fiction"
     },
     {
-      "title": "The Way of Kings",
-      "authors": [
-        "Brandon Sanderson"
-      ],
-      "bibliographic_source": "https://us.macmillan.com/books/9780765376671/thewayofkings/",
-      "section": "Fiction"
-    },
-    {
       "title": "The Andromeda Strain",
       "authors": [
         "Michael Crichton"
       ],
       "bibliographic_source": "https://www.penguinrandomhouse.com/books/33522/the-andromeda-strain-by-michael-crichton/",
       "section": "Fiction"
+    },
+    {
+      "title": "The Stormlight Archives (4/5 books)",
+      "authors": [
+        "Brandon Sanderson"
+      ],
+      "bibliographic_source": "https://us.macmillan.com/books/9780765376671/thewayofkings/",
+      "section": "Fiction",
+      "cover_book": "The Way of Kings",
+      "display_source": "On 11 September 2026 the user requested this exact display name and reading count, positioned after The Andromeda Strain and before Mistborn."
     },
     {
       "title": "Mistborn (8 books)",
