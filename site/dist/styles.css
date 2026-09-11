@@ -121,6 +121,7 @@ main{flex:1}
 .skills-page .skill-group h3{margin-bottom:20px;font-size:20px}
 .skills-page .skill-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10.5px 32px}
 .skills-page .skill-group .skill-list li{min-width:0;margin:0}
+.skills-page .skill-list li.skill-highlight{color:var(--ink);font-weight:500;background:rgba(244,179,82,.07);box-shadow:0 0 0 4px rgba(244,179,82,.07);border-radius:2px}
 @media(max-width:760px){.skills-page .skill-group{padding:22px}.skills-page .skill-list{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:520px){.skills-page .skill-groups{gap:16px}.skills-page .skill-group{padding:20px}.skills-page .skill-list{row-gap:7px}}
 .contact-item small{font-size:14px}

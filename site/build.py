@@ -229,7 +229,8 @@ write('/projects/maze-solver/',page('Java maze solver with route memory',paragra
 
 skills_hero='<div class="project-hero skills-hero"><h1>Skills in practice.</h1></div>'
 skills_data=json.loads((ROOT / 'content/skills.json').read_text(encoding='utf-8'))
-skill_groups=''.join('<div class="skill-group"><h3>'+escape(group['heading'])+'</h3><ul class="skill-list">'+''.join('<li>'+escape(skill)+'</li>' for skill in group['skills'])+'</ul></div>' for group in skills_data['groups'])
+highlighted_skills=set(skills_data.get('highlighted_skills', []))
+skill_groups=''.join('<div class="skill-group"><h3>'+escape(group['heading'])+'</h3><ul class="skill-list">'+''.join('<li'+(' class="skill-highlight"' if skill in highlighted_skills else '')+'>'+escape(skill)+'</li>' for skill in group['skills'])+'</ul></div>' for group in skills_data['groups'])
 skills=f'''<main id="main"><div class="wrap">{skills_hero}<section class="skills-page" aria-label="Technical skills"><div class="skill-groups">
 {skill_groups}
 </div></section>

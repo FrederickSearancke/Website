@@ -1,5 +1,15 @@
 {
   "source": "Frederick supplied these four replacement sections on 11 September 2026. Spelling, capitalisation, punctuation and minor grammar corrected; back-testing standardised at his request.",
+  "highlighted_skills": [
+    "Configured AWS SQS messaging between separate VPSs",
+    "Built an automated options trading bot with IBKR",
+    "Created modular multi-threaded data processing layers",
+    "Reconciled internal bot state against broker positions and orders",
+    "Evaluated the statistical significance of back-testing results",
+    "Built Explainable Boosting Machine volatility models",
+    "Tested model stability across multiple random seeds",
+    "Built chronological walk-forward validation pipelines"
+  ],
   "groups": [
     {
       "heading": "AWS",
