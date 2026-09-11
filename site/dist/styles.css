@@ -81,6 +81,10 @@ main{flex:1}
 .project-hero .lede:empty,.project-tags:empty{display:none}
 .skills-page{padding-bottom:56px}
 .project-hero.skills-hero h1{font-size:36px;line-height:1.2}
+.project-hero.skills-hero{padding-top:42px;padding-bottom:28px}
+.skills-page .skill-list li{margin-bottom:10.5px}
+@media(max-width:760px){.project-hero.skills-hero{padding-top:28px;padding-bottom:20px}}
+@media(max-width:520px){.skills-page .skill-list li{margin-bottom:7px}}
 .reading-section{border-top:1px solid var(--line);padding:48px 0 100px}
 .reading-section h2{font-size:32px;line-height:1.2}
 .book-list{list-style:none;margin:28px 0 0;padding:0}
