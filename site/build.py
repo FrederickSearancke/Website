@@ -243,6 +243,7 @@ skills=f'''<main id="main"><div class="wrap">{skills_hero}<section class="skills
 <li class="book-item"><img class="book-cover" src="/assets/book-most-human-human.jpg" alt="" width="292" height="450" loading="lazy" decoding="async"><h3>The Most Human Human</h3><p class="book-author">Brian Christian</p></li>
 <li class="book-item"><img class="book-cover" src="/assets/book-pattern-on-the-stone.jpg" alt="" width="426" height="640" loading="lazy" decoding="async"><h3>The Pattern on the Stone</h3><p class="book-author">W. Daniel Hillis</p></li>
 <li class="book-item"><img class="book-cover" src="/assets/book-alexs-adventures-in-numberland.jpg" alt="" width="1516" height="2333" loading="lazy" decoding="async"><h3>Alex’s Adventures in Numberland</h3><p class="book-author">Alex Bellos</p></li>
+<li class="book-item"><img class="book-cover" src="/assets/book-a-world-without-work.jpg" alt="" width="326" height="500" loading="lazy" decoding="async"><h3>A World Without Work</h3><p class="book-author">Daniel Susskind</p></li>
 </ul>
 <h3 class="reading-group-title" id="fiction-title">Fiction</h3>
 <ul class="book-list" aria-labelledby="fiction-title">

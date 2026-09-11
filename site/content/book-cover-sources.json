@@ -191,6 +191,20 @@
       "image_integrity_verified": true,
       "asset": "book-alexs-adventures-in-numberland.jpg",
       "retrieved": "2026-09-11"
+    },
+    {
+      "slug": "a-world-without-work",
+      "title": "A World Without Work",
+      "author": "Daniel Susskind",
+      "source_page": "https://www.penguin.co.uk/books/306864/a-world-without-work-by-susskind-daniel/9780141986807",
+      "image_url": "https://cdn.penguin.co.uk/dam-assets/books/9780141986807/9780141986807-jacket-large.jpg",
+      "width": 326,
+      "height": 500,
+      "format": "JPEG",
+      "bytes": 129179,
+      "image_integrity_verified": true,
+      "asset": "book-a-world-without-work.jpg",
+      "retrieved": "2026-09-11"
     }
   ]
 }
