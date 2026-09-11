@@ -1,5 +1,5 @@
 {
-  "reading_and_application_claims": "The user described the original four books and how Professional Automated Trading informed his trading bots. On 11 September 2026 he renamed the section My favourite books and supplied seven additions, in the order retained here. No additional claims about applying the seven new books have been added. The user also requested The Pattern on the Stone by W. Daniel Hillis in the professional reading list on 11 September 2026.",
+  "reading_and_application_claims": "The user described the original four books and how Professional Automated Trading informed his trading bots. On 11 September 2026 he renamed the section My favourite books and supplied seven additions, in the order retained here. No additional claims about applying the seven new books have been added. The user also requested The Pattern on the Stone by W. Daniel Hillis in the professional reading list on 11 September 2026. The user requested The Andromeda Strain in the fiction list on 11 September 2026.",
   "books": [
     {
       "title": "Professional Automated Trading: Theory and Practice",
@@ -94,6 +94,14 @@
         "Brandon Sanderson"
       ],
       "bibliographic_source": "https://us.macmillan.com/books/9780765376671/thewayofkings/",
+      "section": "Fiction"
+    },
+    {
+      "title": "The Andromeda Strain",
+      "authors": [
+        "Michael Crichton"
+      ],
+      "bibliographic_source": "https://www.penguinrandomhouse.com/books/33522/the-andromeda-strain-by-michael-crichton/",
       "section": "Fiction"
     }
   ]

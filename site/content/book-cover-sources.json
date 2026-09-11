@@ -163,6 +163,20 @@
       "image_integrity_verified": true,
       "asset": "book-pattern-on-the-stone.jpg",
       "retrieved": "2026-09-11"
+    },
+    {
+      "slug": "andromeda-strain",
+      "title": "The Andromeda Strain",
+      "author": "Michael Crichton",
+      "source_page": "https://www.penguinrandomhouse.com/books/33522/the-andromeda-strain-by-michael-crichton/",
+      "image_url": "https://images2.penguinrandomhouse.com/cover/9781101974490",
+      "width": 292,
+      "height": 450,
+      "format": "JPEG",
+      "bytes": 48186,
+      "image_integrity_verified": true,
+      "asset": "book-andromeda-strain.jpg",
+      "retrieved": "2026-09-11"
     }
   ]
 }
