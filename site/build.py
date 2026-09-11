@@ -247,7 +247,7 @@ skills=f'''<main id="main"><div class="wrap">{skills_hero}<section class="skills
 <ul class="book-list" aria-labelledby="fiction-title">
 <li class="book-item"><img class="book-cover" src="/assets/book-crime-and-punishment.jpg" alt="" width="300" height="450" loading="lazy" decoding="async"><h3>Crime and Punishment</h3><p class="book-author">Fyodor Dostoevsky</p></li>
 <li class="book-item"><img class="book-cover" src="/assets/book-brothers-karamazov.jpg" alt="" width="279" height="450" loading="lazy" decoding="async"><h3>The Brothers Karamazov</h3><p class="book-author">Fyodor Dostoevsky</p></li>
-<li class="book-item"><img class="book-cover" src="/assets/book-wizard-of-earthsea.webp" alt="" width="500" height="750" loading="lazy" decoding="async"><h3>A Wizard of Earthsea</h3><p class="book-author">Ursula K. Le Guin</p></li>
+<li class="book-item"><span class="book-cover book-cover-earthsea" aria-hidden="true"><img src="/assets/book-wizard-of-earthsea.webp" alt="" width="500" height="750" loading="lazy" decoding="async"></span><h3>A Wizard of Earthsea</h3><p class="book-author">Ursula K. Le Guin</p></li>
 <li class="book-item"><img class="book-cover" src="/assets/book-way-of-kings.jpg" alt="" width="1894" height="2853" loading="lazy" decoding="async"><h3>The Way of Kings</h3><p class="book-author">Brandon Sanderson</p></li>
 </ul></section></div></main>'''
 write('/skills/',page('Skills','Skills in machine learning, quantitative research, software and systems, plus my favourite books on trading, AI and fiction.',skills,current='skills'))

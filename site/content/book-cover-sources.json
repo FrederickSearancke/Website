@@ -133,7 +133,8 @@
       "format": "WEBP",
       "bytes": 70306,
       "image_integrity_verified": true,
-      "asset": "book-wizard-of-earthsea.webp"
+      "asset": "book-wizard-of-earthsea.webp",
+      "display_crop": "On 11 September 2026, the user requested removal of the white border. CSS clips the original 500x750 image to the artwork rectangle x=29..470, y=29..689 and displays it at the same 64px desktop / 60px mobile height as the other standard covers. The source asset is unchanged."
     },
     {
       "slug": "way-of-kings",

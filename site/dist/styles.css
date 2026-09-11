@@ -88,6 +88,9 @@ main{flex:1}
 /* Covers share a centre line; intrinsic widths keep borders tight to the artwork.
    The separate book-item padding preserves the common left edge of every title. */
 .book-cover{position:absolute;left:33px;top:50%;transform:translate(-50%,-50%);box-sizing:content-box;width:auto;height:64px;object-fit:contain;object-position:center;border:1px solid var(--line)}
+.book-cover-earthsea{width:42.76px;overflow:hidden}
+/* Show only the cover artwork: x=29..470, y=29..689 in the 500x750 source. */
+.book-cover-earthsea img{position:absolute;left:-6.575964%;top:-4.393939%;width:113.378685%;height:auto;max-width:none;display:block}
 .book-item-with-project .book-cover{height:96px}
 .book-item:last-child{border-bottom:1px solid var(--line)}
 .book-item h3{font-size:22px;line-height:1.4;letter-spacing:-.02em}
@@ -103,6 +106,7 @@ main{flex:1}
 .book-project-button:hover svg,.book-project-button:focus-visible svg{transform:translate(1px,-1px)}
 @media(prefers-reduced-motion:reduce){.book-project-button,.book-project-button svg{transition:none}.book-project-button:hover svg,.book-project-button:focus-visible svg{transform:none}}
 @media(max-width:760px){.reading-section{padding:36px 0 68px}.book-item{grid-template-columns:1fr;gap:8px;padding:22px 0 22px 64px}.book-item h3{font-size:21px}.book-item .book-note{margin-top:4px}.book-cover{left:25px;height:60px}.book-item-with-project .book-cover{height:72px}}
+@media(max-width:760px){.book-cover-earthsea{width:40.09px}}
 .skills-page .skill-groups{margin-top:0}
 .contact-item small{font-size:14px}
 
