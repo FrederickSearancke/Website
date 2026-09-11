@@ -26,5 +26,12 @@
     "replacement": "The below graph shows the position vectors, each with 1536 dimensions, projected onto a two-dimensional plane that preserves 20.6% of the variance.",
     "scope": "Visual explanation popup and RAG chapter",
     "approval": "Frederick supplied the exact replacement sentence on 10 September 2026. Other sentences remain unchanged."
+  },
+  "ebm-options-overview": {
+    "source_block": "ebm-options-p01-b03",
+    "original": "I attempted to train an Explainable Boosting Machine (EBM) to predict the profitability of options trades. This was my first EBM experiment, intended to provide an additional entry condition for a strategy based on the variance risk premium (VRP). Before I could use it in the strategy, I needed to establish whether the model could make useful predictions. I didn’t get a fit that was stable enough to rely on.",
+    "replacement": "I trained an Explainable Boosting Machine (EBM) to predict the profitability of options trades. This was my first EBM experiment, intended to provide an additional entry condition for a strategy based on the variance risk premium (VRP). Before I could use it in the strategy, I needed to establish whether the model could make useful predictions. The AI model wasn't stable across seed values, so I developed the work to predict actionable signals such as variance of the market returns rather than absolute options prices.",
+    "scope": "Homepage description, project metadata and opening article paragraph",
+    "approval": "Frederick explicitly supplied the two replacement sentences on 11 September 2026. Obvious spelling errors (accross, siganls) and the stray for in predict for actionable signals were corrected."
   }
 }

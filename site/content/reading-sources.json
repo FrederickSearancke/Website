@@ -1,27 +1,92 @@
 {
-  "reading_and_application_claims": "The user explicitly stated that they read all four books and used Professional Automated Trading to create stock-market trading bots that they run with their own money.",
+  "reading_and_application_claims": "The user described the original four books and how Professional Automated Trading informed his trading bots. On 11 September 2026 he renamed the section My favourite books and supplied seven additions, in the order retained here. No additional claims about applying the seven new books have been added.",
   "books": [
     {
       "title": "Professional Automated Trading: Theory and Practice",
-      "authors": ["Eugene A. Durenard"],
+      "authors": [
+        "Eugene A. Durenard"
+      ],
       "bibliographic_source": "https://onlinelibrary.wiley.com/doi/book/10.1002/9781118755846"
     },
     {
       "title": "Positional Option Trading: An Advanced Guide",
-      "authors": ["Euan Sinclair"],
+      "authors": [
+        "Euan Sinclair"
+      ],
       "bibliographic_source": "https://uat.store.wiley.com/en-us/positional-option-trading-an-advanced-guide-p-9781119583516"
     },
     {
       "title": "Volatility Trading",
-      "authors": ["Euan Sinclair"],
+      "authors": [
+        "Euan Sinclair"
+      ],
       "bibliographic_source": "https://onlinelibrary.wiley.com/doi/book/10.1002/9781119197058",
       "edition": "Not specified by the user; omitted from the website."
     },
     {
       "title": "Retail Options Trading",
-      "authors": ["Euan Sinclair", "Andrew Mack"],
+      "authors": [
+        "Euan Sinclair",
+        "Andrew Mack"
+      ],
       "bibliographic_source": "https://www.linkedin.com/posts/euan-sinclair_retail-options-trading-activity-7257158801504522241-hwM7",
       "corroborating_source": "https://blog.moontower.ai/the-book-for-retail-option-traders/"
+    },
+    {
+      "title": "The Black Swan",
+      "authors": [
+        "Nassim Nicholas Taleb"
+      ],
+      "bibliographic_source": "https://www.penguinrandomhouse.com/books/176226/the-black-swan-second-edition-by-nassim-nicholas-taleb/",
+      "section": "Main list"
+    },
+    {
+      "title": "The Alignment Problem",
+      "authors": [
+        "Brian Christian"
+      ],
+      "bibliographic_source": "https://brianchristian.org/the-alignment-problem/",
+      "section": "Main list"
+    },
+    {
+      "title": "The Most Human Human",
+      "authors": [
+        "Brian Christian"
+      ],
+      "bibliographic_source": "https://www.penguinrandomhouse.ca/books/201876/the-most-human-human-by-brian-christian/9780307476708",
+      "section": "Main list"
+    },
+    {
+      "title": "Crime and Punishment",
+      "authors": [
+        "Fyodor Dostoevsky"
+      ],
+      "bibliographic_source": "https://www.penguinrandomhouse.com/books/318117/crime-and-punishment-by-fyodor-dostoyevsky-translated-with-an-introduction-and-notes-by-oliver-ready-cover-by-zohar-lazar/9780143107637/",
+      "section": "Fiction"
+    },
+    {
+      "title": "The Brothers Karamazov",
+      "authors": [
+        "Fyodor Dostoevsky"
+      ],
+      "bibliographic_source": "https://www.penguinrandomhouse.com/books/326633/the-brothers-karamazov-by-fyodor-dostoyevsky/",
+      "section": "Fiction"
+    },
+    {
+      "title": "A Wizard of Earthsea",
+      "authors": [
+        "Ursula K. Le Guin"
+      ],
+      "bibliographic_source": "https://www.ursulakleguin.com/a-wizard-of-earthsea",
+      "section": "Fiction"
+    },
+    {
+      "title": "The Way of Kings",
+      "authors": [
+        "Brandon Sanderson"
+      ],
+      "bibliographic_source": "https://us.macmillan.com/books/9780765376671/thewayofkings/",
+      "section": "Fiction"
     }
   ]
 }

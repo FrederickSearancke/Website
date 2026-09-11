@@ -12,6 +12,7 @@ BASE = '/projects/gpt-finetuning/'
 # Selected palette: 01 Cobalt & Amber. Match first paint to dist/theme.css.
 THEME_COLOR = '#031B3A'
 THEME_CSS_VERSION = sha256((OUT / 'theme.css').read_bytes()).hexdigest()[:12]
+STYLES_CSS_VERSION = sha256((OUT / 'styles.css').read_bytes()).hexdigest()[:12]
 HOME_CSS_VERSION = sha256((OUT / 'home.css').read_bytes()).hexdigest()[:12]
 CHAPTERS = [
  ('data-preparation', 'Training-data preparation', author('gpt-formatting-p01-b06','span')),
@@ -35,7 +36,7 @@ def portrait(large=False):
     if PROFILE.get('portrait'):
         if large:
             return f'<div class="portrait-frame"><img class="contact-portrait" src="{escape(PROFILE["portrait"])}" alt="Frederick Searancke" width="1024" height="1536"></div>'
-        return f'<img class="portrait" src="{escape(PROFILE["portrait"])}" alt="Frederick Searancke" width="62" height="62">'
+        return '<img class="portrait" src="/assets/profile-avatar-232.png" srcset="/assets/profile-avatar-116.png 116w, /assets/profile-avatar-232.png 232w, /assets/profile-avatar-464.png 464w" sizes="(max-width: 520px) 48px, 58px" alt="Frederick Searancke" width="464" height="464" decoding="async">'
     return '<div class="portrait monogram" aria-label="Frederick Searancke initials">FS</div>' if not large else ''
 
 def header(current='', *, home=False):
@@ -58,7 +59,7 @@ def page(title, description, body, *, home=False, current=''):
     title = re.sub(r'<[^>]+>', ' ', title).strip().rstrip('.')
     description = unescape(re.sub(r'<[^>]+>', '', description))
     preload = f'<link rel="stylesheet" href="/home.css?v={HOME_CSS_VERSION}"><link rel="preload" as="image" href="/assets/ebm-options-thumbnail.png">' if home else ''
-    return f'''<!doctype html><html lang="en" style="background:{THEME_COLOR};color-scheme:dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{escape(title)} — Frederick Searancke</title><meta name="description" content="{escape(description)}"><meta name="theme-color" content="{THEME_COLOR}"><meta name="color-scheme" content="dark"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/theme.css?v={THEME_CSS_VERSION}">{preload}<script src="/app.js" defer></script></head><body class="{'home' if home else 'inner-page'}">{header(current,home=home)}{body}{footer()}</body></html>'''
+    return f'''<!doctype html><html lang="en" style="background:{THEME_COLOR};color-scheme:dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{escape(title)} — Frederick Searancke</title><meta name="description" content="{escape(description)}"><meta name="theme-color" content="{THEME_COLOR}"><meta name="color-scheme" content="dark"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css?v={STYLES_CSS_VERSION}"><link rel="stylesheet" href="/theme.css?v={THEME_CSS_VERSION}">{preload}<script src="/app.js" defer></script></head><body class="{'home' if home else 'inner-page'}">{header(current,home=home)}{body}{footer()}</body></html>'''
 
 def write(route, html):
     dest = OUT / route.strip('/') / 'index.html'
@@ -102,11 +103,11 @@ def gpt_page(title,desc,article,active='overview',label='Machine learning · App
     return page(title,desc,f'<main id="main" class="gpt-project"><div class="wrap">{breadcrumb}{gpt_pagination(active,"top")}{hero}<div class="single-article"><article class="article">{article}</article>{gpt_pagination(active)}</div></div></main>',current='projects')
 
 projects = [
- {'slug':'ebm-options-profitability','category':'machine-learning','label':'Machine learning','meta':'Explainable Boosting Machines','image':'ebm-options-thumbnail.png','imageclass':'ebm-options','alt':'EBM: Predicting options profit, with two saved IV-response curves.','width':2000,'height':2000,'title':author('ebm-options-p01-b01','span'),'desc':author('ebm-options-p01-b03','span',excerpt='I attempted to train an Explainable Boosting Machine (EBM) to predict the profitability of options trades.')+' '+author('ebm-options-p01-b03','span',excerpt='I didn’t get a fit that was stable enough to rely on.')},
+ {'slug':'ebm-options-profitability','category':'machine-learning','label':'Machine learning','meta':'Explainable Boosting Machines','image':'ebm-options-thumbnail.png','imageclass':'ebm-options','alt':'EBM: Predicting options profit, with two saved IV-response curves.','width':2000,'height':2000,'title':author('ebm-options-p01-b01','span'),'desc':approved('ebm-options-overview','span',excerpt='I trained an Explainable Boosting Machine (EBM) to predict the profitability of options trades.')+' '+approved('ebm-options-overview','span',excerpt="The AI model wasn't stable across seed values, so I developed the work to predict actionable signals such as variance of the market returns rather than absolute options prices.")},
  {'slug':'gpt-finetuning','category':'machine-learning','label':'Machine learning','meta':'','image':'vectors.png','imageclass':'vector','alt':'RAG visualised: projection of product and policy embeddings','width':2048,'height':1536,'title':'Can GPT-4o Learn to Handle Customer Support?','desc':author('gpt-integration-p01-b03','span',excerpt='I built a Python application that combined the fine-tuned model with retrieval of product and policy information.')},
  {'slug':'blender-pipeline','category':'automation','label':'Automation','meta':'Python + Blender','image':'artwork-to-relief.png','imageclass':'blender','alt':'Full artwork-to-relief comparison: bee artwork, heightmap and generated clay roller','width':1800,'height':850,'title':'From artwork to<br>3D-printable rollers','desc':approved('blender-card-intro')},
  {'slug':'maze-solver','category':'algorithms','label':'Algorithms','meta':'Java','image':'maze-first.png','imageclass':'maze','alt':'Maze from the route-memory controller project','width':910,'height':830,'title':'A maze solver<br>that remembers its route','desc':author('maze-p01-b02','span',excerpt='The final controller could remember a successful route and use it to reach the target more directly on subsequent runs.')},
- {'slug':'ebm-volatility','category':'machine-learning','label':'Machine learning','meta':'Explainable Boosting Machines','image':'ebm-paired-interaction-chart.svg','imageclass':'ebm','alt':'Premarket and opening volatility: 14 by 14 equal square buckets showing learned weights, with 653 observed training days. Blue lowers the forecast and amber raises it.','width':660,'height':430,'title':'Forecasting market volatility using explainable AI.','desc':'Premarket &times; opening &middot; Learned weights<br>Ordered volatility buckets &middot; 653 observed days'},
+ {'slug':'ebm-volatility','category':'machine-learning','label':'Machine learning','meta':'Explainable Boosting Machines','image':'ebm-paired-interaction-chart.svg','imageclass':'ebm','alt':'Premarket and opening volatility: 14 by 14 equal square buckets showing learned weights, with 653 observed training days. Blue lowers the forecast and amber raises it.','width':660,'height':430,'title':'Forecasting market volatility using explainable AI.','desc':author('ebm-volatility-user-introduction','span')},
 ]
 
 def project_thumbnail(p, *, first=False):
@@ -140,17 +141,16 @@ write('/',page('Projects & research','Projects in machine learning, software aut
 
 # TODO: Replace this placeholder with the user's volatility-forecasting writeup when supplied.
 volatility_title = 'Forecasting market volatility using explainable AI.'
-volatility_hero = project_hero('Machine learning · Explainable Boosting Machines',volatility_title,'Project writeup coming soon',[])
-write('/projects/ebm-volatility/',page(volatility_title,'Project writeup coming soon',f'<main id="main"><div class="wrap"><div class="breadcrumbs"><a href="/#projects">← All projects</a></div>{volatility_hero}</div></main>',current='projects'))
+volatility_hero = project_hero('Machine learning · Explainable Boosting Machines',volatility_title,author('ebm-volatility-user-introduction','span'),[])
+write('/projects/ebm-volatility/',page(volatility_title,'I trained an explainable machine learning model to predict late-day intra-day realised volatility of E-mini S&P 500 futures that was stable over many training seeds.',f'<main id="main"><div class="wrap"><div class="breadcrumbs"><a href="/#projects">← All projects</a></div>{volatility_hero}<p class="coming-soon-message">Project writeup coming soon</p></div></main>',current='projects'))
 
-# The article uses only the PDF's own title, prose, headings and captions.
-# Creative changes are presentation only: no rewritten copy or added commentary.
+# Preserve source prose except for the user's recorded, approved wording changes.
 options_title = paragraph_text('ebm-options-p01-b01')
-options_description = author('ebm-options-p01-b03','span',excerpt='I attempted to train an Explainable Boosting Machine (EBM) to predict the profitability of options trades.')
+options_description = approved('ebm-options-overview','span',excerpt='I trained an Explainable Boosting Machine (EBM) to predict the profitability of options trades.')
 options_hero = '<div class="project-hero">'+author('ebm-options-p01-b01','h1')+'</div>'
 def options_figure(file, caption_id):
     return figure(file,paragraph_text(caption_id),author(caption_id,'span'))
-options_article = document('ebm-options',after={
+options_article = document('ebm-options',overrides={'ebm-options-p01-b03':approved('ebm-options-overview','p')},after={
  'ebm-options-p01-b06':options_figure('ebm-options-trade-profits.png','ebm-options-p01-b07'),
  'ebm-options-p02-b02':options_figure('ebm-options-training-examples.png','ebm-options-p02-b03'),
  'ebm-options-p03-b04':options_figure('ebm-options-iv-trend.png','ebm-options-p03-b05'),
@@ -230,7 +230,7 @@ skills=f'''<main id="main"><div class="wrap">{skills_hero}<section class="skills
 <div class="skill-group"><h3>Software &amp; data</h3><ul class="skill-list"><li>Python</li><li>Java</li><li>SQL</li></ul></div>
 <div class="skill-group"><h3>Building systems</h3><ul class="skill-list"><li>End-to-end project delivery</li><li>Modular system architecture</li><li>TCP APIs · IBKR TWS</li><li>REST API integration</li></ul></div>
 </div></section>
-<section class="reading-section" aria-labelledby="reading-title"><h2 id="reading-title">Books I’ve read</h2>
+<section class="reading-section" aria-labelledby="reading-title"><h2 id="reading-title">My favourite books</h2>
 <ul class="book-list">
 <li class="book-item book-item-with-project"><img class="book-cover" src="/assets/book-professional-automated-trading.jpg" alt="" width="300" height="450" loading="lazy" decoding="async"><h3>Professional Automated Trading: Theory and Practice</h3><p class="book-author">Eugene A. Durenard</p>
 <!-- TODO(stock-market-trading-bots-project): When Frederick supplies the stock-market trading-bot project to add, connect this book's arrow CTA to that project's final route. Replace the disabled button #trading-bots-project-cta with an anchor using the same class and SVG, set its href to the new project, retain it inside .book-project-tail, update aria-label to "Read about my stock-market trading bots", and remove type, disabled, aria-describedby, title and the #trading-bots-project-status coming-soon label. Keep this placeholder unlinked until that project exists. -->
@@ -238,8 +238,18 @@ skills=f'''<main id="main"><div class="wrap">{skills_hero}<section class="skills
 <li class="book-item"><img class="book-cover" src="/assets/book-positional-option-trading.jpg" alt="" width="300" height="445" loading="lazy" decoding="async"><h3>Positional Option Trading: An Advanced Guide</h3><p class="book-author">Euan Sinclair</p></li>
 <li class="book-item"><img class="book-cover" src="/assets/book-volatility-trading.jpg" alt="" width="300" height="453" loading="lazy" decoding="async"><h3>Volatility Trading</h3><p class="book-author">Euan Sinclair</p></li>
 <li class="book-item"><img class="book-cover" src="/assets/book-retail-options-trading.png" alt="" width="238" height="357" loading="lazy" decoding="async"><h3>Retail Options Trading</h3><p class="book-author">Euan Sinclair and Andrew Mack</p></li>
+<li class="book-item"><img class="book-cover" src="/assets/book-black-swan.jpg" alt="" width="292" height="450" loading="lazy" decoding="async"><h3>The Black Swan</h3><p class="book-author">Nassim Nicholas Taleb</p></li>
+<li class="book-item"><img class="book-cover" src="/assets/book-alignment-problem.webp" alt="" width="416" height="628" loading="lazy" decoding="async"><h3>The Alignment Problem</h3><p class="book-author">Brian Christian</p></li>
+<li class="book-item"><img class="book-cover" src="/assets/book-most-human-human.jpg" alt="" width="292" height="450" loading="lazy" decoding="async"><h3>The Most Human Human</h3><p class="book-author">Brian Christian</p></li>
+</ul>
+<h3 class="reading-group-title" id="fiction-title">Fiction</h3>
+<ul class="book-list" aria-labelledby="fiction-title">
+<li class="book-item"><img class="book-cover" src="/assets/book-crime-and-punishment.jpg" alt="" width="300" height="450" loading="lazy" decoding="async"><h3>Crime and Punishment</h3><p class="book-author">Fyodor Dostoevsky</p></li>
+<li class="book-item"><img class="book-cover" src="/assets/book-brothers-karamazov.jpg" alt="" width="279" height="450" loading="lazy" decoding="async"><h3>The Brothers Karamazov</h3><p class="book-author">Fyodor Dostoevsky</p></li>
+<li class="book-item"><img class="book-cover" src="/assets/book-wizard-of-earthsea.webp" alt="" width="500" height="750" loading="lazy" decoding="async"><h3>A Wizard of Earthsea</h3><p class="book-author">Ursula K. Le Guin</p></li>
+<li class="book-item"><img class="book-cover" src="/assets/book-way-of-kings.jpg" alt="" width="1894" height="2853" loading="lazy" decoding="async"><h3>The Way of Kings</h3><p class="book-author">Brandon Sanderson</p></li>
 </ul></section></div></main>'''
-write('/skills/',page('Skills','Skills in machine learning, quantitative research, software and systems, plus books I’ve read and applied to my own trading bots.',skills,current='skills'))
+write('/skills/',page('Skills','Skills in machine learning, quantitative research, software and systems, plus my favourite books on trading, AI and fiction.',skills,current='skills'))
 
 about_hero='<div class="project-hero"><h1 class="section-label">About me</h1></div>'
 about=f'''<main id="main"><div class="wrap">{about_hero}<div class="about-copy">
@@ -253,7 +263,7 @@ about=f'''<main id="main"><div class="wrap">{about_hero}<div class="about-copy">
 <p>I hold a BASI Level 1 ski instructor qualification, combining my interest in skiing with teaching others.</p>
 <p>I volunteered for 35 hours helping children aged 4–8 learn to ski for the first time. This meant introducing them to the basics and helping them become comfortable on skis.</p>
 <h2 style="margin-top:45px">Introducing Python.</h2>
-<p>For around five years, I volunteered at a computer science club, teaching Year 7 and Year 8 pupils to code in Python for the first time. The club gave me the opportunity to share my interest in programming and help younger pupils get started.</p>
+<p>I volunteered at my school's computer science club, teaching Year 7 and Year 8 pupils to code in Python for over 5 years. I really enjoyed the opportunity to share my passion for programming, helping young students see how exciting coding can be.</p>
 <div style="margin-top:35px"><a class="button" href="/contact/">Get in touch <span aria-hidden="true">↗</span></a></div></div></div></main>'''
 write('/about/',page('About me','Frederick Searancke: Saxon Novices 2026 foil winner, BASI Level 1 ski instructor, and volunteer teaching young skiers and Python beginners.',about,current='about'))
 

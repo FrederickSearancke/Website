@@ -81,7 +81,7 @@ def main():
             if n.tag in {'a','div'} and norm(n.text())=='FS':errors.append(f'{file}: initials placeholder remains')
         if file==ROOT/'dist/skills/index.html':
             groups=[n for n in nodes if 'skill-group' in n.attrs.get('class','').split()]
-            if len(groups)!=4 or any(sum(c.tag=='li' for c in g.nodes())!=4 for g in groups):errors.append('Skills must have 4 columns with 4 entries each')
+            if [sum(c.tag=='li' for c in g.nodes()) for g in groups] != [3,4,3,4]:errors.append('Skills must retain the existing 3 / 4 / 3 / 4 entries across four groups')
             if any(term in ' '.join(g.text() for g in groups).lower() for term in ['blender automation','graph traversal','stacks and backtracking','vector similarity']):errors.append('An excluded skill remains')
         if file==ROOT/'dist/index.html':
             if '01 — 03' in parser.root.text() or 'From the work' in parser.root.text():errors.append('Removed homepage labels remain')

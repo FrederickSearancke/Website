@@ -13,7 +13,12 @@
     "wins": 12,
     "losses": 0,
     "record_method": "Four victories in each of two poule rounds, then four direct elimination victories. The table-of-32 bye is not counted as a win.",
-    "bout_evidence_pages": [7, 13, 17, 19]
+    "bout_evidence_pages": [
+      7,
+      13,
+      17,
+      19
+    ]
   },
   "photos": [
     {
@@ -33,5 +38,5 @@
       "method": "Unmodified original JPEG, displayed at its full aspect ratio."
     }
   ],
-  "skiing_and_python": "BASI Level 1 supported by the user's CV and explicit confirmation. The user supplied the skiing volunteering ages (4–8), 35-hour total, and approximately five years teaching Year 7–8 Python beginners."
+  "skiing_and_python": "BASI Level 1 supported by the user's CV and confirmation. The user supplied the skiing volunteering ages (4–8), 35-hour total, and updated the Python teaching account on 11 September 2026 to over 5 years at his school's club with Year 7–8 pupils."
 }

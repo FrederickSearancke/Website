@@ -1,0 +1,13 @@
+{
+  "source_kind": "explicit_user_request",
+  "date": "2026-09-11",
+  "blocks": [
+    {
+      "document_key": "ebm-volatility",
+      "block_id": "ebm-volatility-user-introduction",
+      "kind": "paragraph",
+      "text": "I trained an explainable machine learning model to predict late-day intra-day realised volatility of E-mini S&P 500 futures that was stable over many training seeds.",
+      "source": "Frederick supplied this description in the website-edit request on 11 September 2026."
+    }
+  ]
+}

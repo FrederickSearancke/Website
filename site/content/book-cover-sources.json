@@ -56,6 +56,97 @@
       "source_page": "https://blog.moontower.ai/the-book-for-retail-option-traders/",
       "verification": "Cover from launch post by Kris Abdelmessih, who wrote the foreword to this book. Visually checked both authors and title.",
       "asset": "book-retail-options-trading.png"
+    },
+    {
+      "slug": "black-swan",
+      "title": "The Black Swan",
+      "author": "Nassim Nicholas Taleb",
+      "source_page": "https://www.penguinrandomhouse.com/books/176226/the-black-swan-second-edition-by-nassim-nicholas-taleb/",
+      "image_url": "https://images2.penguinrandomhouse.com/cover/9780812973815",
+      "width": 292,
+      "height": 450,
+      "format": "JPEG",
+      "bytes": 22428,
+      "image_integrity_verified": true,
+      "asset": "book-black-swan.jpg"
+    },
+    {
+      "slug": "alignment-problem",
+      "title": "The Alignment Problem",
+      "author": "Brian Christian",
+      "source_page": "https://brianchristian.org/the-alignment-problem/",
+      "image_url": "https://brianchristian.org/_astro/The-Alignment-Problem-Front-Cover.X7K7yPJj_Z19Sgjk.webp",
+      "width": 416,
+      "height": 628,
+      "format": "WEBP",
+      "bytes": 64450,
+      "image_integrity_verified": true,
+      "asset": "book-alignment-problem.webp"
+    },
+    {
+      "slug": "most-human-human",
+      "title": "The Most Human Human",
+      "author": "Brian Christian",
+      "source_page": "https://www.penguinrandomhouse.ca/books/201876/the-most-human-human-by-brian-christian/9780307476708",
+      "image_url": "https://images.randomhouse.com/cover/9780307476708",
+      "width": 292,
+      "height": 450,
+      "format": "JPEG",
+      "bytes": 20049,
+      "image_integrity_verified": true,
+      "asset": "book-most-human-human.jpg"
+    },
+    {
+      "slug": "crime-and-punishment",
+      "title": "Crime and Punishment",
+      "author": "Fyodor Dostoevsky",
+      "source_page": "https://www.penguinrandomhouse.com/books/318117/crime-and-punishment-by-fyodor-dostoyevsky-translated-with-an-introduction-and-notes-by-oliver-ready-cover-by-zohar-lazar/9780143107637/",
+      "image_url": "https://images1.penguinrandomhouse.com/cover/9780143107637",
+      "width": 300,
+      "height": 450,
+      "format": "JPEG",
+      "bytes": 62698,
+      "image_integrity_verified": true,
+      "asset": "book-crime-and-punishment.jpg"
+    },
+    {
+      "slug": "brothers-karamazov",
+      "title": "The Brothers Karamazov",
+      "author": "Fyodor Dostoevsky",
+      "source_page": "https://www.penguinrandomhouse.com/books/326633/the-brothers-karamazov-by-fyodor-dostoyevsky/",
+      "image_url": "https://images2.penguinrandomhouse.com/cover/9780451530608",
+      "width": 279,
+      "height": 450,
+      "format": "JPEG",
+      "bytes": 48105,
+      "image_integrity_verified": true,
+      "asset": "book-brothers-karamazov.jpg"
+    },
+    {
+      "slug": "wizard-of-earthsea",
+      "title": "A Wizard of Earthsea",
+      "author": "Ursula K. Le Guin",
+      "source_page": "https://www.ursulakleguin.com/a-wizard-of-earthsea",
+      "image_url": "https://images.squarespace-cdn.com/content/v1/5cad42ef90f904e520359371/0b0dbcf4-f191-466a-9c16-ac663c46e9a6/Earthsea-1-wizard-of-earthsea.jpg?format=500w",
+      "width": 500,
+      "height": 750,
+      "format": "WEBP",
+      "bytes": 70306,
+      "image_integrity_verified": true,
+      "asset": "book-wizard-of-earthsea.webp"
+    },
+    {
+      "slug": "way-of-kings",
+      "title": "The Way of Kings",
+      "author": "Brandon Sanderson",
+      "source_page": "https://us.macmillan.com/books/9780765376671/thewayofkings/",
+      "image_url": "https://mpd-biblio-covers.imgix.net/9780765376671.jpg",
+      "width": 1894,
+      "height": 2853,
+      "format": "JPEG",
+      "bytes": 658152,
+      "image_integrity_verified": true,
+      "asset": "book-way-of-kings.jpg"
     }
   ]
 }
