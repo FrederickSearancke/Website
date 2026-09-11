@@ -1,5 +1,5 @@
 {
-  "reading_and_application_claims": "The user described the original four books and how Professional Automated Trading informed his trading bots. On 11 September 2026 he renamed the section My favourite books and supplied seven additions, in the order retained here. No additional claims about applying the seven new books have been added.",
+  "reading_and_application_claims": "The user described the original four books and how Professional Automated Trading informed his trading bots. On 11 September 2026 he renamed the section My favourite books and supplied seven additions, in the order retained here. No additional claims about applying the seven new books have been added. The user also requested The Pattern on the Stone by W. Daniel Hillis in the professional reading list on 11 September 2026.",
   "books": [
     {
       "title": "Professional Automated Trading: Theory and Practice",
@@ -54,6 +54,14 @@
         "Brian Christian"
       ],
       "bibliographic_source": "https://www.penguinrandomhouse.ca/books/201876/the-most-human-human-by-brian-christian/9780307476708",
+      "section": "Main list"
+    },
+    {
+      "title": "The Pattern on the Stone",
+      "authors": [
+        "W. Daniel Hillis"
+      ],
+      "bibliographic_source": "https://www.hachettebookgroup.com/titles/w-daniel-hillis/the-pattern-on-the-stone/9780465066933/",
       "section": "Main list"
     },
     {

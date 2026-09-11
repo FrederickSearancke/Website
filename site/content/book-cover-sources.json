@@ -147,6 +147,20 @@
       "bytes": 658152,
       "image_integrity_verified": true,
       "asset": "book-way-of-kings.jpg"
+    },
+    {
+      "slug": "pattern-on-the-stone",
+      "title": "The Pattern on the Stone",
+      "author": "W. Daniel Hillis",
+      "source_page": "https://www.hachettebookgroup.com/titles/w-daniel-hillis/the-pattern-on-the-stone/9780465066933/",
+      "image_url": "https://www.hachettebookgroup.com/wp-content/uploads/2025/05/9780465066933.jpg?w=427",
+      "width": 426,
+      "height": 640,
+      "format": "JPEG",
+      "bytes": 26404,
+      "image_integrity_verified": true,
+      "asset": "book-pattern-on-the-stone.jpg",
+      "retrieved": "2026-09-11"
     }
   ]
 }
